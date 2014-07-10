@@ -17,15 +17,13 @@ Example power ballot pages:
 How to contribute
 -----------------
 
-You can contribute either by helping with data entry or by helping with development.
-
-To help with data entry you should Contact Common Cause Hawaii and specify that you want to help with the Hawaii Power Ballot Initiative. You will be asked to fill out basic information about each candidate, such as:
+Want to help? Common Cause Hawaii is seeking volunteers to help gather additional candidate information. If you can help, please Email Civic-Celerator (<civiccelerator@gmail.com>) and specify that you want to help with the Hawaii Power Ballot Initiative. You will be asked to fill out basic information about each candidate, such as:
 * Basic description
 * Campaign website
 * Social Media: Twitter, Facebook, Google+
 * [FollowTheMoney.com](http://FollowTheMoney.com) links
 * Other interesting/informative links about the candidate
 
-Side Note: Do we have an email that we can point people to here?
+To volunteer for data entry email <civiccelerator@gmail.com>!
 
 To help with development take a look at the issues and talk to @rajhawaii or @axelson. The group communication will happen via the [Code for Hawaii Google+ group](https://plus.google.com/communities/116866725555175272325).
