@@ -26,4 +26,14 @@ Want to help? Common Cause Hawaii is seeking volunteers to help gather additiona
 
 To volunteer for data entry email <civiccelerator@gmail.com>!
 
+Contribute with Code
+--------------------
+
 To help with development take a look at the issues and talk to @rajhawaii or @axelson. The group communication will happen via the [Code for Hawaii Google+ group](https://plus.google.com/communities/116866725555175272325).
+
+Potential issues to fix/address:
+* Use Twitter bootstrap
+** General styling
+** Modal dialog
+* Filter options
+** Probably radio buttons to filter by party and office
