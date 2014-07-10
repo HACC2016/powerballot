@@ -37,7 +37,9 @@ $(document).ready(function() {
     });
 
     $('#h18hashem').click(function(event){
-    	$('#h18hashem-box').css({position:"absolute",top:"20px"});
+      event.preventDefault();
+      var y_pos = event.pageY - event.clientY + 20;
+        $('#h18hashem-box').css({position:"absolute",top: y_pos + "px"});
         $('#overlay').fadeIn(500, function(){
             $('#h18hashem-box').fadeIn(100);
         });
