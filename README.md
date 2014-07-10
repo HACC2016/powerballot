@@ -1,10 +1,10 @@
 Hawaii Power Ballot
 ===================
 
-Hawaii Power Ballot is a project to provide a version of a ballot where you can click on the candidate to get more information about them.
+Hawaii Power Ballot is a project to provide a version of a ballot where you can click on the candidate to get more information about that candidate.
 
-Example candidate info in a Power Ballot
-----------------------------------------
+Screenshot of power ballot info
+-------------------------------
 ![Screenshot of a candidate](http://codeforhawaii.github.io/hawaii-power-ballot/images/screenshot1.png "Screenshot of a candidate")
 
 Details
