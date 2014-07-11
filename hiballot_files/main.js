@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+  // Replaces #h18hashem-box
+  $('.cand-choice').click(function(e) {
+    e.preventDefault();
+    $('#candidateModal').modal();
+  });
+
     $('#s12galuteria').click(function(event){
     	$('#s12galuteria-box').css({position:"absolute",top:"20px"});
         $('#overlay').fadeIn(500, function(){
@@ -32,20 +38,6 @@ $(document).ready(function() {
     });
     $('#s12lethem-boxclose').click(function(){
         $('#s12lethem-box').fadeOut(100, function(){
-            $('#overlay').fadeOut(100);
-        });
-    });
-
-    $('#h18hashem').click(function(event){
-      event.preventDefault();
-      var y_pos = event.pageY - event.clientY + 20;
-        $('#h18hashem-box').css({position:"absolute",top: y_pos + "px"});
-        $('#overlay').fadeIn(500, function(){
-            $('#h18hashem-box').fadeIn(100);
-        });
-    });
-    $('#h18hashem-boxclose').click(function(){
-        $('#h18hashem-box').fadeOut(100, function(){
             $('#overlay').fadeOut(100);
         });
     });
