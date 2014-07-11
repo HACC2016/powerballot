@@ -1,9 +1,49 @@
 $(document).ready(function() {
+  var candidate_data = {};
+  candidate_data['h18hashem'] = {
+    name: '+AA Mark Jun Hashem (D)',
+    party: 'Democrat',
+    office: 'House',
+    district: '18',
+    incumbent: true,
+    photo_url: "http://www.capitol.hawaii.gov/Members/Images/RepSenPhotos/hashem.jpg",
+    photo_width: "148px",
+    photo_source_text: "State Legislature photo",
+    bio: "<p>Elected in 2010, Representative Mark J. Hashem represents House District 18. He serves as the Vice-Chair of the Committee on Agriculture and the Vice-Chair of the Committee on International Affairs. He is a member of the House Finance Committee, Economic Revitalization & Business Committee, and Tourism Committee.</p>\
+            <p>Representative Hashem serves on the Hawaii Invasive Species Council and is also an appointee to the National Council on State Legislatures (NCSL) standing committee on Agriculture and Energy for the 2011-2012 term.</p>\
+            <p>Mark is a graduate of McKinley High School, where he is a volunteer wrestling coach. After graduating from Pacific University in Forest Grove, Oregon, he entered the Master's Program at Hokkaido University. During his stay in Japan, Representative Hashem, who is fluent in Japanese, operated an elementary English school and a billiard supply network in Sapporo.</p>\
+            <p>Representative Hashem is married, and is the proud father of three children.</p>",
+    bio_cred_text: "TobaccoIssues.com website",
+    bio_cred_url: "http://www.tobaccoissues.com/candidatedetail.aspx?LegisID=HASHJMARXXXXXXHI",
+    fact_list: [
+      {name: 'Occupation', text: 'legislator, business owner, sports coach'},
+      {name: 'Age', text: 'unknown'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: 'Friends of Mark Hashem'},
+        {name: 'Chair', text: 'Mark J. Hashem'},
+        {name: 'Treasurer', text: 'Fabiola B. Hashem'},
+        {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10626", link_text: "Organizational Report"}
+      ]}
+    ],
+    end: 'ignore'
+  };
 
   // Replaces #h18hashem-box
   $('.cand-choice').click(function(e) {
     e.preventDefault();
-    $('#candidateModal').modal();
+    var $this = $(this);
+    var $candidateModal = $('#candidateModal');
+    var candidate_name = $this.data('name');
+    console.log("clicked on candidate: " + candidate_name);
+    var data = candidate_data[candidate_name];
+
+    var template = $('#template').html();
+    Mustache.parse(template);   // optional, speeds up future uses
+    var rendered = Mustache.render(template, data);
+
+    $candidateModal.find('.modal-title').text(data.name);
+    $candidateModal.find('.modal-body').html(rendered);
+    $candidateModal.modal();
   });
 
     $('#s12galuteria').click(function(event){
