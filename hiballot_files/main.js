@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var candidate_data = {};
   candidate_data['h18hashem'] = {
-    name: '+AA Mark Jun Hashem (D)',
+    name: 'Mark Jun Hashem (D)',
     party: 'Democrat',
     office: 'House',
     district: '18',
@@ -25,6 +25,18 @@ $(document).ready(function() {
         {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10626", link_text: "Organizational Report"}
       ]}
     ],
+    campaign_finance_standard_report: "https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10626",
+    campaign_finance_special_report: "https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Hashem,%20Mark&s_CR_EP_ID=",
+    other_links: [
+      {href: "http://www.capitol.hawaii.gov/memberpage.aspx?member=hashem&year=2014", text: "State Legislature Official Page"},
+      {href: "http://www.lwv-hawaii.com/candidates-2014.htm#Hashem,MarkJun", text: "League of Women Voters of Hawaii"},
+      {href: "http://beta.followthemoney.org/entity-details?eid=18913803", text: "FollowTheMoney"},
+      {href: "http://votesmart.org/candidate/biography/127594/mark-hashem", text: "Project Vote Smart"},
+      {href: "http://ballotpedia.org/Mark_Hashem", text: "Ballotpedia"},
+      {href: "http://en.wikipedia.org/wiki/Mark_Hashem", text: "Wikipedia"},
+      {text: "Civil Beat - unknown"}
+    ],
+
     end: 'ignore'
   };
 

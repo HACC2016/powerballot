@@ -142,8 +142,8 @@
 
       <h3>Campaign Finance links</h3>
       <ul class="article-list">
-        <li><a href="https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11106" target="_blank" alt="Standard Reports">Standard Reports</a></li>
-        <li><a href="https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Halvorsen,%20Susan&s_CR_EP_ID=" target="_blank" alt="Special Reports">Special Reports</a></li>
+        <li><a href="{{campaign_finance_standard_report}}" target="_blank" alt="Standard Reports">Standard Reports</a></li>
+        <li><a href="{{campaign_finance_special_report}}" target="_blank" alt="Special Reports">Special Reports</a></li>
       </ul>
 
       <h3>Other links</h3>
@@ -532,19 +532,20 @@
 
           <h3>Campaign Finance links</h3>
           <ul class="article-list">
-            <li><a href="https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10626" target="_blank" alt="Standard Reports">Standard Reports</a></li>
-            <li><a href="https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Hashem,%20Mark&s_CR_EP_ID=" target="_blank" alt="Special Reports">Special Reports</a></li>
+            <li><a href="{{campaign_finance_standard_report}}" target="_blank" alt="Standard Reports">Standard Reports</a></li>
+            <li><a href="{{campaign_finance_special_report}}" target="_blank" alt="Special Reports">Special Reports</a></li>
           </ul>
 
           <h3>Other links</h3>
           <ul class="article-list">
-            <li><a href="http://www.capitol.hawaii.gov/memberpage.aspx?member=hashem&year=2014" target="_blank" alt="State Legislature Offical Page">State Legislature Offical Page</a></li>
-            <li><a href="http://www.lwv-hawaii.com/candidates-2014.htm#Hashem,MarkJun" target="_blank" alt="League of Women Voters of Hawaii">League of Women Voters of Hawaii</a></li>
-            <li><a href="http://beta.followthemoney.org/entity-details?eid=18913803" target="_blank" alt="FollowTheMoney">FollowTheMoney</a></li>
-            <li><a href="http://votesmart.org/candidate/biography/127594/mark-hashem" target="_blank" alt="Project Vote Smart">Project Vote Smart</a></li>
-            <li><a href="http://ballotpedia.org/Mark_Hashem" target="_blank" alt="Ballotpedia">Ballotpedia</a></li>
-            <li><a href="http://en.wikipedia.org/wiki/Mark_Hashem" target="_blank" alt="Wikipedia">Wikipedia</a></li>
-            <li>Civil Beat - unknown</li>
+          {{#other_links}}
+            {{#href}}
+            <li><a href="{{href}}" target="_blank" alt="{{text}}">{{text}}</a></li>
+            {{/href}}
+            {{^href}}
+            <li>{{text}}</li>
+            {{/href}}
+          {{/other_links}}
           </ul>
         </div>
       </div>
