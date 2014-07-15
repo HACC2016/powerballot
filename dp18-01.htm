@@ -521,11 +521,14 @@
 
           <h3>Candidate links</h3>
           <ul class="article-list">
-            <li><a href="http://www.markhashem.com/" target="_blank" alt="Candidate website">Candidate website (not working)</a></li>
-            <li><a href="https://www.facebook.com/markjhashem" target="_blank" alt="Facebook">Facebook</a></li>
-            <li>Twitter - unknown</li>
-            <li>LinkedIn - unknown</li>
-            <li><a href="mailto:mark.hashem@yahoo.com" alt="Email">Email</a></li>
+          {{#candidate_links}}
+            {{#href}}
+            <li><a href="{{href}}" target="_blank" alt="{{text}}">{{text}}</a></li>
+            {{/href}}
+            {{^href}}
+            <li>{{text}}</li>
+            {{/href}}
+          {{/candidate_links}}
           </ul>
 
           <h3>Campaign Finance links</h3>

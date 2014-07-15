@@ -79,8 +79,8 @@ $(document).ready(function() {
     ],
 
     candidate_links: [
-      {href: "http://susanhalvorsenforstatehouse.blogspot.com/", text: "Candidate website (Facebook)"},
-      {href: "https://www.facebook.com/susanhalvorsenforstatehouse", text: "Website"},
+      {href: "http://susanhalvorsenforstatehouse.blogspot.com/", text: "Candidate website"},
+      {href: "https://www.facebook.com/susanhalvorsenforstatehouse", text: "Facebook"},
       {text: "Twitter - unknown"},
       {href: "https://www.linkedin.com/pub/susan-halvorsen/21/676/a9", text: "LinkedIn"},
       {href: "mailto:susan@susanhalvorsen.com", text: "Email"}
