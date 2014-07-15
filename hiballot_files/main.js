@@ -25,8 +25,18 @@ $(document).ready(function() {
         {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10626", link_text: "Organizational Report"}
       ]}
     ],
+
+    candidate_links: [
+      {href: "http://www.markhashem.com/", text: "Candidate website (not working)"},
+      {href: "https://www.facebook.com/markjhashem", text: "Facebook"},
+      {text: "Twitter - unknown"},
+      {text: "LinkedIn - unknown"},
+      {href: "mailto:mark.hashem@yahoo.com", text: "Email"},
+    ],
+
     campaign_finance_standard_report: "https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10626",
     campaign_finance_special_report: "https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Hashem,%20Mark&s_CR_EP_ID=",
+
     other_links: [
       {href: "http://www.capitol.hawaii.gov/memberpage.aspx?member=hashem&year=2014", text: "State Legislature Official Page"},
       {href: "http://www.lwv-hawaii.com/candidates-2014.htm#Hashem,MarkJun", text: "League of Women Voters of Hawaii"},
@@ -36,8 +46,57 @@ $(document).ready(function() {
       {href: "http://en.wikipedia.org/wiki/Mark_Hashem", text: "Wikipedia"},
       {text: "Civil Beat - unknown"}
     ],
+  };
 
-    end: 'ignore'
+
+
+  candidate_data['h18halvorsen'] = {
+    name: 'HALVORSEN, Susan Kehaulani (R)',
+    party: 'Republican',
+    office: 'House',
+    district: '18',
+    incumbent: false,
+    photo_url: "http://www.lwv-hawaii.com/cand-images/halvorsen.jpg",
+    photo_width: "148px",
+    photo_source_text: "Hawaii League of Women Voters",
+    bio: "<p>Born and raised in Honolulu, Susan graduated from Roosevelt High School and Brigham Young University-Hawaii.</p>\
+		<p>She is a devoted wife and mother of 3 children and has served in many positions of responsibility for her community and church.</p>\
+		<p>Susan has served the people of Hawaii for over 12 years as a Social Worker with the Department of Health.</p>\
+		<p>She works with and assists Kūpuna and the disabled to receive necessary health care. She also helps to obtain permanent homes for many of Hawaii’s homeless and resolves escalating situations in the community to protect the public.</p>\
+		<p>Susan is experienced in collaborating with federal, state, and private organizations to benefit individuals and families.</p>\
+		<p>She serves as Union Steward for the Hawaii Employees Government Association (HGEA) Unit 13 in the Department of Health.</p>",
+    bio_cred_text: "the candidate's website",
+    bio_cred_url: "http://susanhalvorsenforstatehouse.blogspot.com/p/blog-page.html",
+    fact_list: [
+      {name: 'Occupation', text: 'social worker'},
+      {name: 'Age', text: 'unknown'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: 'Susan Halvorsen for State House'},
+        {name: 'Chair', text: 'Elevila B. Giles'},
+        {name: 'Treasurer', text: 'Norrin K. Lau'},
+        {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11106", link_text: "Organizational Report"}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: "http://susanhalvorsenforstatehouse.blogspot.com/", text: "Candidate website (Facebook)"},
+      {href: "https://www.facebook.com/susanhalvorsenforstatehouse", text: "Website"},
+      {text: "Twitter - unknown"},
+      {href: "https://www.linkedin.com/pub/susan-halvorsen/21/676/a9", text: "LinkedIn"},
+      {href: "mailto:susan@susanhalvorsen.com", text: "Email"}
+    ],
+
+    campaign_finance_standard_report: "https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11106",
+    campaign_finance_special_report: "https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Halvorsen,%20Susan&s_CR_EP_ID=",
+
+    other_links: [
+      {href: "http://www.lwv-hawaii.com/candidates-2014.htm#Halvorsen,SusanKehaulani", text: "League of Women Voters of Hawaii"},
+      {href: "http://beta.followthemoney.org/entity-details?eid=24819117", text: "FollowTheMoney"},
+      {href: "http://votesmart.org/candidate/153376/susan-halvorsen", text: "Project Vote Smart"},
+      {href: "http://ballotpedia.org/Susan_Kehaulani_Halvorsen", text: "Ballotpedia"},
+      {text: "Wikipedia - unknown"},
+      {text: "Civil Beat - unknown"}
+    ]
   };
 
   // Replaces #h18hashem-box
