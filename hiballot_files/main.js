@@ -1,10 +1,58 @@
 $(document).ready(function() {
   var candidate_data = {};
+  
+  //Governor
+  candidate_data['govabercrombie'] = {
+    name: ' Neil Abercrombie (D)',
+    party: 'Democrat',
+    office_district: 'Governor',
+    incumbent: true,
+    photo_url: "http://governor.hawaii.gov/wp-content/uploads/2012/09/5.9.2011-Governor-Abercrombie-1000x1250-240x300.jpeg",
+    photo_width: "148px",
+    photo_source_text: "State website photo",
+    bio: "<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>",
+    bio_cred_text: "candidate website",
+    bio_cred_url: "http://neilabercrombie.com/about-neil-abercrombie/",
+    fact_list: [
+      {name: 'Occupation', text: 'Governor'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: 'Abercrombie for Governor'},
+        {name: 'Chair', text: ' William Kaneko'},
+        {name: 'Treasurer', text: ' Jack Y. Endo'},
+        {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10529", link_text: "Organizational Report"}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: "http://neilabercrombie.com/", text: "Candidate website"},
+      {href: "https://www.facebook.com/NeilForHawaii", text: "Facebook"},
+      {href: "https://twitter.com/neilforhawaii", text: "Twitter"},
+      {href: "https://www.linkedin.com/in/neilabercrombie", text: "LinkedIn"},
+      {href: "mailto:2014@neilabercrombie.com", text: "Email"},
+    ],
+
+    campaign_finance_standard_report: "https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10529",
+    campaign_finance_special_report: "https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Abercrombie, Neil&s_CR_EP_ID=",
+
+    other_links: [
+      {href: "http://governor.hawaii.gov/", text: "State Governor Official Page"},
+      {href: "http://www.lwv-hawaii.com/candidates-2014.htm#Abercrombie,Neil", text: "League of Women Voters of Hawaii"},
+      {href: "http://www.followthemoney.org/database/uniquecandidate.phtml?uc=132289", text: "FollowTheMoney"},
+      {href: "http://votesmart.org/candidate/biography/26827/neil-abercrombie#.U8W7xvldWSo", text: "Project Vote Smart"},
+      {href: "http://ballotpedia.org/Neil_Abercrombie", text: "Ballotpedia"},
+      {href: "http://en.wikipedia.org/wiki/Neil_Abercrombie", text: "Wikipedia"},
+      {text: "Civil Beat Q&A - unknown"}
+    ],
+  };
+
+  //House 18
   candidate_data['h18hashem'] = {
     name: 'Mark Jun Hashem (D)',
     party: 'Democrat',
-    office: 'House',
-    district: '18',
+    office_district: 'Hawaii State House - District 18',
     incumbent: true,
     photo_url: "http://www.capitol.hawaii.gov/Members/Images/RepSenPhotos/hashem.jpg",
     photo_width: "148px",
@@ -53,8 +101,7 @@ $(document).ready(function() {
   candidate_data['h18halvorsen'] = {
     name: 'HALVORSEN, Susan Kehaulani (R)',
     party: 'Republican',
-    office: 'House',
-    district: '18',
+    office_district: 'Hawaii State House - District 18',
     incumbent: false,
     photo_url: "http://www.lwv-hawaii.com/cand-images/halvorsen.jpg",
     photo_width: "148px",

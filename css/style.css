@@ -598,6 +598,45 @@ textarea {
     background-color: lightcoral;
   }
 
+  .section-title-l {
+    border: 1px solid #000;
+    padding: 0px 0 0px 0;
+    text-align: center;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 16px;
+    background-color: khaki;
+  }
+
+  .section-title-g {
+    border: 1px solid #000;
+    padding: 0px 0 0px 0;
+    text-align: center;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 16px;
+    background-color: lightgreen;
+  }
+
+  .section-title-i {
+    border: 1px solid #000;
+    padding: 0px 0 0px 0;
+    text-align: center;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 16px;
+    background-color: plum;
+  }
+  .section-title-n {
+    border: 1px solid #000;
+    padding: 0px 0 0px 0;
+    text-align: center;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 16px;
+    background-color: lightgray;
+  }
+
   .section-title-ns {
     border: 1px solid #000;
     padding: 0px 0 0px 0;
