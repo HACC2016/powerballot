@@ -50,13 +50,7 @@
       </ul>
     </div>
   </div>
-  
-  <div class="ppinfo">
-  <h4>
-	<a href="https://elections2.hawaii.gov/ppl/" target="_blank">Find your polling place - official</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your name and birthdate)</em></br><a href="http://civic-celerator.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=eabd4dbf3fcb48468cd92587b2d8729c" target="_blank">Find your polling place - unofficial</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your address)</em>
-  </h4>
-  </div>
-  
+    
   <div class="question">
     <div class="section-title">
       <p>Governor</p>
@@ -113,7 +107,11 @@
       <a href="governor.htm#" class="cand-choice" data-name="govspatola"><img src="./hiballot_files/oval.gif"> SPATOLA, Joseph R. (N)</a><br>
     </div>
   </div>
-  </br>
+  <div class="ppinfo">
+  <h4>
+	<a href="https://elections2.hawaii.gov/ppl/" target="_blank">Find your polling place - official</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your name and birthdate)</em></br><a href="http://civic-celerator.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=eabd4dbf3fcb48468cd92587b2d8729c" target="_blank">Find your polling place - unofficial</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your address)</em>
+  </h4>
+  </div>
   <div class="disclaimer">
     <p>Interactive sample ballot is for informational purposes only. Your selections are not monitored or recorded.<br> Completion of this ballot does not count as an actual vote in any election.</p>
   </div>
@@ -146,7 +144,7 @@
     <script id="template" type="x-tmpl-mustache">
       <div class="row">
         <div class="col-md-6">
-          <h2>Governor</h2>
+          <h2>{{office_district}}</h2>
           {{#incumbent}}
           <h4>Incumbent candidate</h4>
           {{/incumbent}}
