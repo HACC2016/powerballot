@@ -648,16 +648,22 @@ $(document).ready(function() {
     var $this = $(this);
     var $candidateModal = $('#candidateModal');
     var candidate_name = $this.data('name');
-    console.log("clicked on candidate: " + candidate_name);
-    var data = candidate_data[candidate_name];
+    var candidate_ballot_name = $this.text().replace(/\([DR]\)/, "").trim();
+    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test2/FeatureServer/2/query"
+    var params = { where: "Ballot_name='" + candidate_ballot_name + "'", outFields: '*', f: 'pjson' }
+    $.get(url, params, function(data) {
+      console.log("got data " + data);
+      // TODO: Can do error checking here? For empty-ish data?
+      var features = parse_server_response(data);
 
-    var template = $('#template').html();
-    Mustache.parse(template);   // optional, speeds up future uses
-    var rendered = Mustache.render(template, data);
+      var template = $('#template').html();
+      Mustache.parse(template);   // optional, speeds up future uses
+      var rendered = Mustache.render(template, features);
 
-    $candidateModal.find('.modal-title').text(data.name);
-    $candidateModal.find('.modal-body').html(rendered);
-    $candidateModal.modal();
+      $candidateModal.find('.modal-title').text(data.name_party);
+      $candidateModal.find('.modal-body').html(rendered);
+      $candidateModal.modal();
+    });
   });
 
     $('#s12galuteria').click(function(event){
@@ -757,3 +763,19 @@ $(document).ready(function() {
     });
 
 });
+
+function parse_server_response(json_str) {
+  var data = JSON.parse(json_str).features[0].attributes;
+  // name -> name_party or ballot_name
+  // party -> Party
+  // incumbent -> incumbent_text
+  // photo_with -> add the 'px'
+  //    fec_url
+  //    TODO: Where does fec_url go?
+  // volunteer
+  // pb_status?
+  // party_text
+
+  // Note: if we wanted to have text "unknown" or "missing" for links like LinkedIn we would do the processing here
+  return data;
+}
