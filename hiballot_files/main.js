@@ -59,7 +59,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'candidate website',
     bio_cred_url: 'http://www.davidige.org/about-david/',
     fact_list: [
       {name: 'Occupation', text: 'Electrical Engineer, State Senator'},
@@ -150,7 +150,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'Blogger profile',
     bio_cred_url: 'https://www.blogger.com/profile/00170437569602470225',
     fact_list: [
       {name: 'Occupation', text: 'Telecommunications Industry'},
@@ -195,7 +195,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'candidate website',
     bio_cred_url: 'http://www.jeffdavisgovernor.com/bio',
     fact_list: [
       {name: 'Occupation', text: 'Solar Contractor and Radio Show Host'},
@@ -240,7 +240,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'Disqus website',
     bio_cred_url: 'http://disqus.com/disqus_4q3jshxTCd/',
     fact_list: [
       {name: 'Occupation', text: ''},
@@ -285,7 +285,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'candidate website',
     bio_cred_url: 'http://neilabercrombie.com/about-neil-abercrombie/',
     fact_list: [
       {name: 'Occupation', text: 'Governor'},
@@ -331,7 +331,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'Project Vote Smart',
     bio_cred_url: 'http://votesmart.org/candidate/biography/17801/stuart-gregory#.U8cEC_ldWSo',
     fact_list: [
       {name: 'Occupation', text: ''},
@@ -376,7 +376,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'candidate website',
     bio_cred_url: 'http://votemufi.com/mufis-biography/',
     fact_list: [
       {name: 'Occupation', text: 'Former Mayor of Honolulu'},
@@ -421,7 +421,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'Ballotpedia',
     bio_cred_url: 'http://ballotpedia.org/Charles_Collins',
     fact_list: [
       {name: 'Occupation', text: 'Former educator'},
@@ -466,7 +466,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'Civil Beat',
     bio_cred_url: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-richard-morse/',
     fact_list: [
       {name: 'Occupation', text: 'Writer'},
@@ -511,7 +511,7 @@ $(document).ready(function() {
             <p>and here...</p>\
             <p>and here...</p>\
             <p>and here.</p>',
-    bio_cred_text: '',
+    bio_cred_text: 'candidate website',
     bio_cred_url: 'http://www.dukeaiona.com/about-duke/',
     fact_list: [
       {name: 'Occupation', text: 'Lawyer and Substitute Teacher'},
