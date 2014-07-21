@@ -2,49 +2,545 @@ $(document).ready(function() {
   var candidate_data = {};
   
   //Governor
-  candidate_data['govabercrombie'] = {
-    name: ' Neil Abercrombie (D)',
-    party: 'Democrat',
+  candidate_data['govdejean'] = {
+    name: '  Khis Caldwell DeJean (N)',
+    party: 'Non-partisan',
     office_district: 'Governor',
-    incumbent: true,
-    photo_url: "http://governor.hawaii.gov/wp-content/uploads/2012/09/5.9.2011-Governor-Abercrombie-1000x1250-240x300.jpeg",
-    photo_width: "148px",
-    photo_source_text: "State website photo",
-    bio: "<p>bio text goes here</p>\
+    incumbent: false,
+    photo_url: 'http://www.lwv-hawaii.com/cand-images/dejean1.jpg',
+    photo_width: '148px',
+    photo_source_text: 'Hawaii League of Women Voters photo',
+    bio: '<p>bio text goes here</p>\
             <p>and here...</p>\
             <p>and here...</p>\
-            <p>and here.</p>",
-    bio_cred_text: "candidate website",
-    bio_cred_url: "http://neilabercrombie.com/about-neil-abercrombie/",
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: '',
     fact_list: [
-      {name: 'Occupation', text: 'Governor'},
+      {name: 'Occupation', text: ''},
       {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
-        {name: 'Name', text: 'Abercrombie for Governor'},
-        {name: 'Chair', text: ' William Kaneko'},
-        {name: 'Treasurer', text: ' Jack Y. Endo'},
-        {link_url: "https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10529", link_text: "Organizational Report"}
+        {name: 'Name', text: ' Khistina Caldwell DeJean for Governor of Hawaii'},
+        {name: 'Chair', text: '  Khistina C. DeJean'},
+        {name: 'Treasurer', text: '  Khistina C. DeJean'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10811', link_text: 'Organizational Report'}
       ]}
     ],
 
     candidate_links: [
-      {href: "http://neilabercrombie.com/", text: "Candidate website"},
-      {href: "https://www.facebook.com/NeilForHawaii", text: "Facebook"},
-      {href: "https://twitter.com/neilforhawaii", text: "Twitter"},
-      {href: "https://www.linkedin.com/in/neilabercrombie", text: "LinkedIn"},
-      {href: "mailto:2014@neilabercrombie.com", text: "Email"},
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:khistinacdejean@yahoo.com', text: 'Email'},
     ],
 
-    campaign_finance_standard_report: "https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10529",
-    campaign_finance_special_report: "https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Abercrombie, Neil&s_CR_EP_ID=",
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10811',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=DeJean, Khistina Caldwell&s_CR_EP_ID=',
 
     other_links: [
-      {href: "http://governor.hawaii.gov/", text: "State Governor Official Page"},
-      {href: "http://www.lwv-hawaii.com/candidates-2014.htm#Abercrombie,Neil", text: "League of Women Voters of Hawaii"},
-      {href: "http://www.followthemoney.org/database/uniquecandidate.phtml?uc=132289", text: "FollowTheMoney"},
-      {href: "http://votesmart.org/candidate/biography/26827/neil-abercrombie#.U8W7xvldWSo", text: "Project Vote Smart"},
-      {href: "http://ballotpedia.org/Neil_Abercrombie", text: "Ballotpedia"},
-      {href: "http://en.wikipedia.org/wiki/Neil_Abercrombie", text: "Wikipedia"},
-      {text: "Civil Beat Q&A - unknown"}
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#DeJean,KhistinaCaldwell', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://beta.followthemoney.org/entity-details?eid=24812562', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/153283/khis-dejean-caldwell#.U8G5FvldU1I', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Khistina_Dejean', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govige'] = {
+    name: '  David Yutaka Ige  (D)',
+    party: 'Democratic',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'http://votesmart.org/canphoto/3406.jpg',
+    photo_width: '148px',
+    photo_source_text: 'Project Vote Smart photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://www.davidige.org/about-david/',
+    fact_list: [
+      {name: 'Occupation', text: 'Electrical Engineer, State Senator'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' David Ige for Governor 2014'},
+        {name: 'Chair', text: '  Keith K. Hiraoka'},
+        {name: 'Treasurer', text: '  Michael T. Tokioka'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10147', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://www.davidige.org/', text: 'Candidate website'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:sendige@davidige.org', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10147',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Ige, David&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.capitol.hawaii.gov/memberpage.aspx?member=ige&year=2014', text: 'Official government webpage'},
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Ige,DavidY.', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://beta.followthemoney.org/entity-details?eid=20815439', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/3406/david-ige#.U8NlwaZOWas', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/David_Ige', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {href: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-david-ige/?utm_medium=social&utm_source=powerballot&utm_campaign=hawaii', text: 'Civil Beat Q&A'},
+    ],
+  };
+
+  candidate_data['govspatola'] = {
+    name: '  Joseph R. Spatola  (N)',
+    party: 'Non-partisan',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: '',
+    photo_width: '148px',
+    photo_source_text: '',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: '',
+    fact_list: [
+      {name: 'Occupation', text: ''},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Friends of Joe Spatola'},
+        {name: 'Chair', text: '  Joseph R. Spatola II'},
+        {name: 'Treasurer', text: '  Joseph R. Spatola II'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11076', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:', text: 'Email - unknown'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11076',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Spatola, Joseph&s_CR_EP_ID=',
+
+    other_links: [
+      {text: 'League of Women Voters of Hawaii - unknown'},
+      {href: 'http://beta.followthemoney.org/entity-details?eid=24812566', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/153285/joseph-spatola#.U8LjGvldU1I', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Joe_Spatola', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govtanabe'] = {
+    name: '  Van K. (Tanaban) Tanabe  (D)',
+    party: 'Democratic',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'http://votesmart.org/canphoto/32337.jpg',
+    photo_width: '148px',
+    photo_source_text: 'Project Vote Smart photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'https://www.blogger.com/profile/00170437569602470225',
+    fact_list: [
+      {name: 'Occupation', text: 'Telecommunications Industry'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Good Guys for Tanabe'},
+        {name: 'Chair', text: '  Van K. Tanabe'},
+        {name: 'Treasurer', text: '  Van K. Tanabe'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11107', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:vantanabe@yahoo.com', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11107',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Tanabe, Van &s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Tanabe,VanK.', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://beta.followthemoney.org/entity-details?eid=24812567', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/evaluations/32337/van-tanabe/12#.U8G6LPldU1I', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Van_Tanabe', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {href: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-van-tanabe/?utm_medium=social&utm_source=powerballot&utm_campaign=hawaii', text: 'Civil Beat Q&A'},
+    ],
+  };
+
+  candidate_data['govjdavis'] = {
+    name: '  Jeff Davis  (L)',
+    party: 'Libertarian',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'http://d3n8a8pro7vhmx.cloudfront.net/jeffdavisgovernor/pages/29/attachments/original/1384490977/suit.jpg?1384490977',
+    photo_width: '148px',
+    photo_source_text: 'Candidate website photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://www.jeffdavisgovernor.com/bio',
+    fact_list: [
+      {name: 'Occupation', text: 'Solar Contractor and Radio Show Host'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Friends of Jeff Davis'},
+        {name: 'Chair', text: '  Robert Morgenweck'},
+        {name: 'Treasurer', text: '  Julius Lannuti'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11008', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://www.jeffdavisgovernor.com/', text: 'Candidate website'},
+      {href: 'https://www.facebook.com/TheSolarGuyJeffDavis', text: 'Facebook'},
+      {href: 'https://twitter.com/yoursolarguy', text: 'Twitter'},
+      {href: 'http://www.linkedin.com/in/solarserviceshawaii', text: 'LinkedIn'},
+      {href: 'mailto:http://www.jeffdavisgovernor.com/contact-us', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11008',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Davis, Jeffrey&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Davis,Jeff', text: 'League of Women Voters of Hawaii'},
+      {text: 'FollowTheMoney - unknown'},
+      {href: 'http://votesmart.org/candidate/153278/jeff-davis#.U8W3VPldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Jeff_Davis_(Hawaii)', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {href: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-jeff-davis/?utm_medium=social&utm_source=powerballot&utm_campaign=hawaii', text: 'Civil Beat Q&A'},
+    ],
+  };
+
+  candidate_data['govmdavis'] = {
+    name: '  Misty Davis  (N)',
+    party: 'Non-partisan',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'http://a.disquscdn.com/uploads/users/10941/9469/avatar92.jpg?1402533327',
+    photo_width: '148px',
+    photo_source_text: 'Disqus photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://disqus.com/disqus_4q3jshxTCd/',
+    fact_list: [
+      {name: 'Occupation', text: ''},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Misty Davis'},
+        {name: 'Chair', text: '  Misty Davis'},
+        {name: 'Treasurer', text: '  Misty Davis'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11083', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: 'https://twitter.com/@davismisty52', text: 'Twitter'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:davismisty52@gmail.com', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11083',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Davis, Misty&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Davis,Misty', text: 'League of Women Voters of Hawaii'},
+      {text: 'FollowTheMoney - unknown'},
+      {href: 'http://votesmart.org/candidate/153280/misty-davis#.U8W4gPldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Misty_Davis', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govabercrombie'] = {
+    name: '  Neil Abercrombie  (D)',
+    party: 'Democratic',
+    office_district: 'Governor',
+    incumbent: true,
+    photo_url: 'http://governor.hawaii.gov/wp-content/uploads/2012/09/5.9.2011-Governor-Abercrombie-1000x1250-240x300.jpeg',
+    photo_width: '148px',
+    photo_source_text: 'State website photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://neilabercrombie.com/about-neil-abercrombie/',
+    fact_list: [
+      {name: 'Occupation', text: 'Governor'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Abercrombie for Governor'},
+        {name: 'Chair', text: '  William Kaneko'},
+        {name: 'Treasurer', text: '  Jack Y. Endo'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10529', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://neilabercrombie.com/', text: 'Candidate website'},
+      {href: 'https://www.facebook.com/NeilForHawaii', text: 'Facebook'},
+      {href: 'https://twitter.com/neilforhawaii', text: 'Twitter'},
+      {href: 'https://www.linkedin.com/in/neilabercrombie', text: 'LinkedIn'},
+      {href: 'mailto:2014@neilabercrombie.com', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10529',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Abercrombie, Neil&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://governor.hawaii.gov/', text: 'Official government webpage'},
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Abercrombie,Neil', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://www.followthemoney.org/database/uniquecandidate.phtml?uc=132289', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/biography/26827/neil-abercrombie#.U8W7xvldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Neil_Abercrombie', text: 'Ballotpedia'},
+      {href: 'http://en.wikipedia.org/wiki/Neil_Abercrombie', text: 'Wikipedia'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govgregory'] = {
+    name: '  Stuart Todd Gregory  (R)',
+    party: 'Republican',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: '',
+    photo_width: '148px',
+    photo_source_text: '',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://votesmart.org/candidate/biography/17801/stuart-gregory#.U8cEC_ldWSo',
+    fact_list: [
+      {name: 'Occupation', text: ''},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: " If You Didn't Vote For Me Then You Paid Too Much"},
+        {name: 'Chair', text: '  Stuart T. Gregory'},
+        {name: 'Treasurer', text: '  Stuart T. Gregory'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11160', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:', text: 'Email - unknown'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11160',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Gregory, Stuart&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Gregory,StuartTodd', text: 'League of Women Voters of Hawaii'},
+      {text: 'FollowTheMoney - unknown'},
+      {href: 'http://votesmart.org/candidate/biography/17801/stuart-gregory#.U8cEC_ldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Stuart_Gregory', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govhannemann'] = {
+    name: '  Mufi Hannemann  (I)',
+    party: 'Independent',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'https://pbs.twimg.com/profile_images/457971737875853312/qp4--Tdd_400x400.jpeg',
+    photo_width: '148px',
+    photo_source_text: 'Twitter photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://votemufi.com/mufis-biography/',
+    fact_list: [
+      {name: 'Occupation', text: 'Former Mayor of Honolulu'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' The Hannemann Committee'},
+        {name: 'Chair', text: '  Dean J. Okimoto'},
+        {name: 'Treasurer', text: '  Mike Ellis'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10132', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://votemufi.com/', text: 'Candidate website'},
+      {href: 'https://www.facebook.com/votemufi', text: 'Facebook'},
+      {href: 'https://twitter.com/MufiHannemann?original_referer=http%3A%2F%2Fvotemufi.com%2Fmufis-biography%2F&profile_id=23866990&tw_i=488888101666693120&tw_p=embeddedtimeline&tw_w=454107791351754752', text: 'Twitter'},
+      {href: 'http://www.linkedin.com/in/mufihannemann', text: 'LinkedIn'},
+      {href: 'mailto:http://votemufi.com/contact-us/', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10132',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Hannemann, Mufi&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Hannemann,Mufi', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://www.followthemoney.org/database/search.phtml?searchbox=mufi&CurrentType=Candidates', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/75793/mufi-hannemann#.U8cIpfldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Mufi_Hannemann', text: 'Ballotpedia'},
+      {href: 'http://en.wikipedia.org/wiki/Mufi_Hannemann', text: 'Wikipedia'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govcollins'] = {
+    name: '  Charles (Trump) Collins  (R)',
+    party: 'Republican',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'http://ballotpedia.org/wiki/images/thumb/a/a1/Charles_Collins.JPG/200px-Charles_Collins.JPG',
+    photo_width: '148px',
+    photo_source_text: 'Ballotpedia photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://ballotpedia.org/Charles_Collins',
+    fact_list: [
+      {name: 'Occupation', text: 'Former educator'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Charles "Trump" Collins 4 Gov'},
+        {name: 'Chair', text: '  Charles Augustine Collins'},
+        {name: 'Treasurer', text: '  Charles A. Collins'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11134', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: '', text: 'Candidate website - unknown'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:', text: 'Email - unknown'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11134',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Collins, Charles&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Collins,CharlesA.', text: 'League of Women Voters of Hawaii'},
+      {text: 'FollowTheMoney - unknown'},
+      {href: 'http://votesmart.org/candidate/54135/charles-collins#.U8cKXfldWSp', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Charles_Collins', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {text: 'Civil Beat Q&A - unknown'},
+    ],
+  };
+
+  candidate_data['govmorse'] = {
+    name: '  Richard Morse  (N)',
+    party: 'Non-partisan',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'https://www.civilbeat.com/wp-content/uploads/2014/06/P-1b-150x150.jpg',
+    photo_width: '148px',
+    photo_source_text: 'Civil Beat photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-richard-morse/',
+    fact_list: [
+      {name: 'Occupation', text: 'Writer'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Richard Morse'},
+        {name: 'Chair', text: '  Richard B. Morse Jr.'},
+        {name: 'Treasurer', text: '  Richard B. Morse Jr.'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=11109', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://morse4gov.blogspot.com/', text: 'Candidate website'},
+      {href: '', text: 'Facebook - unknown'},
+      {href: '', text: 'Twitter - unknown'},
+      {href: '', text: 'LinkedIn - unknown'},
+      {href: 'mailto:morse4gov@gmail.com', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC11109',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Morse, Richard&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Morse,Jr.,RichardB.', text: 'League of Women Voters of Hawaii'},
+      {text: 'FollowTheMoney - unknown'},
+      {href: 'http://votesmart.org/candidate/149754/richard-morse#.U8gw8PldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Richard_Morse,_Jr.', text: 'Ballotpedia'},
+      {text: 'Wikipedia - unknown'},
+      {href: 'http://www.civilbeat.com/2014/07/candidate-qa-governor-of-hawaii-richard-morse/?utm_medium=social&utm_source=powerballot&utm_campaign=hawaii', text: 'Civil Beat Q&A'},
+    ],
+  };
+  
+  candidate_data['govaiona'] = {
+    name: '  Duke Aiona  (R)',
+    party: 'Republican',
+    office_district: 'Governor',
+    incumbent: false,
+    photo_url: 'https://civilbeat_production.s3.amazonaws.com/media_files/photos/4791-97c75edc5b406e62e9fc2ab074efff4d74c25ad8ff98da7466f0f999_w%3A1024_px.jpg',
+    photo_width: '148px',
+    photo_source_text: 'Civil Beat photo',
+    bio: '<p>bio text goes here</p>\
+            <p>and here...</p>\
+            <p>and here...</p>\
+            <p>and here.</p>',
+    bio_cred_text: '',
+    bio_cred_url: 'http://www.dukeaiona.com/about-duke/',
+    fact_list: [
+      {name: 'Occupation', text: 'Lawyer and Substitute Teacher'},
+      {name: 'Candidate Committee', has_sub_list: true, sub_fact_list: [
+        {name: 'Name', text: ' Friends  of Duke Aiona'},
+        {name: 'Chair', text: '  Dewey Arakawa'},
+        {name: 'Treasurer', text: '  Sharon M. Wong'},
+        {link_url: 'https://nc.csc.hawaii.gov/CFSPublic/ORG_Report.php?OR_ID=10162', link_text: 'Organizational Report'}
+      ]}
+    ],
+
+    candidate_links: [
+      {href: 'http://www.dukeaiona.com/', text: 'Candidate website'},
+      {href: 'https://www.facebook.com/DukeAiona2014', text: 'Facebook'},
+      {href: 'https://twitter.com/DukeAiona2014', text: 'Twitter'},
+      {href: 'http://www.linkedin.com/in/dukeaiona', text: 'LinkedIn'},
+      {href: 'mailto:http://www.dukeaiona.com/contact-duke/', text: 'Email'},
+    ],
+
+    campaign_finance_standard_report: 'https://nc.csc.hawaii.gov/CFSPublic/ReportDetail.php?RNO=CC10162',
+    campaign_finance_special_report: 'https://nc.csc.hawaii.gov/CFSPublic/CandidateSRCH.php?s_OR_CC_CANDIDATE_NAME=Aiona, James (Duke)&s_CR_EP_ID=',
+
+    other_links: [
+      {href: 'http://www.lwv-hawaii.com/candidates-2014.htm#Aiona,Duke', text: 'League of Women Voters of Hawaii'},
+      {href: 'http://www.followthemoney.org/database/uniquecandidate.phtml?uc=132534', text: 'FollowTheMoney'},
+      {href: 'http://votesmart.org/candidate/biography/32350/duke-aiona-jr#.U8W1APldWSo', text: 'Project Vote Smart'},
+      {href: 'http://ballotpedia.org/Duke_Aiona', text: 'Ballotpedia'},
+      {href: 'http://en.wikipedia.org/wiki/James_Aiona', text: 'Wikipedia'},
+      {text: 'Civil Beat Q&A - unknown'},
     ],
   };
 
