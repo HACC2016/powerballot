@@ -37,3 +37,5 @@ Potential issues to fix/address:
 ** Modal dialog
 * Filter options
 ** Probably radio buttons to filter by party and office
+* Bring in Twitter/Facebook/LinkedIn Icons?
+* Add a loading animation while the candidate info loads (or preload all candidates when the page loads)
