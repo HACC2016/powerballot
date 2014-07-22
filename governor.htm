@@ -157,6 +157,7 @@
               <h6>{{photo_source_text}}</h6>
             </div>
             {{{bio}}}
+            {{^bio}}Bio text not submitted{{/bio}}
             <p class="bio-cred">Above excerpt from <a href="{{bio_cred_url}}" alt="candidate text" target="_blank">{{bio_cred_text}}</a></p>
           </div>
         </div>
@@ -174,51 +175,40 @@
           <h3>Bio and Candidate Committee</h3>
           <ul class="fact-list">
             <li><span class="bold">Party affiliation:</span> {{party}}</li>
-            {{#fact_list}}
-            <li><span class="bold">{{name}}:</span> {{text}}</li>
-            {{#has_sub_list}}
+            <li><span class="bold">Occupation:</span> {{occupation}}</li>
             <ul class="fact-list">
-              {{#sub_fact_list}}
-              {{^link_url}}
-              <li><span class="bold">{{name}}:</span> {{text}}</li>
-              {{/link_url}}
-              {{#link_url}}
-              <li><a href="{{link_url}}" target="_blank" alt="{{link_text}}">{{link_text}}</a></li>
-              {{/link_url}}
-              {{/sub_fact_list}}
+              <li><span class="bold">Name:</span> {{cc_name}}</li>
+              <li><span class="bold">Chair:</span> {{cc_chair}}</li>
+              <li><span class="bold">Treasurer:</span> {{cc_treasurer}}</li>
+              <li><span class="bold">ReportUrl:</span> {{cc_report_url}}</li>
+              <li><a href="{{cc_report_url}}" target="_blank" alt="Candidate Committee Organizational Report">Organizational Report</a></li>
             </ul>
-            {{/has_sub_list}}
-            {{/fact_list}}
           </ul>
 
           <h3>Candidate links</h3>
           <ul class="article-list">
-          {{#candidate_links}}
-            {{#href}}
-            <li><a href="{{href}}" target="_blank" alt="{{text}}">{{text}}</a></li>
-            {{/href}}
-            {{^href}}
-            <li>{{text}}</li>
-            {{/href}}
-          {{/candidate_links}}
+            <li><a href="{{cand_website_url}}" target="_blank" alt="Candidate Website">Candidate Website</a></li>
+            <li><a href="{{twitter_url}}" target="_blank" alt="Twitter">Twitter</a></li>
+            <li><a href="{{cand_facebook_url}}" target="_blank" alt="Facebook">Facebook</a></li>
+            <li><a href="{{cand_linked}}" target="_blank" alt="LinkedIn">LinkedIn</a></li>
+            <li><a href="{{cand_email}}" target="_blank" alt="Email">Email</a></li>
           </ul>
 
           <h3>Campaign Finance links</h3>
           <ul class="article-list">
-            <li><a href="{{campaign_finance_standard_report}}" target="_blank" alt="Standard Reports">Standard Reports</a></li>
-            <li><a href="{{campaign_finance_special_report}}" target="_blank" alt="Special Reports">Special Reports</a></li>
+            <li><a href="{{csc_standard_url}}" target="_blank" alt="Standard Reports">Standard Reports</a></li>
+            <li><a href="{{csc_special_url}}" target="_blank" alt="Special Reports">Special Reports</a></li>
           </ul>
 
           <h3>Other links</h3>
           <ul class="article-list">
-          {{#other_links}}
-            {{#href}}
-            <li><a href="{{href}}" target="_blank" alt="{{text}}">{{text}}</a></li>
-            {{/href}}
-            {{^href}}
-            <li>{{text}}</li>
-            {{/href}}
-          {{/other_links}}
+            <li><a href="{{gov_website_url}}" target="_blank" alt="Official government webpage">Official government webpage</a></li>
+            <li><a href="{{lwv_website_url}}" target="_blank" alt="League of Women Voters of Hawaii">League of Women Voters of Hawaii</a></li>
+            <li><a href="{{ftm_website_url}}" target="_blank" alt="FollowTheMoney">FollowTheMoney</a></li>
+            <li><a href="{{pvs_website_url}}" target="_blank" alt="Project Vote Smart">Project Vote Smart</a></li>
+            <li><a href="{{bp_website_url}}" target="_blank" alt="Ballotpedia">Ballotpedia</a></li>
+            <li><a href="{{wp_website_url}}" target="_blank" alt="Wikipedia">Wikipedia</a></li>
+            <li><a href="{{cb_website_url}}" target="_blank" alt="Civil Beat Q&A">Civil Beat Q&A</a></li>
           </ul>
         </div>
       </div>
