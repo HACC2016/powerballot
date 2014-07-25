@@ -1,23 +1,25 @@
+$.get('candidate-template.mst', function(template) {
+  Mustache.parse(template);   // optional, speeds up future uses
+  window.candidate_template = template;
+});
+
 $(document).ready(function() {
   var candidate_data = {};
-  
-  // Replaces #h18hashem-box
+
   $('.cand-choice').click(function(e) {
     e.preventDefault();
     var $this = $(this);
     var $candidateModal = $('#candidateModal');
     var candidate_name = $this.data('name');
     var candidate_ballot_name = $this.text().replace(/\([DRLGIN]\)/, "").trim();
-    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test2/FeatureServer/2/query"
+    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test4/FeatureServer/2/query"
     var params = { where: "Ballot_name='" + candidate_ballot_name + "'", outFields: '*', f: 'pjson' }
     $.get(url, params, function(data) {
       console.log("got data " + data);
       // TODO: Can do error checking here? For empty-ish data?
       var features = parse_server_response(data);
 
-      var template = $('#template').html();
-      Mustache.parse(template);   // optional, speeds up future uses
-      var rendered = Mustache.render(template, features);
+      var rendered = Mustache.render(window.candidate_template, features);
 
       $candidateModal.find('.modal-title').text(data.name_party);
       $candidateModal.find('.modal-body').html(rendered);
