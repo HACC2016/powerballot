@@ -42,4 +42,8 @@ Potential issues to fix/address:
 --------------------
 24 July - Updated the data service, now "powerballot_test4".  Here's the link:
 http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test4/FeatureServer/2
+--------------------
+26 July - Final service with all Common Cause Hawaii data now published:
+http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1
+
 
