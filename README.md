@@ -45,3 +45,5 @@ Potential issues to fix/address:
 --------------------
 * Here's the link: http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1
 * Missing links now show up as "Twitter - Unknown"
+* 11:30 pm: Updated service to fix okina problem with Python, some names used ' for okina, replaced in data with `
+*           Affects name_party, ballot_name, cc_name and cc_treasurer
