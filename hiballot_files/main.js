@@ -40,6 +40,8 @@ function parse_server_response(json_str) {
     throw "Invalid response - Unable to load candidate";
   }
   var data = features[0].attributes;
+  // Fix email links
+  if(data.cand_email) data.cand_email = "mailto:" + data.cand_email;
 
   var candidate_links = {
     cand_website_url: "Candidate Website",
