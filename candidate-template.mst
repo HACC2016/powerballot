@@ -43,28 +43,26 @@
 
     <h3>Candidate links</h3>
     <ul class="article-list">
-      <li><a href="{{cand_website_url}}" target="_blank" alt="Candidate Website">Candidate Website</a></li>
-      <li><a href="{{twitter_url}}" target="_blank" alt="Twitter">Twitter</a></li>
-      <li><a href="{{cand_facebook_url}}" target="_blank" alt="Facebook">Facebook</a></li>
-      <li><a href="{{cand_linked}}" target="_blank" alt="LinkedIn">LinkedIn</a></li>
-      <li><a href="{{cand_email}}" target="_blank" alt="Email">Email</a></li>
+      {{#candidate_links}}
+      {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+      {{^url}}<li>{{text}}</li>{{/url}}
+      {{/candidate_links}}
     </ul>
 
     <h3>Campaign Finance links</h3>
     <ul class="article-list">
-      <li><a href="{{csc_standard_url}}" target="_blank" alt="Standard Reports">Standard Reports</a></li>
-      <li><a href="{{csc_special_url}}" target="_blank" alt="Special Reports">Special Reports</a></li>
+      {{#campaign_finance_links}}
+      {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+      {{^url}}<li>{{text}}</li>{{/url}}
+      {{/campaign_finance_links}}
     </ul>
 
     <h3>Other links</h3>
     <ul class="article-list">
-      <li><a href="{{gov_website_url}}" target="_blank" alt="Official government webpage">Official government webpage</a></li>
-      <li><a href="{{lwv_website_url}}" target="_blank" alt="League of Women Voters of Hawaii">League of Women Voters of Hawaii</a></li>
-      <li><a href="{{ftm_website_url}}" target="_blank" alt="FollowTheMoney">FollowTheMoney</a></li>
-      <li><a href="{{pvs_website_url}}" target="_blank" alt="Project Vote Smart">Project Vote Smart</a></li>
-      <li><a href="{{bp_website_url}}" target="_blank" alt="Ballotpedia">Ballotpedia</a></li>
-      <li><a href="{{wp_website_url}}" target="_blank" alt="Wikipedia">Wikipedia</a></li>
-      <li><a href="{{cb_website_url}}" target="_blank" alt="Civil Beat Q&A">Civil Beat Q&A</a></li>
+      {{#other_links}}
+      {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+      {{^url}}<li>{{text}}</li>{{/url}}
+      {{/other_links}}
     </ul>
   </div>
 </div>

@@ -16,9 +16,15 @@ $(document).ready(function() {
     //var params = { where: "Ballot_name='" + candidate_ballot_name + "'", outFields: '*', f: 'pjson' };
     var params = { where: "CC_Reg_No='" + reg_no + "'", outFields: '*', f: 'pjson' };
     $.get(url, params, function(data) {
-      console.log("got data " + data);
+      //console.log("got data " + data);
+      //console.log("got id: " + JSON.parse(data).features[0].attributes.Candidate_ID);
       // TODO: Can do error checking here? For empty-ish data?
-      var features = parse_server_response(data);
+      var features;
+      try {
+        features = parse_server_response(data);
+      } catch(err) {
+        console.err("Received err: " + err);
+      }
 
       var rendered = Mustache.render(window.candidate_template, features);
 
@@ -36,16 +42,48 @@ function parse_server_response(json_str) {
     throw "Invalid response - Unable to load candidate";
   }
   var data = features[0].attributes;
-  // name -> name_party or ballot_name
-  // party -> Party
-  // incumbent -> incumbent_text
-  // photo_with -> add the 'px'
-  //    fec_url
-  //    TODO: Where does fec_url go?
-  // volunteer
-  // pb_status?
-  // party_text
 
-  // Note: if we wanted to have text "unknown" or "missing" for links like LinkedIn we would do the processing here
+  var candidate_links = {
+    cand_website_url: "Candidate Website",
+    cand_twitter_url: "Twitter",
+    cand_facebook_url: "Facebook",
+    cand_linked: "LinkedIn",
+    cand_email: "Email"
+  };
+  data.candidate_links = prepare_links(candidate_links, data);
+
+  var campaign_finance_links = {
+    csc_standard_url: "Standard Reports",
+    csc_special_url: "Special Reports"
+  };
+  data.campaign_finance_links = prepare_links(campaign_finance_links, data);
+
+  var other_links = {
+      gov_website_url: "Official government webpage",
+      lwv_website_url: "League of Women Voters of Hawaii",
+      ftm_website_url: "FollowTheMoney",
+      pvs_website_url: "Project Vote Smart",
+      bp_website_url: "Ballotpedia",
+      wp_website_url: "Wikipedia",
+      cb_website_url: "Civil Beat Q&A"
+  };
+  if (data.office === "Governor") {
+    other_links.fec_url = "FEC";
+  }
+  data.other_links = prepare_links(other_links, data);
+
   return data;
+}
+
+function prepare_links(links, data) {
+  response = [];
+  $.each(links, function(key,val) {
+    if (data[key].length == 0) {
+      response.push({url: '', text: val + ' - unknown'});
+    } else {
+      response.push({url: data[key], text: val});
+    }
+    delete data[key];
+  });
+  return response;
 }
