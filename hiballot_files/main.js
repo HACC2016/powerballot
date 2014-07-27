@@ -4,15 +4,13 @@ $.get('candidate-template.mst', function(template) {
 });
 
 $(document).ready(function() {
-  var candidate_data = {};
-
   $('.cand-choice').click(function(e) {
     e.preventDefault();
     var $this = $(this);
     var $candidateModal = $('#candidateModal');
     var reg_no = $this.data('reg-no');
     var candidate_ballot_name = $this.text().replace(/\([DRLGIN]\)/, "").trim();
-    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test4/FeatureServer/2/query"
+    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1/query";
     //var params = { where: "Ballot_name='" + candidate_ballot_name + "'", outFields: '*', f: 'pjson' };
     var params = { where: "CC_Reg_No='" + reg_no + "'", outFields: '*', f: 'pjson' };
     $.get(url, params, function(data) {
@@ -79,7 +77,7 @@ function prepare_links(links, data) {
   response = [];
   $.each(links, function(key,val) {
     if (data[key].length == 0) {
-      response.push({url: '', text: val + ' - unknown'});
+      response.push({url: '', text: val + ' - Unknown'});
     } else {
       response.push({url: data[key], text: val});
     }

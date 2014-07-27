@@ -36,11 +36,12 @@ Potential issues to fix/address:
 ** Probably radio buttons to filter by party and office
 * Bring in Twitter/Facebook/LinkedIn Icons?
 * Add a loading animation while the candidate info loads (or preload all candidates when the page loads)
+
+24 July - Updated the data service, now "powerballot_test4".
 --------------------
-24 July - Updated the data service, now "powerballot_test4".  Here's the link:
-http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test4/FeatureServer/2
---------------------
+* Here's the link: http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/powerballot_test4/FeatureServer/2
+
 26 July - Final service with all Common Cause Hawaii data now published:
-http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1
-
-
+--------------------
+* Here's the link: http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1
+* Missing links now show up as "Twitter - Unknown"
