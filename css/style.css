@@ -685,3 +685,7 @@ textarea {
     padding:0;
   }
 
+  .modal-email {
+    float: left;
+  }
+

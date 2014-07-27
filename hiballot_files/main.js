@@ -26,7 +26,7 @@ $(document).ready(function() {
 
       var rendered = Mustache.render(window.candidate_template, features);
 
-      $candidateModal.find('.modal-title').text(data.name_party);
+      $candidateModal.find('.modal-title').text(features.name_party);
       $candidateModal.find('.modal-body').html(rendered);
       $candidateModal.modal();
     });
