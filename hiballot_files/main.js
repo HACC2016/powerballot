@@ -26,9 +26,18 @@ $(document).ready(function() {
 
       $candidateModal.find('.modal-title').text(features.name_party);
       $candidateModal.find('.modal-body').html(rendered);
+
+      // Set history to include anchor
+      window.location.hash = cand_id;
       $candidateModal.modal();
     });
   });
+
+  // Detect if anchor is set and click on that candidate
+  if (window.location.hash.length > 0) {
+    var cand_id = window.location.hash.substr(1);
+    $('.cand-choice[data-cand-id="' + cand_id + '"]').click();
+  }
 
 });
 
