@@ -282,10 +282,17 @@ textarea {
   }
 
   .cand-photobox {
-    float:left;
+    vertical-align: top;
     width:150px;
     margin:2px 14px 4px 0;
     display:inline;
+  }
+
+  .bio-info {
+    padding-left: 10px;
+  }
+  .bio-info :first-child {
+    margin-top: 0px;
   }
 
   .cand-question {

@@ -26,6 +26,11 @@ $(document).ready(function() {
 
       $candidateModal.find('.modal-title').text(features.name_party);
       $candidateModal.find('.modal-body').html(rendered);
+      // Replace bio text if there is no bio
+      if (features.bio.length == 0) {
+        $candidateModal.find('.cand-extra-container').append($('.bio-candidate-section'));
+        $candidateModal.find('.cand-extra-container').append($('.candidate-links'));
+      }
 
       // Set history to include anchor
       window.location.hash = cand_id;
