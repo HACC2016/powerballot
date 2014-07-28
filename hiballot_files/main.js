@@ -29,6 +29,10 @@ $(document).ready(function() {
 
       // Set history to include anchor
       window.location.hash = cand_id;
+      $candidateModal.on('hidden.bs.modal', function() {
+        // http://stackoverflow.com/a/17108603
+        window.location.hash = "#!";
+      });
       $candidateModal.modal();
     });
   });
