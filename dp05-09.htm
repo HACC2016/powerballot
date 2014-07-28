@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Hawaii Power Ballot for the August 9, 2014 Primary Election">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Power Ballot Hawaii</title>
+</head>
+<body>
+<div class="container">
+  <div>
+    <div class="ballot-header">
+      <img src="./hiballot_files/CivicCeleratorMap.png" alt="Civic Celerator banner" style="display:inline;" width=400>
+      <p>POWER BALLOT</p>
+      <p>HAWAII PRIMARY ELECTION</p>
+      <p>AUGUST 9, 2014</p> 
+    </div>
+  </div>
+  <div>
+    <div class="ballot-instructions">
+      <ul class="instructions-list">
+        <li>In the primary you can <b>only</b> select from candidates in a single party for Federal and State offices.<span class="hoverpop" style="font-size:12px"><a href="./hiballot_files/primaryballothowto.jpg"><em>(offical instructions)</em><span><img src="./hiballot_files/primaryballothowto.jpg" alt="primary ballot instructions"></span></a></span></li>
+        <li>All County and OHA elections are nonpartisan special.</li>
+        <li><span class="bold">Click a candidate name below for candidate information.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ppinfo">
+  <h5>
+	 Precinct 05-09</br>No population</br>
+  </h5>
+  </div>
+  <div class="ppinfo">
+    <h5>
+	 <a href="https://elections2.hawaii.gov/ppl/" target="_blank">Find your polling place - official</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your name and birthdate)</em></br><a href="http://civic-celerator.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=eabd4dbf3fcb48468cd92587b2d8729c" target="_blank">Find your polling place - unofficial</a></br><em>&nbsp;&nbsp;&nbsp;&nbsp;(using your address)</em>
+    </h5>
+  </div>
+  <div class="disclaimer">
+    <p>The Power Ballot is for informational purposes only, no endorsement of any candidate or party is intended, candidate information has been gathered from public websites and documents.</p>
+  </div>
+  <div class="contactus">
+	 <h6>
+	 <p><b>Did you find a mistake? Do you have a suggestion?</br>Let us know - <a href="mailto:civiccelerator@gmail.com" alt="Email">Email Civic-Celerator</a></b></p>
+	 <p></br>Special thanks to Corie Tanida of Common Cause Hawaii who coordinated a great group of volunteers - Christine Trecker, Connie Clinton, Dustin Schoedel, Jeanne Ohta and Joe Heaukulani.  They all spent many hours doing the candidate research that made the Power Ballot possible.</p>
+	 <p></br>The amazing web development skills of Jason Axelson were critical for pulling in candidate data from the REST service and smoothing the rough edges of my initial prototype.</p>
+	 <p></br>Mahalo ka kou!  - Da Map Guy (Royce Jones)</p>
+	 </h6>
+  </div>
+</div><!--// END container div -->
+<div class="modal fade" id="candidateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Candidate Name</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <span class="modal-email">See a mistake? Have a suggestion? <a href="mailto:civiccelerator@gmail.com" alt="Email">Let us know</a></span>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="./hiballot_files/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mustache.js"></script>
+    <script type="text/javascript" src="./hiballot_files/main.js"></script>
+</body></html>
