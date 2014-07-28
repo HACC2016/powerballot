@@ -47,3 +47,7 @@ Potential issues to fix/address:
 * Missing links now show up as "Twitter - Unknown"
 * 11:30 pm: Updated service to fix okina problem with Python, some names used ' for okina, replaced in data with `
 *           Affects name_party, ballot_name, cc_name and cc_treasurer
+27 July - Debugging Python scripts to generate DP pages:
+--------------------
+* Problem with OE_Council attribute for Big Island in precincts service - fixed
+     - does not affect candidate pages
