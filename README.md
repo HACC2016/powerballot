@@ -51,3 +51,17 @@ Potential issues to fix/address:
 --------------------
 * Problem with OE_Council attribute for Big Island in precincts service - fixed
      - does not affect candidate pages
+	 
+29 July - Federal candidates
+--------------------
+* Problem with candidates for Federal office - they should not have State Candidate Committee information, only FEC information.  So in the powerballot service:
+	- I've blanked out (set to "") all of the links to State Campaign Spending for all 25 Federal candidates, so the candidate committee report and the standard and special campaign spending reports.
+	- I've blanked out (set to "") committee name, chair and treasurer for all 25 Federal candidates
+	- I've set committee name and treasurer based on FEC records for 2014, could not find info on chair so all remain blank
+	- I've added a new attribute "FEC_CC_ID" that contains the FEC ID for the candidate committee, we already have "FEC_Cand_ID" which is the FEC candidate ID
+	- note: 10 of the 25 Federal candidates do not have an FEC ID.
+* Suggest we change candidate popup "Bio and Candidate Committee" section for Federal candidates (OE_SORT_ID < 500) to:
+	Name:
+	Treasurer:
+	FEC Candidate ID: (I can't figure out how to construct a unique URL, so just the ID as text)
+	FEC Committee ID: (I can't figure out how to construct a unique URL, so just the ID as text)
