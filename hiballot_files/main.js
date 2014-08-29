@@ -18,6 +18,8 @@ $(document).ready(function() {
     var $this = $(this);
     var $candidateModal = $('#candidateModal');
     var cand_id = $this.data('cand-id');
+    var cand_name = $this.text().trim();
+    ga('send', 'event', 'button', 'click', cand_name, 1);
     var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1/query";
     var params = { where: "Candidate_ID='" + cand_id + "'", outFields: '*', f: 'pjson' };
     $.get(url, params, function(data) {
