@@ -20,7 +20,7 @@ $(document).ready(function() {
     var cand_id = $this.data('cand-id');
     var cand_name = $this.text().trim();
     ga('send', 'event', 'button', 'click', cand_name, 1);
-    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_primary_candidates/FeatureServer/1/query";
+    var url = "http://services2.arcgis.com/tuFQUQg1xd48W6M5/arcgis/rest/services/HI_2014_general_candidates/FeatureServer/1/query";
     var params = { where: "Candidate_ID='" + cand_id + "'", outFields: '*', f: 'pjson' };
     $.get(url, params, function(data) {
       //console.log("got data " + data);
@@ -92,7 +92,8 @@ function parse_server_response(json_str) {
       pvs_website_url: "Project Vote Smart",
       bp_website_url: "Ballotpedia",
       wp_website_url: "Wikipedia",
-      cb_website_url: "Civil Beat Q&A"
+      cb_website_url: "Civil Beat Q&A",
+      pbs_hawaii_url: "PBS Hawaii Insights"
   };
   if (data.office === "Governor") {
     other_links.fec_url = "FEC";
