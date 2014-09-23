@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-md-6">
+    <h3>{{office_district}}</h3>
+    <h4>{{incumbent_text}}</h4>
+    <div class="cand-bio">
+      <table>
+        <tr>
+          <td class="cand-photobox">
+              <img src="{{photo_url}}" alt="candidate photo" width="{{photo_width}}" class="cand-photo">
+              <h6>{{photo_source_text}}</h6>
+          </td>
+          <td class="bio-info">
+            {{{bio}}}
+            {{#bio}}
+            <p class="bio-cred">Above excerpt from <a href="{{bio_cred_url}}" alt="candidate text" target="_blank">{{bio_cred_text}}</a></p>
+            {{/bio}}
+            <div class="cand-extra-container"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="vote-reminder">
+      <img src="./hiballot_files/vote-button.gif" width="80" alt="Don&#39;t forget to vote!">
+      <h5>Don't forget to vote</h5>
+      <p><span class="bold">Early voting</span><br>
+      July 28 - August 7, 2014</p>
+      <p><span class="bold">Primary Election day</span><br>
+      August 9, 2014</p>
+      <p><a href="http://hawaii.gov/elections/voters/registration.htm" target="_blank">→ Register to vote</a><em> (October 6 deadline for General Election)</em></p>
+    </div>
+
+    <div class="bio-candidate-section">
+      <h3>Bio and Candidate Committee</h3>
+      <ul class="fact-list">
+        <li><span class="bold">Party affiliation:</span> {{party_text}}</li>
+        <li><span class="bold">Occupation:</span> {{occupation}}</li>
+        <li><span class="bold">Candidate Committee:</span></li>
+        <ul class="fact-list">
+          <li><span class="bold">Name:</span> {{cc_name}}</li>
+          <li><span class="bold">Chair:</span> {{cc_chair}}</li>
+          <li><span class="bold">Treasurer:</span> {{cc_treasurer}}</li>
+          <li><a href="{{cc_report_url}}" target="_blank" alt="Candidate Committee Organizational Report">Organizational Report</a></li>
+        </ul>
+      </ul>
+    </div>
+
+    <div class="candidate-links">
+      <h3>Candidate links</h3>
+      <ul class="article-list">
+        {{#candidate_links}}
+        {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+        {{^url}}<li>{{text}}</li>{{/url}}
+        {{/candidate_links}}
+      </ul>
+    </div>
+
+    <h3>Campaign Finance links</h3>
+    <ul class="article-list">
+      {{#campaign_finance_links}}
+      {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+      {{^url}}<li>{{text}}</li>{{/url}}
+      {{/campaign_finance_links}}
+    </ul>
+
+    <h3>Other links</h3>
+    <ul class="article-list">
+      {{#other_links}}
+      {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
+      {{^url}}<li>{{text}}</li>{{/url}}
+      {{/other_links}}
+    </ul>
+  </div>
+</div>
