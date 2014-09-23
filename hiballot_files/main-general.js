@@ -7,7 +7,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-53294565-1', 'auto');
 ga('send', 'pageview');
 
-$.get('candidate-template.mst', function(template) {
+$.get('candidate-template-general.mst', function(template) {
   Mustache.parse(template);   // optional, speeds up future uses
   window.candidate_template = template;
 });
