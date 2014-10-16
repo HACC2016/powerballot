@@ -79,6 +79,11 @@ function parse_server_response(json_str) {
   };
   data.candidate_links = prepare_links(candidate_links, data);
 
+  var report_links = {
+    cc_report_url: "Organizational Report"
+  }
+  data.report_links = prepare_links(report_links, data);
+
   var campaign_finance_links = {
     csc_standard_url: "Standard Reports",
     csc_special_url: "Special Reports"
