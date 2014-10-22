@@ -41,7 +41,6 @@
           <li><span class="bold">Name:</span> {{cc_name}}</li>
           <li><span class="bold">Chair:</span> {{cc_chair}}</li>
           <li><span class="bold">Treasurer:</span> {{cc_treasurer}}</li>
-          <li><span class="bold">Hmmm:</span> {{cc_treasurer}}</li>
           {{#report_links}}
           {{#url}}<li><a href="{{url}}" target="_blank" alt="{{text}}">{{text}}</a></li>{{/url}}
           {{^url}}<li>{{text}}</li>{{/url}}
