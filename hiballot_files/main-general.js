@@ -13,6 +13,9 @@ $.get('candidate-template-general.mst', function(template) {
 });
 
 $(document).ready(function() {
+  $('.find-your-power-ballot').on('click', function(e) {
+    ga('send', 'event', 'button', 'navigation', 'find_your_power_ballot', 1);
+  });
   $('.cand-choice').click(function(e) {
     e.preventDefault();
     var $this = $(this);
