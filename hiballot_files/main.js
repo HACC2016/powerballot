@@ -1,7 +1,7 @@
 // similar behavior as an HTTP redirect
 var current_page = window.location.pathname;
 var new_page = current_page.replace('hawaii-power-ballot', 'hawaii-power-ballot-2014');
-if(new_page.indexOf('hawaii-power-ballot' == -1)) {
+if(new_page.indexOf('hawaii-power-ballot') == -1) {
   new_page = "/hawaii-power-ballot-2014" + new_page;
 }
 var new_url = 'http://commoncausehawaii.github.io' + new_page;
