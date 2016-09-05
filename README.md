@@ -56,7 +56,7 @@ Potential issues to fix/address:
 --------------------
 * Problem with OE_Council attribute for Big Island in precincts service - fixed
      - does not affect candidate pages
-	 
+
 29 July - Federal candidates
 --------------------
 * Problem with candidates for Federal office - they should not have State Candidate Committee information, only FEC information.  So in the powerballot service:
