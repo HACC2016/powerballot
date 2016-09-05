@@ -26,6 +26,11 @@ Want to help? Common Cause Hawaii is seeking volunteers to help gather additiona
 
 To volunteer for data entry email <civiccelerator@gmail.com>!
 
+Development
+-----------
+
+Install postgres (on Mac you can use Postgres.app)
+
 Contribute with Code
 --------------------
 
