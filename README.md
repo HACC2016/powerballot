@@ -29,7 +29,7 @@ To volunteer for data entry email <civiccelerator@gmail.com>!
 Development
 -----------
 
-Install postgres (on Mac you can use Postgres.app)
+See Development.md
 
 Contribute with Code
 --------------------
