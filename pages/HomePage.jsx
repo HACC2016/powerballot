@@ -1,23 +1,18 @@
 import React from 'react';
-import {RootContainer, RootElement, TheFold, ReactServerAgent} from 'react-server';
+import {RootContainer, RootElement, TheFold} from 'react-server';
+
+import {getCandidates, getPrecincts} from '../services/arc_gis'
 
 import Home from '../components/Home.jsx';
 
 export default class HomePage {
   handleRoute(next) {
-    const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
-    const result = ReactServerAgent.get(baseUrl)
-    .query({
-      where: "DP='02-03'",
-      outFields: '*',
-      returnGeometry: false,
-      f: 'pjson',
-    })
+    const candidatesPr = getCandidates()
+    const precinctsPr = getPrecincts()
 
-    this.data = result.then((data) => {
-      return {
-        precincts: data.text,
-      }
+    this.data = Promise.all([candidatesPr, precinctsPr])
+    .then(data => {
+      return {candidates: data[0], precincts: data[1]}
     })
 
     return next()
