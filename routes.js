@@ -12,5 +12,10 @@ module.exports = {
       method: 'get',
       page: path.join('.', 'pages', 'HomePage.jsx'),
     },
+    ExampleBallot: {
+      path: ['/ballot/:ballotId'],
+      method: 'get',
+      page: path.join('.', 'pages', 'ExampleBallot.jsx'),
+    },
   },
 };
