@@ -2,15 +2,15 @@ import React, { PropTypes } from 'react'
 
 export default class BallotCandidate extends React.Component {
   _renderParty(party) {
-    switch(party.toLowerCase()) {
-      case 'republican':
-        return 'R'
-      case 'democrat':
-        return 'D'
-      case 'libertarian':
-        return 'L'
-      defaut:
-        return party
+    switch (party.toLowerCase()) {
+    case 'republican':
+      return 'R'
+    case 'democrat':
+      return 'D'
+    case 'libertarian':
+      return 'L'
+    default:
+      return party
     }
   }
 
