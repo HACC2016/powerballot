@@ -2,12 +2,12 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('candidates', function(table) {
       table.increments();
-      table.string('Candidate_ID')
-      table.string('Contest_ID')
-      table.string('Candidate_Name')
-      table.string('Candidate_Party')
-      table.string('Candidate_FEC')
-      table.string('Candidate_CSC')
+      table.text('Candidate_ID')
+      table.text('Contest_ID')
+      table.text('Candidate_Name')
+      table.text('Candidate_Party')
+      table.text('Candidate_FEC')
+      table.text('Candidate_CSC')
       table.timestamps();
     }),
   ])

@@ -2,8 +2,8 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('candidate_metadata', function(table) {
       table.increments();
-      table.string('Candidate_ID')
-      table.string('ballot_name')
+      table.text('Candidate_ID')
+      table.text('ballot_name')
       table.timestamps();
     }),
   ])
