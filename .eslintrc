@@ -98,8 +98,8 @@
     ],
     "react/jsx-uses-react": 2,
     "semi": [
-      0,
-      "always"
+      2,
+      "never"
     ],
     "semi-spacing": 2,
     "space-infix-ops": 0,
