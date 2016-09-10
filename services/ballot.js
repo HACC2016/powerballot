@@ -1,11 +1,27 @@
+const Candidate = require('../models/candidate')
+
+export function getCandidatesPromise(contestIds) {
+  return Candidate
+    .query(function(qb) {
+      qb.whereIn('Contest_ID', contestIds)
+    })
+    .fetchAll()
+    .then(results => {
+      let candidates = results.map(candidateModel => {
+        return candidateModel.attributes
+      })
+      return candidates
+    })
+}
+
 function generateEmptyBallotPromise(id) {
   return new Promise(
-    function(resolve, reject) {
+    function(resolve) {
       resolve(
         {
           id: id,
           title: id,
-          candidates: []
+          candidates: [],
         }
       )
     }
@@ -13,9 +29,9 @@ function generateEmptyBallotPromise(id) {
 }
 
 function findBallotPromise(id) {
-  if(id=='abc') {
+  if (id==='abc') {
     return new Promise(
-      function(resolve, reject) {
+      function(resolve) {
         resolve(
           {
             id: id,
@@ -24,19 +40,19 @@ function findBallotPromise(id) {
               {
                 id: 1,
                 name: "CAVASSO, Cam",
-                party: "Republican"
+                party: "Republican",
               },
               {
                 id: 2,
                 name: "KOKOSKI, Michael",
-                party: "Libertarian"
+                party: "Libertarian",
               },
               {
                 id: 3,
                 name: "SCHATZ, Brian",
-                party: "Democrat"
-              }
-            ]
+                party: "Democrat",
+              },
+            ],
           }
         )
       }

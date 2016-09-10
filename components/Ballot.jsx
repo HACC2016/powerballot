@@ -4,12 +4,12 @@ import BallotCandidate from './BallotCandidate.jsx'
 
 export default class Ballot extends React.Component {
   render () {
-    const { ballot } = this.props
+    const { ballot, candidates } = this.props
 
     return (
       <div>
         <div className="ballot-title">{ballot.title}</div>
-        {ballot.candidates.map((c, i) => {
+        {candidates.map((c, i) => {
           return (
             <BallotCandidate key={i} candidate={c} />
           )
