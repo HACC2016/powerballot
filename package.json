@@ -14,12 +14,15 @@
     "babel-runtime": "^6.6.1",
     "bookshelf": "^0.10.0",
     "knex": "^0.11.10",
+    "normalize.css": "^4.2.0",
     "pg": "^6.1.0",
     "react": "~0.14.2",
     "react-dom": "~0.14.2",
     "react-server": "^0.4.7",
     "react-server-cli": "^0.4.6",
-    "superagent": "1.8.4"
+    "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release",
+    "superagent": "1.8.4",
+    "svg-sprite-loader": "0.0.27"
   },
   "devDependencies": {
     "ava": "^0.15.1",
