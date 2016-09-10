@@ -13,11 +13,10 @@ const result = superagent.get(baseUrl)
 
 return result.then((data) => {
   const candidates = JSON.parse(data.text).features
-  console.log(candidates[0].attributes)
   candidates.map (data => {
     const candidate = data.attributes
     console.log('on ', candidate.Candidate_Name)
     delete candidate.OBJECTID
-    new Candidate(candidates[0].attributes).save()
+    new Candidate(candidate).save()
   })
 })
