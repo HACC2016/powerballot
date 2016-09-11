@@ -1,8 +1,14 @@
-const bookshelf = require('../server/bookshelf')
+const {canUseDOM} = require('../services/utils')
 
-const Candidate = bookshelf.Model.extend({
-  tableName: 'candidates',
-  hasTimestamps: true,
-});
+if (!canUseDOM()) {
+  const bookshelf = require('../server/bookshelf')
 
-module.exports = Candidate
+  const Candidate = bookshelf.Model.extend({
+    tableName: 'candidates',
+    hasTimestamps: true,
+  });
+
+  module.exports = Candidate
+} else {
+  module.exports = {}
+}
