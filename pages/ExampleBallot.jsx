@@ -63,8 +63,8 @@ export default class ExampleBallot {
       <RootElement>
         <Header />
       </RootElement>
-      <RootElement>
-        <Ballot ballot={ballot} />
+      <RootElement when={this.data}>
+        <Ballot />
       </RootElement>
       <TheFold />
     </RootContainer>
