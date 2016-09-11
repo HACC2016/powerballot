@@ -1,18 +1,18 @@
 import React from 'react'
 import {RootContainer, RootElement, TheFold} from 'react-server'
 
-import {getHardcodedBallot} from '../services/ballot'
+import {getBallot} from '../services/ballot'
 
 import Ballot from '../components/Ballot.jsx'
 
 export default class ExampleBallot {
 
   handleRoute(next) {
-    // const ballotId = this.getRequest().getRouteParams().ballotId
-    const ballotPr = getHardcodedBallot()
+    const ballotId = this.getRequest().getRouteParams().ballotId
+    const ballotPr = getBallot(ballotId)
 
     this.data = ballotPr.then(data => {
-      console.log(data)
+      console.log('server ballot data', JSON.stringify(data, null, 2))
 
       return {
         ballot: data,

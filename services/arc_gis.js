@@ -1,4 +1,4 @@
-import {ReactServerAgent} from 'react-server';
+import {ReactServerAgent} from 'react-server'
 
 export function getPowerBallot() {
   // HI2016G_PowerBallot_HACC

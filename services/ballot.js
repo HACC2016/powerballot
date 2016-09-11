@@ -56,6 +56,32 @@ export function findContestsForBallot(id) {
   })
 }
 
+export function getBallot(districtId) {
+  return getContestIdsForDistrictPromise(districtId).then(contestIds => {
+    return getCandidatesPromise(contestIds).then(candidates => {
+
+      var contestIdToCandidates = {}
+      candidates.map(candidate => {
+        const { Contest_ID } = candidate
+        contestIdToCandidates[Contest_ID] = contestIdToCandidates[Contest_ID] || []
+        contestIdToCandidates[Contest_ID].push(candidate)
+      })
+
+      const contests = contestIds.map(contestId => {
+        return {
+          Contest_ID: contestId,
+          candidates: contestIdToCandidates[contestId] || [],
+        }
+      })
+
+      return {
+        contests: contests,
+        amendments: [],
+      }
+    })
+  })
+}
+
 export function getHardcodedBallot() {
   return new Promise(function(resolve) {
     resolve(
