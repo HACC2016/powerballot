@@ -1,5 +1,7 @@
 const Candidate = require('../models/candidate')
 
+import { getPrecinct, getContests } from './arc_gis'
+
 export function getCandidatesPromise(contestIds) {
   return Candidate
     .query(function(qb) {
@@ -14,55 +16,72 @@ export function getCandidatesPromise(contestIds) {
     })
 }
 
-function generateEmptyBallotPromise(id) {
-  return new Promise(
-    function(resolve) {
-      resolve(
-        {
-          id: id,
-          title: id,
-          candidates: [],
-        }
-      )
-    }
-  )
+export function getCandidatesForDistrictPromise(dp) {
+  return getContestIdsForDistrictPromise(dp).then(contests => {
+    return getCandidatesPromise(contests)
+  })
 }
 
-function findBallotPromise(id) {
-  if (id==='abc') {
-    return new Promise(
-      function(resolve) {
-        resolve(
+export function getContestIdsForDistrictPromise(dp) {
+  return getPrecinct(dp).then(results => {
+
+    console.log('Found stuff', results)
+
+    var contestsFromAllDistricts = results.map(result => {
+      return result.attributes.Contests.split('-')
+    })
+
+    var allContests = [].concat.apply([], contestsFromAllDistricts)
+
+    console.log(allContests)
+
+    return allContests
+  })
+}
+
+export function getFullContestsPromise(contestIds) {
+  getContests(contestIds).then(results => {
+    var contestIdToObject = {}
+    results.map(result => {
+      contestIdToObject[result.attributes.Contest_ID] = result.attributes
+    })
+
+    return contestIdToObject
+  })
+}
+
+export function findContestsForBallot(id) {
+  return getContestIdsForDistrictPromise(id).then(contestIds => {
+    return getFullContestsPromise(contestIds)
+  })
+}
+
+export function getHardcodedBallot() {
+  return new Promise(function(resolve) {
+    resolve(
+      {
+        contests: [
           {
-            id: id,
-            title: 'United States Senate',
+            Contest_ID: "USS",
             candidates: [
-              {
-                id: 1,
-                name: "CAVASSO, Cam",
-                party: "Republican",
-              },
-              {
-                id: 2,
-                name: "KOKOSKI, Michael",
-                party: "Libertarian",
-              },
-              {
-                id: 3,
-                name: "SCHATZ, Brian",
-                party: "Democrat",
-              },
+              { id: 161,
+                Candidate_ID: 'USSa',
+                Contest_ID: 'USS',
+                Candidate_Name: 'Allison, Joy J.',
+                Candidate_Party: 'C',
+                Candidate_FEC: 'S4HI00151',
+                Candidate_CSC: 'see FEC',
+                created_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
+                updated_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)' },
             ],
-          }
-        )
+          },
+        ],
+        amendments: [
+          {
+
+          },
+        ],
       }
     )
-  }
-  else {
-    return generateEmptyBallotPromise(id)
-  }
-}
-
-export function getBallot(id) {
-  return findBallotPromise(id)
+  })
 }
