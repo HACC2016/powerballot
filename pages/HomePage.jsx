@@ -1,9 +1,10 @@
-import React from 'react';
-import {RootContainer, RootElement, TheFold} from 'react-server';
+import React from 'react'
+import {RootContainer, RootElement, TheFold} from 'react-server'
 
 import {getCandidates, getPrecincts} from '../services/arc_gis'
 
-import Home from '../components/Home.jsx';
+import Header from '../components/global/Header.jsx'
+import Home from '../components/Home.jsx'
 
 export default class HomePage {
   handleRoute(next) {
@@ -18,8 +19,17 @@ export default class HomePage {
     return next()
   }
 
+  getLinkTags() {
+    return [
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro" },
+    ]
+  }
+
   getElements() {
     return <RootContainer>
+      <RootElement>
+        <Header />
+      </RootElement>
       <RootElement when={this.data}>
         <Home/>
       </RootElement>
@@ -34,6 +44,6 @@ export default class HomePage {
       {charset: 'utf8'},
       {'http-equiv': 'x-ua-compatible', 'content': 'ie=edge'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-    ];
+    ]
   }
 }

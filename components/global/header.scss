@@ -1,0 +1,23 @@
+@import '../../styles/_variables.scss';
+
+:local {
+  .header-container {
+    background: $dark-grey;
+    color: $white;
+    padding: 20px 0 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .logo {
+    margin: 8px 0;
+    stroke: white;
+    fill: white;
+    width: 257px;
+    height: 43px;
+  }
+
+  .subtext {
+    max-width: 300px;
+  }
+}

@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes} from 'react'
 
 import CandidateList from './CandidateList.jsx'
 import PrecinctList from './PrecinctList.jsx'
