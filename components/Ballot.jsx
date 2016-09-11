@@ -1,17 +1,26 @@
 import React, { PropTypes } from 'react'
 
 export default class Ballot extends React.Component {
+
+  _renderContest (contest) {
+    return (
+      <Contest key={contest.Contest_ID} contest={contest} />
+    )
+  }
+
   render () {
     const { ballot } = this.props
+    const { contests } = ballot
 
     return (
       <div>
-        {JSON.stringify(ballot, null, 2)}
+        <div className="ballot-title">Your Power Ballot</div>
+        {contests.map(this._renderContest)}
       </div>
     )
   }
 }
 
 Ballot.propTypes = {
-  ballot: PropTypes.object,
+  contests: PropTypes.array,
 }
