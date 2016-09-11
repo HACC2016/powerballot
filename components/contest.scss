@@ -1,5 +1,15 @@
+@import '../styles/_variables.scss';
+
 :local {
   .header {
-    color: red;
+    font-weight: 500;
+    color: $white;
+    background: $medium-grey;
+    padding: 8px 20px;
+  }
+
+  .candidate-list {
+    background: $light-grey;
+    padding: 8px 20px;
   }
 }

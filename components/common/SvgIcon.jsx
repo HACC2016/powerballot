@@ -5,6 +5,7 @@ import { canUseDOM } from '../../services/utils'
 if (canUseDOM()) {
   var urls = {
     logo: require('../../assets/power_ballot-09.svgg'),
+    yourIcon: require('../../assets/icon_yourpowerballot-10.svgg'),
   }
 }
 

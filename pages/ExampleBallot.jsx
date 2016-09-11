@@ -2,6 +2,7 @@ import React from 'react'
 import {RootContainer, RootElement, TheFold} from 'react-server'
 
 import {getBallot} from '../services/ballot'
+import Header from '../components/global/Header.jsx'
 
 import Ballot from '../components/Ballot.jsx'
 
@@ -25,6 +26,12 @@ export default class ExampleBallot {
     })
 
     return next()
+  }
+
+  getLinkTags() {
+    return [
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro" },
+    ]
   }
 
   getElements() {
@@ -51,9 +58,13 @@ export default class ExampleBallot {
         },
       ],
     }
+      // <RootElement when={this.data}>
     return <RootContainer>
-      <RootElement when={this.data}>
-        <Ballot />
+      <RootElement>
+        <Header />
+      </RootElement>
+      <RootElement>
+        <Ballot ballot={ballot} />
       </RootElement>
       <TheFold />
     </RootContainer>

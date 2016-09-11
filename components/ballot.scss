@@ -1,0 +1,9 @@
+@import '../styles/_variables.scss';
+
+:local {
+  .header {
+    margin-top: 20px;
+    background: $dark-grey;
+    color: $white;
+  }
+}

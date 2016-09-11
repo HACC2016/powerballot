@@ -5,19 +5,33 @@ import BallotCandidate from './BallotCandidate.jsx'
 import styles from './contest.scss'
 
 export default class Contest extends React.Component {
+  _renderContestName () {
+    const { contest } = this.props
+
+    switch (contest.Contest_ID) {
+    case 'USS':
+      return 'United States Senate'
+    default:
+      return contest.Contest_ID
+    }
+  }
+
   render () {
-    const { candidates, contest } = this.props
+    const { contest } = this.props
+    const { candidates } = contest
 
     return (
       <div>
         <div className={styles['header']}>
-          {contest.Contest_ID}
+          {this._renderContestName()}
         </div>
-        {candidates.map((c, i) => {
-          return (
-            <BallotCandidate key={i} candidate={c} />
-          )
-        })}
+        <div className={styles['candidate-list']}>
+          {candidates.map((c, i) => {
+            return (
+              <BallotCandidate key={i} candidate={c} />
+            )
+          })}
+        </div>
       </div>
     )
   }
@@ -25,8 +39,4 @@ export default class Contest extends React.Component {
 
 Contest.propTypes = {
   contest: PropTypes.object,
-  candidates: PropTypes.array.isRequired,
-}
-Contest.defaultProps = {
-  candidates: [],
 }
