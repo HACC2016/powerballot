@@ -8,7 +8,7 @@ import Ballot from '../components/Ballot.jsx'
 export default class ExampleBallot {
 
   handleRoute(next) {
-    //const ballotId = this.getRequest().getRouteParams().ballotId
+    // const ballotId = this.getRequest().getRouteParams().ballotId
     const ballotPr = getHardcodedBallot()
 
     this.data = ballotPr.then(data => {
@@ -28,9 +28,32 @@ export default class ExampleBallot {
   }
 
   getElements() {
+    const ballot = {
+      contests: [
+        {
+          Contest_ID: "USS",
+          candidates: [
+            { id: 161,
+              Candidate_ID: 'USSa',
+              Contest_ID: 'USS',
+              Candidate_Name: 'Allison, Joy J.',
+              Candidate_Party: 'C',
+              Candidate_FEC: 'S4HI00151',
+              Candidate_CSC: 'see FEC',
+              created_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
+              updated_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
+            },
+          ],
+        },
+      ],
+      amendments: [
+        {
+        },
+      ],
+    }
     return <RootContainer>
       <RootElement when={this.data}>
-        <Ballot/>
+        <Ballot />
       </RootElement>
       <TheFold />
     </RootContainer>

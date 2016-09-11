@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react'
 
+import Contest from './Contest.jsx'
+
 export default class Ballot extends React.Component {
 
   _renderContest (contest) {
