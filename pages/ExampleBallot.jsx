@@ -1,9 +1,9 @@
-import React from 'react';
-import {RootContainer, RootElement, TheFold} from 'react-server';
+import React from 'react'
+import {RootContainer, RootElement, TheFold} from 'react-server'
 
 import {getBallot, getCandidatesPromise} from '../services/ballot'
 
-import Ballot from '../components/Ballot.jsx';
+import Ballot from '../components/Ballot.jsx'
 
 export default class ExampleBallot {
 
@@ -21,7 +21,7 @@ export default class ExampleBallot {
     },
     failure => {
       console.error('Unable to get candidates data')
-      console.error(failure);
+      console.error(failure)
       return { ballot: {}, candidates: []}
     })
 
@@ -42,6 +42,6 @@ export default class ExampleBallot {
       {charset: 'utf8'},
       {'http-equiv': 'x-ua-compatible', 'content': 'ie=edge'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-    ];
+    ]
   }
 }
