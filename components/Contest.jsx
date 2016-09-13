@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 import BallotCandidate from './BallotCandidate.jsx'
 
 import styles from './contest.scss'
+console.log('styles', styles)
 
 export default class Contest extends React.Component {
   _renderContestName () {

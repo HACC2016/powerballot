@@ -15,6 +15,7 @@ export default class Ballot extends React.Component {
 
   render () {
     const { ballot } = this.props
+    if (!ballot) return null
     const { contests } = ballot
 
     return (

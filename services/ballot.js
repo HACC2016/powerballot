@@ -79,7 +79,7 @@ export function getBallot(districtId) {
         amendments: [],
       }
     })
-  })
+  }).catch(() => {})
 }
 
 export function getHardcodedBallot() {
