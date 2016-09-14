@@ -1,8 +1,11 @@
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-}
+:global {
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-.row {
-  max-width: 700px;
-  margin: 0 auto;
+  .row {
+    max-width: 700px;
+    margin: 0 auto;
+  }
 }

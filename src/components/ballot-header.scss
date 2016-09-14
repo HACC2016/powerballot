@@ -1,0 +1,46 @@
+@import 'src/styles/_variables.scss';
+
+:local {
+  .container {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .container-background {
+    position: absolute;
+  }
+
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: $dark-grey;
+    color: $white;
+    height: 50px;
+  }
+
+  .icon {
+    position: absolute;
+    left: 12px; bottom: 0;
+  }
+
+  .title-container {
+    font-size: 24px;
+    margin-left: 93px;
+  }
+
+  .title {
+    font-weight: 600;
+    margin-right: 12px;
+  }
+
+  .sub-title {
+    font-weight: 300;
+  }
+
+  .contents {
+    padding: 20px;
+    background: $light-grey;
+  }
+}

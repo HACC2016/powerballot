@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import Ballot from 'src/components/Ballot'
 
 // If you use React Router, make this component
@@ -35,7 +36,10 @@ export default class App extends Component {
     // }
 
     return (
-      <Ballot ballot={window.__INITIAL_STATE__.data.ballot} />
+      <Ballot
+        ballot={window.__INITIAL_STATE__.data.ballot}
+        precinct={window.__INITIAL_STATE__.precinct}
+      />
     )
   }
 }

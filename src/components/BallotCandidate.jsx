@@ -3,20 +3,20 @@ import Modal, {closeStyle} from 'simple-react-modal'
 
 import CandidateDetails from './CandidateDetails.jsx'
 
-import styles from './ballotcandidate.scss'
+import styles from './ballot-candidate.scss'
 
 export default class BallotCandidate extends React.Component {
 
-  constructor(){
+  constructor() {
     super()
     this.state = {}
   }
 
-  _showModal(){
+  _showModal = () => {
     this.setState({showModal: true})
   }
 
-  _closeModal(){
+  _closeModal = () => {
     this.setState({showModal: false})
   }
 
@@ -51,7 +51,7 @@ export default class BallotCandidate extends React.Component {
     return (
       <div className={styles['ballot-candidate']}>
         <div className={styles['name']}>
-          <a onClick={this._showModal.bind(this)}>
+          <a onClick={this._showModal}>
             {candidate.Candidate_Name}
           </a>
         </div>
@@ -62,9 +62,10 @@ export default class BallotCandidate extends React.Component {
         <Modal
           closeOnOuterClick={true}
           show={this.state.showModal}
-          onClose={this._closeModal.bind(this)}>
-          <a style={closeStyle} onClick={this._closeModal.bind(this)}>X</a>
-          <CandidateDetails candidate={candidate}></CandidateDetails>
+          onClose={this._closeModal}
+        >
+          <a style={closeStyle} onClick={this._closeModal}>X</a>
+          <CandidateDetails candidate={candidate} />
         </Modal>
       </div>
     )

@@ -25,6 +25,7 @@ router.get('/:precinct', function (req, res) {
   result.then(data => {
     const initialState = {
       data,
+      precinct,
     }
 
     res.render('index.jade', {

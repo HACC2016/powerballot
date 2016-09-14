@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 
-import SvgIcon from './common/SvgIcon.jsx'
-import Contest from './Contest.jsx'
+import Header from './global/Header'
+import BallotHeader from './BallotHeader'
+import Contest from './Contest'
 
 import styles from './ballot.scss'
 
@@ -14,17 +15,17 @@ export default class Ballot extends React.Component {
   }
 
   render () {
-    const { ballot } = this.props
+    const { ballot, precinct } = this.props
     if (!ballot) return null
     const { contests } = ballot
 
     return (
-      <div className='row'>
-        <div className={styles['header']}>
-          <SvgIcon icon='yourIcon' />
-          Your Power Ballot
+      <div>
+        <Header />
+        <div className='row'>
+          <BallotHeader ballot={ballot} precinct={precinct} />
+          {contests.map(this._renderContest)}
         </div>
-        {contests.map(this._renderContest)}
       </div>
     )
   }
@@ -32,4 +33,5 @@ export default class Ballot extends React.Component {
 
 Ballot.propTypes = {
   ballot: PropTypes.object,
+  precinct: PropTypes.string,
 }
