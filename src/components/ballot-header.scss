@@ -1,0 +1,43 @@
+@import 'src/styles/_variables.scss';
+
+:local {
+  .container {
+    position: relative;
+    margin-top: 20px;
+    color: $white;
+  }
+
+  .container-background {
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+    background: $dark-grey;
+    height: 50px;
+  }
+
+  .contents {
+    position: relative;
+    z-index: 1;
+    padding: 0 12px;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .icon {
+    // Not sure why this doesn't want to align properly
+    margin-bottom: -5px;
+    margin-right: 12px;
+  }
+
+  .title-container {
+    font-size: 24px;
+  }
+
+  .title {
+    font-weight: 600;
+    margin-right: 12px;
+  }
+
+  .sub-title {
+    font-weight: 300;
+  }
+}

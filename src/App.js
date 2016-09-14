@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import Ballot from 'src/components/Ballot'
 
 // If you use React Router, make this component

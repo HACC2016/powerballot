@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 
-import SvgIcon from './common/SvgIcon.jsx'
-import Contest from './Contest.jsx'
+import Header from './global/Header'
+import BallotHeader from './BallotHeader'
+import Contest from './Contest'
 
 import styles from './ballot.scss'
 
@@ -19,12 +20,12 @@ export default class Ballot extends React.Component {
     const { contests } = ballot
 
     return (
-      <div className='row'>
-        <div className={styles['header']}>
-          <SvgIcon icon='yourIcon' />
-          Your Power Ballot
+      <div>
+        <Header />
+        <div className='row'>
+          <BallotHeader ballot={ballot} />
+          {contests.map(this._renderContest)}
         </div>
-        {contests.map(this._renderContest)}
       </div>
     )
   }
