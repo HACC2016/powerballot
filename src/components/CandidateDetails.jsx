@@ -35,10 +35,10 @@ export default class CandidateDetails extends React.Component {
         </div>
         <div>
           Candidate Committee<br></br>
-          <CandidateLinks title="Campaign Finance Links" links={campaignLinks}></CandidateLinks>
+          <CandidateLinks title="Campaign Finance Links" links={campaignLinks} />
         </div>
-          <CandidateLinks title="Candidate Links" links={candidateLinks}></CandidateLinks>
-          <CandidateLinks title="Other Links" links={oherLinks}></CandidateLinks>
+          <CandidateLinks title="Candidate Links" links={candidateLinks} />
+          <CandidateLinks title="Other Links" links={oherLinks} />
         <div>
 
         </div>

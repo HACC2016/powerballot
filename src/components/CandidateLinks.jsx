@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import styles from './candidatelinks.scss'
+import styles from './candidate-links.scss'
 
 export default class CandidateLinks extends React.Component {
 
