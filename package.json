@@ -5,7 +5,7 @@
   "main": "HelloWorld.js",
   "scripts": {
     "start": "NODE_ENV=development node --harmony-destructuring server.js & node webpack_dev_server.js",
-    "lint": "eslint src"
+    "lint": "eslint --ext .js --ext .jsx src"
   },
   "license": "Apache-2.0",
   "dependencies": {
