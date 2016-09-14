@@ -27,7 +27,6 @@
       "always-multiline"
     ],
     "comma-spacing": 0,
-    "consistent-return": 2,
     "constructor-super": 2,
     "curly": [
       2,

@@ -1,24 +1,64 @@
-// var path = require('path')
+var path = require('path')
+var webpack = require('webpack')
 
-export default (webpackConfig) => {
-
-  // Load css from node_modules
-  webpackConfig.module.loaders.push({
-    test: /\.css$/,
+module.exports = {
+  devtool: 'eval',
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index',
+  ],
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/',
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  module: {
     loaders: [
-      'style',
-      'css',
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src'),
+      },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
+          'postcss',
+        ],
+      },
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]',
+          'postcss',
+          'sass',
+        ],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite?' + JSON.stringify({
+          name: '[name]_[hash]',
+          prefixize: true,
+        }),
+      },
     ],
-  })
-
-  // Svg loader, use .svgg to not conflict with the already existing loader...
-  webpackConfig.module.loaders.push({
-    test: /\.svgg$/,
-    loader: 'svg-sprite?' + JSON.stringify({
-      name: '[name]_[hash]',
-      prefixize: true,
-    }),
-  })
-
-  return webpackConfig
+  },
+  postcss: function () {
+    return [
+      require('autoprefixer'),
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      src: path.join(__dirname, '.', 'src'),
+    },
+  },
 }
