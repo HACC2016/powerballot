@@ -1,0 +1,16 @@
+@import '../styles/_variables.scss';
+
+:local {
+  .known-link {
+    color: black;
+    text-decoration: none;
+  }
+
+  .unknown-link {
+    color: $medium-grey;
+  }
+
+  .unknown-link-href {
+    font-style: italic;
+  }
+}
