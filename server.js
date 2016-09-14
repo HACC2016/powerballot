@@ -1,16 +1,32 @@
-var webpack = require('webpack')
-var WebpackDevServer = require('webpack-dev-server')
-var config = require('./webpack.config')
+var path = require('path')
+var express = require('express')
+var bodyParser = require('body-parser')
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true,
-  stats: 'errors-only',
-}).listen(3000, 'localhost', function (err) {
-  if (err) {
-    return console.log(err)
-  }
+var ballotsRoute = require('./server/routes/ballots')
 
-  console.log('Listening at http://localhost:3000/')
+var app = express()
+
+var port = process.env.PORT || 4000
+
+app.engine('jade', require('jade').__express)
+app.set('view engine', 'jade')
+app.set('views', './server/views')
+
+app.use('/static/', express.static(path.join(__dirname, '/dist')))
+app.use('/assets/', express.static(path.join(__dirname, '/src/assets')))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.use('/ballot', ballotsRoute)
+app.get('/ballot/:precinct', function (req, res) {
+  console.log('precinct', req.params.precinct)
+  res.render('index.jade')
+})
+
+app.get('*', function (req, res) {
+  res.render('index.jade')
+})
+
+app.listen(port, function () {
+  console.log('Express listening on ', port)
 })

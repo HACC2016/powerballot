@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Sample App
+    if initialState
+      script.
+        window.__INITIAL_STATE__ = !{JSON.stringify(initialState)}
+  body
+    #root
+    script(src='/static/bundle.js')

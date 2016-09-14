@@ -1,8 +1,9 @@
+"use strict"
 const Candidate = require('../models/candidate')
 
-import { getPrecinct, getContests } from './arc_gis'
+const { getPrecinct, getContests } = require('./arc_gis')
 
-export function getCandidatesPromise(contestIds) {
+function getCandidatesPromise(contestIds) {
   return Candidate
     .query(function(qb) {
       qb.whereIn('Contest_ID', contestIds)
@@ -16,13 +17,13 @@ export function getCandidatesPromise(contestIds) {
     })
 }
 
-export function getCandidatesForDistrictPromise(dp) {
+function getCandidatesForDistrictPromise(dp) {
   return getContestIdsForDistrictPromise(dp).then(contests => {
     return getCandidatesPromise(contests)
   })
 }
 
-export function getContestIdsForDistrictPromise(dp) {
+function getContestIdsForDistrictPromise(dp) {
   return getPrecinct(dp).then(results => {
 
     console.log('Found stuff', results)
@@ -39,7 +40,7 @@ export function getContestIdsForDistrictPromise(dp) {
   })
 }
 
-export function getFullContestsPromise(contestIds) {
+function getFullContestsPromise(contestIds) {
   getContests(contestIds).then(results => {
     var contestIdToObject = {}
     results.map(result => {
@@ -50,13 +51,13 @@ export function getFullContestsPromise(contestIds) {
   })
 }
 
-export function findContestsForBallot(id) {
+function findContestsForBallot(id) {
   return getContestIdsForDistrictPromise(id).then(contestIds => {
     return getFullContestsPromise(contestIds)
   })
 }
 
-export function getBallot(districtId) {
+function getBallot(districtId) {
   return getContestIdsForDistrictPromise(districtId).then(contestIds => {
     return getCandidatesPromise(contestIds).then(candidates => {
 
@@ -79,10 +80,10 @@ export function getBallot(districtId) {
         amendments: [],
       }
     })
-  }).catch(() => {})
+  })
 }
 
-export function getHardcodedBallot() {
+function getHardcodedBallot() {
   return new Promise(function(resolve) {
     resolve(
       {
@@ -110,4 +111,8 @@ export function getHardcodedBallot() {
       }
     )
   })
+}
+
+module.exports = {
+  getBallot,
 }

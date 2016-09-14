@@ -1,11 +1,11 @@
-import {ReactServerAgent} from 'react-server'
+const SuperAgent = require('superagent')
 
-export function getPowerBallot() {
+function getPowerBallot() {
   // HI2016G_PowerBallot_HACC
   const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
   console.log('service!')
 
-  const result = ReactServerAgent.get(baseUrl)
+  const result = SuperAgent.get(baseUrl)
   .query({
     where: "1=1",
     outFields: '*',
@@ -17,13 +17,13 @@ export function getPowerBallot() {
   })
 }
 
-export function getCandidates() {
+function getCandidates() {
   // HI2016G_PowerBallot_HACC
   const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/5/query'
   // const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
   console.log('service!')
 
-  const result = ReactServerAgent.get(baseUrl)
+  const result = SuperAgent.get(baseUrl)
   .query({
     where: "1=1",
     outFields: '*',
@@ -35,11 +35,11 @@ export function getCandidates() {
   })
 }
 
-export function getPrecincts() {
+function getPrecincts() {
   // HI2016G_Precincts_HACC
   const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
 
-  const result = ReactServerAgent.get(baseUrl)
+  const result = SuperAgent.get(baseUrl)
   .query({
     where: "1=1",
     outFields: '*',
@@ -51,11 +51,11 @@ export function getPrecincts() {
   })
 }
 
-export function getPrecinct(dp) {
+function getPrecinct(dp) {
   // HI2016G_Precincts_HACC
   const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
 
-  const result = ReactServerAgent.get(baseUrl)
+  const result = SuperAgent.get(baseUrl)
   .query({
     where: "DP='"+ dp + "'",
     outFields: '*',
@@ -67,7 +67,7 @@ export function getPrecinct(dp) {
   })
 }
 
-export function getContests(ids) {
+function getContests(ids) {
   // HI2016G_Precincts_HACC
   const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/2/query'
 
@@ -75,7 +75,7 @@ export function getContests(ids) {
 
   console.log('idsString', idsString)
 
-  const result = ReactServerAgent.get(baseUrl)
+  const result = SuperAgent.get(baseUrl)
   .query({
     where: "Contest_ID in (" + idsString + ")",
     outFields: '*',
@@ -85,4 +85,9 @@ export function getContests(ids) {
   return result.then((data) => {
     return JSON.parse(data.text).features
   })
+}
+
+module.exports = {
+  getPrecinct,
+  getContests,
 }

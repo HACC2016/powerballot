@@ -10,32 +10,32 @@ import Ballot from 'src/components/Ballot'
 
 export default class App extends Component {
   render() {
-    const ballot = {
-      contests: [
-        {
-          Contest_ID: "USS",
-          candidates: [
-            { id: 161,
-              Candidate_ID: 'USSa',
-              Contest_ID: 'USS',
-              Candidate_Name: 'Allison, Joy J.',
-              Candidate_Party: 'C',
-              Candidate_FEC: 'S4HI00151',
-              Candidate_CSC: 'see FEC',
-              created_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
-              updated_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
-            },
-          ],
-        },
-      ],
-      amendments: [
-        {
-        },
-      ],
-    }
+    // const ballot = {
+    //   contests: [
+    //     {
+    //       Contest_ID: "USS",
+    //       candidates: [
+    //         { id: 161,
+    //           Candidate_ID: 'USSa',
+    //           Contest_ID: 'USS',
+    //           Candidate_Name: 'Allison, Joy J.',
+    //           Candidate_Party: 'C',
+    //           Candidate_FEC: 'S4HI00151',
+    //           Candidate_CSC: 'see FEC',
+    //           created_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
+    //           updated_at: 'Sat Sep 10 2016 10:08:32 GMT-1000 (HST)',
+    //         },
+    //       ],
+    //     },
+    //   ],
+    //   amendments: [
+    //     {
+    //     },
+    //   ],
+    // }
 
     return (
-      <Ballot ballot={ballot} />
+      <Ballot ballot={window.__INITIAL_STATE__.data.ballot} />
     )
   }
 }

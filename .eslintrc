@@ -70,7 +70,6 @@
     "no-new-func": 2,
     "no-obj-calls": 2,
     "no-path-concat": 2,
-    "no-process-env": 2,
     "no-process-exit": 2,
     "no-redeclare": 2,
     "no-return-assign": 0,
@@ -102,10 +101,6 @@
     "semi-spacing": 2,
     "space-infix-ops": 0,
     "space-unary-ops": 2,
-    "strict": [
-      2,
-      "never"
-    ],
     "valid-typeof": 2,
     "yoda": 0
   }
