@@ -1,0 +1,16 @@
+@import '../styles/_variables.scss';
+
+:local {
+  .ballot-candidate {
+    padding: 5px 0;
+  }
+
+  .name {
+    font-weight: 500;
+  }
+
+  .party {
+    font-style: italic;
+    font-size: smaller;
+  }
+}

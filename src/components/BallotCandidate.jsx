@@ -1,6 +1,25 @@
 import React, { PropTypes } from 'react'
+import Modal, {closeStyle} from 'simple-react-modal'
+
+import CandidateDetails from './CandidateDetails.jsx'
+
+import styles from './ballotcandidate.scss'
 
 export default class BallotCandidate extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {}
+  }
+
+  _showModal(){
+    this.setState({showModal: true})
+  }
+
+  _closeModal(){
+    this.setState({showModal: false})
+  }
+
   _renderParty(party) {
     switch (party.toLowerCase()) {
     case 'a':
@@ -30,8 +49,23 @@ export default class BallotCandidate extends React.Component {
     const { candidate } = this.props
 
     return (
-      <div className="ballot-candidate">
-        ({this._renderParty(candidate.Candidate_Party)}) {candidate.Candidate_Name}
+      <div className={styles['ballot-candidate']}>
+        <div className={styles['name']}>
+          <a onClick={this._showModal.bind(this)}>
+            {candidate.Candidate_Name}
+          </a>
+        </div>
+        <div className={styles['party']}>
+          {this._renderParty(candidate.Candidate_Party)}
+        </div>
+
+        <Modal
+          closeOnOuterClick={true}
+          show={this.state.showModal}
+          onClose={this._closeModal.bind(this)}>
+          <a style={closeStyle} onClick={this._closeModal.bind(this)}>X</a>
+          <CandidateDetails candidate={candidate}></CandidateDetails>
+        </Modal>
       </div>
     )
   }

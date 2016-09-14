@@ -29,6 +29,7 @@
     "react-dom": "~0.14.2",
     "react-hot-loader": "^3.0.0-beta.1",
     "sass-loader": "^4.0.2",
+    "simple-react-modal": "^0.5.1",
     "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release",
     "style-loader": "^0.13.1",
     "superagent": "2.2.0",
