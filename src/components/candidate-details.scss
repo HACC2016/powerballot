@@ -1,0 +1,74 @@
+@import '../styles/_variables.scss';
+
+:local {
+  .candidate-name {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .section {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .section-title {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .separator {
+    flex: 1 100%;
+    background-color: black;
+    height: 1px;
+    margin: 5px 0;
+  }
+
+  .sub-section {
+    padding: 10px 0;
+  }
+
+  @media all and (min-width: 600px) {
+    .small-section {
+      flex: 1 50%;
+    }
+  }
+  @media all and (max-width: 600px) {
+    .small-section {
+      flex: 1 100%;
+    }
+  }
+
+  .general {
+    order: 1;
+    flex: 2 100%;
+    @extend .sub-section;
+  }
+  .separator-1 {
+    order: 2;
+    @extend .separator;
+  }
+  .candidate-comittee {
+    order: 3;
+    @extend .small-section;
+    @extend .sub-section;
+  }
+  .finance-links {
+    order: 4;
+    @extend .small-section;
+    @extend .sub-section;
+  }
+  .separator-2 {
+    order: 5;
+    @extend .separator;
+  }
+  .candidate-links {
+    order: 6;
+    @extend .small-section;
+    @extend .sub-section;
+  }
+  .other-links {
+    order: 7;
+    @extend .small-section;
+    @extend .sub-section;
+  }
+}

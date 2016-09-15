@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 
+import parentStyles from './candidate-details.scss'
 import styles from './candidate-links.scss'
 
 export default class CandidateLinks extends React.Component {
@@ -20,8 +21,8 @@ export default class CandidateLinks extends React.Component {
     const { title, links } = this.props
 
     return (
-      <div>
-        <span>{title}</span>
+      <div className={this.props.className}>
+        <span className={parentStyles['section-title']}>{title}</span>
         {links.map((linkObject, i) => {
           return (
             <div key={i}>
