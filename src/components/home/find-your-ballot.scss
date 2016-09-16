@@ -1,0 +1,25 @@
+@import 'src/styles/_variables.scss';
+
+$input-padding: 12px;
+
+.container {
+  background: $medium-blue;
+  color: $white;
+  padding: 20px;
+}
+
+.input-container {
+  display: flex;
+  padding-top: 10px;
+}
+
+.input {
+  min-width: 300px;
+  outline: none;
+  padding: $input-padding;
+}
+
+.go-button {
+  background: $dark-grey;
+  padding: $input-padding;
+}
