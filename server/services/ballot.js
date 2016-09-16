@@ -38,7 +38,7 @@ function getCandidateMetadata(candidateIds) {
 
 function setCandidateMetadata(candidateId, metadata) {
   return CandidateMetadata
-    .forge({ CANDIDATE_ID: candidateId })
+    .forge({ [CANDIDATE_ID]: candidateId })
     .fetch()
     .then(foundMetadata => {
       let method = 'update'
@@ -49,7 +49,7 @@ function setCandidateMetadata(candidateId, metadata) {
       console.log('method ', method)
 
       return CandidateMetadata
-        .forge({ CANDIDATE_ID: candidateId})
+        .forge({ [CANDIDATE_ID]: candidateId})
         .save(metadata, {method: method})
         .then(savedModel => {
           console.log('Saved metadata', savedModel)
@@ -103,23 +103,38 @@ function getBallot(districtId) {
     return getCandidatesPromise(contestIds).then(candidates => {
 
       var contestIdToCandidates = {}
-      candidates.map(candidate => {
+      var candidateIdToCandidate = {}
+      var candidateIds = candidates.map(candidate => {
         const { Contest_ID } = candidate
+
+        candidate.metadata = null
         contestIdToCandidates[Contest_ID] = contestIdToCandidates[Contest_ID] || []
         contestIdToCandidates[Contest_ID].push(candidate)
+        candidateIdToCandidate[candidate[CANDIDATE_ID]] = candidate
+        return candidate[CANDIDATE_ID]
       })
 
-      const contests = contestIds.map(contestId => {
+      return getCandidateMetadata(candidateIds).then(candidatesMetadata => {
+
+        candidatesMetadata.map(metadata => {
+          let candidate = candidateIdToCandidate[metadata[CANDIDATE_ID]]
+          if (candidate) {
+            candidate.metadata = metadata
+          }
+        })
+
+        const contests = contestIds.map(contestId => {
+          return {
+            Contest_ID: contestId,
+            candidates: contestIdToCandidates[contestId] || [],
+          }
+        })
+
         return {
-          Contest_ID: contestId,
-          candidates: contestIdToCandidates[contestId] || [],
+          contests: contests,
+          amendments: [],
         }
       })
-
-      return {
-        contests: contests,
-        amendments: [],
-      }
     })
   })
 }
