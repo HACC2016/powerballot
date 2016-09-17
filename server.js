@@ -3,6 +3,7 @@ var express = require('express')
 var bodyParser = require('body-parser')
 
 var ballotsRoute = require('./server/routes/ballots')
+var candidatesRoute = require('./server/routes/admin_candidates')
 
 var app = express()
 
@@ -20,6 +21,12 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use('/ballot', ballotsRoute)
 app.get('/ballot/:precinct', function (req, res) {
   console.log('precinct', req.params.precinct)
+  res.render('index.jade')
+})
+
+app.use('/candidate', candidatesRoute)
+app.get('/candidate/:candidateId', function (req, res) {
+  console.log('candidate', req.params.candidateId)
   res.render('index.jade')
 })
 

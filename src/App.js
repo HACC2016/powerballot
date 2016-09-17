@@ -3,6 +3,7 @@ import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
 import BallotPage from 'src/components/BallotPage'
 import Home from 'src/components/home/Home'
+import AdminCandidatePage from 'src/components/AdminCandidatePage'
 
 export default class App extends Component {
   render() {
@@ -14,9 +15,11 @@ export default class App extends Component {
             {/* 3. Link to some paths with `Link` */}
             <li><Link to="/">Home</Link></li>
             <li><Link to="/ballot/13-04">Ballot</Link></li>
+            <li><Link to="/candidate/USSa">Candidate</Link></li>
           </ul>
           <Match exactly pattern="/" component={Home} />
           <Match pattern="/ballot" component={BallotPage} />
+          <Match pattern="/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch}/>
         </div>
       </BrowserRouter>
