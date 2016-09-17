@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import CandidateLinks from './CandidateLinks.jsx'
+import CandidateDetailsLinks from 'src/components/CandidateDetailsLinks.jsx'
 
 import styles from './candidate-details.scss'
 
@@ -55,14 +55,14 @@ export default class CandidateDetails extends React.Component {
               <div>Chair</div>
               <div>Treasurer</div>
             </div>
-            <CandidateLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
+            <CandidateDetailsLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
           </div>
 
           <div className={styles['separator']}></div>
 
           <div className={styles['section']}>
-            <CandidateLinks className={styles['column']} title="Candidate Links" candidate={candidate} links={candidateLinks} />
-            <CandidateLinks className={styles['column']} title="Other Links" candidate={candidate} links={otherLinks} />
+            <CandidateDetailsLinks className={styles['column']} title="Candidate Links" candidate={candidate} links={candidateLinks} />
+            <CandidateDetailsLinks className={styles['column']} title="Other Links" candidate={candidate} links={otherLinks} />
           </div>
 
           <div className={styles['separator']}></div>
