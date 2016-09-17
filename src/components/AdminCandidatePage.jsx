@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import CandidateDetails from 'src/components/CandidateDetails'
+import AdminCandidate from 'src/components/AdminCandidate'
 
 export default class AdminCandidatePage extends React.Component {
   componentDidUpdate () {
@@ -11,7 +11,7 @@ export default class AdminCandidatePage extends React.Component {
     const { } = this.props
 
     return (
-      <CandidateDetails
+      <AdminCandidate
         candidate={window.__INITIAL_STATE__.candidate}
       />
     )

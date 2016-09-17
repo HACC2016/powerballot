@@ -45,18 +45,18 @@ function fieldNameToTitle(fieldName) {
   return 'N/A'
 }
 
-function fieldToHref(candidate, field) {
-  if (field === 'cand_email' && candidate[field]) {
-    return 'mailto: ' + candidate[field]
+function fieldToHref(metadata, field) {
+  if (field === 'cand_email' && metadata[field]) {
+    return 'mailto: ' + metadata[field]
   }
   else {
-    return candidate[field]
+    return metadata[field]
   }
 }
 
-export function createLinkObject(candidate, link) {
+export function createLinkObject(metadata, fieldName) {
   return {
-    title: fieldNameToTitle(link),
-    href: fieldToHref(candidate, link),
+    title: fieldNameToTitle(fieldName),
+    href: fieldToHref(metadata, fieldName),
   }
 }
