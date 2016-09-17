@@ -9,21 +9,28 @@ export default class CandidateDetails extends React.Component {
     const { candidate } = this.props
 
     const campaignLinks = [
-      { title: 'Campaign Expenditures Visualization' },
-      { title: 'Standard Reports'},
-      { title: 'Spcial Reports'},
+      'expenditure_viz_url',
+      'csc_standard_url',
+      'csc_special_url',
     ]
 
     const candidateLinks = [
-      { title: 'Website', href: 'http://www.google.com' },
-      { title: 'Email', href: 'mailto:test@gmail.com' },
-      { title: 'Facebook', href: 'http://www.facebook.com' },
-      { title: 'LinkedIn'},
-      { title: 'Twitter', href: 'http://www.twitter.com' },
+      'cand_website_url',
+      'cand_email',
+      'cand_facebook_url',
+      'cand_linked',
+      'cand_twitter_url',
     ]
 
     const otherLinks = [
-      { title: 'Official government webpage', href: 'http://www.google.com' },
+      'gov_website_url',
+      'lwv_website_url',
+      'ftm_website_url',
+      'pvs_website_url',
+      'bp_website_url',
+      'wp_website_url',
+      'cb_website_url',
+      'pbs_hawaii_url',
     ]
 
     return (
@@ -48,14 +55,14 @@ export default class CandidateDetails extends React.Component {
               <div>Chair</div>
               <div>Treasurer</div>
             </div>
-            <CandidateLinks className={styles['column']} title="Campaign Finance Links" links={campaignLinks} />
+            <CandidateLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
           </div>
 
           <div className={styles['separator']}></div>
 
           <div className={styles['section']}>
-            <CandidateLinks className={styles['column']} title="Candidate Links" links={candidateLinks} />
-            <CandidateLinks className={styles['column']} title="Other Links" links={otherLinks} />
+            <CandidateLinks className={styles['column']} title="Candidate Links" candidate={candidate} links={candidateLinks} />
+            <CandidateLinks className={styles['column']} title="Other Links" candidate={candidate} links={otherLinks} />
           </div>
 
           <div className={styles['separator']}></div>

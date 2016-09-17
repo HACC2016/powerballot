@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import styles from './candidate-details-links.scss'
+import { createLinkObject } from 'src/services/candidate_links_utils.js'
 
 export default class CandidateDetailsLinks extends React.Component {
 
@@ -17,18 +18,20 @@ export default class CandidateDetailsLinks extends React.Component {
   }
 
   render () {
-    const { link } = this.props
+    const { candidate, link } = this.props
+    const linkObject = createLinkObject(candidate, link)
 
     return (
         <div>
           { link.href ?
-            this._renderKnownLink(link) :
-            this._renderUnknownLink(link) }
+            this._renderKnownLink(linkObject) :
+            this._renderUnknownLink(linkObject) }
         </div>
     )
   }
 }
 
 CandidateDetailsLinks.propTypes = {
-  link: PropTypes.object,
+  candidate: PropTypes.object,
+  link: PropTypes.string,
 }
