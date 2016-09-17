@@ -87,7 +87,51 @@ function getContests(ids) {
   })
 }
 
+// Get the "esri" coordinates for an address
+function geocodeAddress (address) {
+  const baseUrl = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates'
+
+  const result = SuperAgent.get(baseUrl)
+  .query({
+    SingleLine: address,
+    // Might need to change formatting
+    // inSR: { wkid: 4326 }????
+    outSR: { wkid: 102100 },
+    outFields: 'Match_addr,stAddr,City',
+    // TOO: add auto suggest to get a magicKey
+    // &magicKey=GST7YMc0AM9UOsE3GY8tIS9GOghnYnwZIip_GQypG1c915KHUTFOYNaHUTBtQNcpOh9bZgKZQoc3YSyaagDIZhkZQsxKQN4mDb8uAgTvDM8F
+    maxLocations: 3,
+    f: 'json',
+  })
+
+  return result.then((data) => {
+    return JSON.parse(data.text)
+  })
+}
+
+// Use the precinct service to lookup an address based on "esri" coordinates
+function lookupPrecinct (coordinates, spatialReference) {
+  const baseUrl =  'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
+
+  const result = SuperAgent.get(baseUrl)
+  .query({
+    where: '1=1',
+    geometry: `${coordinates.x},${coordinates.y}`,
+    geometryType: 'esriGeometryPoint',
+    returnGeometry: false,
+    inSR: spatialReference,
+    outFields: '*',
+    f: 'json',
+  })
+
+  return result.then((data) => {
+    return JSON.parse(data.text).features
+  })
+}
+
 module.exports = {
+  geocodeAddress,
   getPrecinct,
   getContests,
+  lookupPrecinct,
 }

@@ -59,6 +59,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       src: path.join(__dirname, '.', 'src'),
+      server: path.join(__dirname, '.', 'server'),
     },
   },
 }
