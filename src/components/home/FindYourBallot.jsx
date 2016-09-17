@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { browserHistory } from 'react-router'
 
 import { geocodeAddress, lookupPrecinct } from 'server/services/arc_gis'
 
@@ -9,12 +8,10 @@ export default class FindYourBallot extends React.Component {
   state = {
     address: '1450 Ala Moana Blvd, Honolulu, HI 96814',
     addressLookupResult: {},
-    precinct: '',
   }
 
   _updateAddress = (e) => {
     this.setState({address: e.target.value})
-    browserHistory.push('/ballot', { some: 'state' })
   }
   _submit = (e) => {
     if (e.key === 'Enter') {
@@ -39,14 +36,13 @@ export default class FindYourBallot extends React.Component {
 
     lookupPrecinct(candidate.location, spatialReference).then((result) => {
       const precinct = result[0].attributes.DP
-      this.setState({precinct})
       this.context.router.transitionTo(`/ballot/${precinct}`)
     })
   }
 
   render () {
     const { } = this.props
-    const { address, precinct } = this.state
+    const { address } = this.state
 
     return (
       <div className={styles['container']}>
