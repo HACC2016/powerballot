@@ -12,9 +12,9 @@ export default class CandidateDetailsLinks extends React.Component {
     return (
       <div className={this.props.className}>
         <span className={parentStyles['section-title']}>{title}</span>
-        {links.map((linkObject, i) => {
+        {links.map((linkFieldName, i) => {
           return (
-            <CandidateDetailsLink key={i} candidate={candidate} link={linkObject} />
+            <CandidateDetailsLink key={i} candidate={candidate} fieldName={linkFieldName} />
           )
         })}
       </div>

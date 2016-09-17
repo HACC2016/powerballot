@@ -1,4 +1,4 @@
-function fieldNameToTitle(fieldName) {
+export function metadataFieldNameToTitle(fieldName) {
   switch (fieldName) {
   case 'cc_report_url':
     return 'TEST'
@@ -43,20 +43,4 @@ function fieldNameToTitle(fieldName) {
   }
 
   return 'N/A'
-}
-
-function fieldToHref(metadata, field) {
-  if (field === 'cand_email' && metadata[field]) {
-    return 'mailto: ' + metadata[field]
-  }
-  else {
-    return metadata[field]
-  }
-}
-
-export function createLinkObject(metadata, fieldName) {
-  return {
-    title: fieldNameToTitle(fieldName),
-    href: fieldToHref(metadata, fieldName),
-  }
 }

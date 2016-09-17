@@ -1,9 +1,25 @@
 import React, { PropTypes } from 'react'
 
 import styles from './candidate-details-links.scss'
-import { createLinkObject } from 'src/services/candidate_links_utils.js'
+import { metadataFieldNameToTitle } from 'src/services/candidate_utils.js'
 
 export default class CandidateDetailsLink extends React.Component {
+
+  _fieldToHref(metadata, field) {
+    if (field === 'cand_email' && metadata[field]) {
+      return 'mailto: ' + metadata[field]
+    }
+    else {
+      return metadata[field]
+    }
+  }
+
+  _createLinkObject(metadata, fieldName) {
+    return {
+      title: metadataFieldNameToTitle(fieldName),
+      href: this._fieldToHref(metadata, fieldName),
+    }
+  }
 
   _renderKnownLink(link) {
     return (
@@ -18,9 +34,9 @@ export default class CandidateDetailsLink extends React.Component {
   }
 
   render () {
-    const { candidate, link } = this.props
+    const { candidate, fieldName } = this.props
     const { metadata } = candidate
-    const linkObject = createLinkObject(metadata, link)
+    const linkObject = this._createLinkObject(metadata, fieldName)
 
     return (
         <div>
@@ -34,5 +50,5 @@ export default class CandidateDetailsLink extends React.Component {
 
 CandidateDetailsLink.propTypes = {
   candidate: PropTypes.object,
-  link: PropTypes.string,
+  fieldName: PropTypes.string,
 }
