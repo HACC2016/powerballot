@@ -26,8 +26,6 @@ router.get('/:candidateId', function (req, res) {
       candidate: data.candidate,
     }
 
-    console.log('initialState!!!!!!!', JSON.stringify(initialState, null, 2))
-
     res.render('index.jade', {
       initialState,
     })

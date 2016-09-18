@@ -4,7 +4,7 @@ const CandidateMetadata = require('../models/candidate_metadata')
 
 const CANDIDATE_ID = 'Candidate_ID'
 
-function getCandidatesPromise(contestIds) {
+function getCandidatesForContests(contestIds) {
   return Candidate
     .query(function(qb) {
       qb.whereIn('Contest_ID', contestIds)
@@ -23,7 +23,6 @@ function getCandidate(candidateId) {
     .where(CANDIDATE_ID, candidateId)
     .fetch()
     .then(candidate => {
-      console.log('candidate!??????', candidate)
       return candidate.attributes
     })
 }
@@ -49,8 +48,6 @@ function getCandidatesMetadata(candidateIds) {
       let candidatesMetadata = results.map(candidateMetadataModel => {
         return candidateMetadataModel.attributes
       })
-
-      console.log('Found metadata', candidatesMetadata)
       return candidatesMetadata
     })
 }
@@ -62,9 +59,6 @@ function getFullCandidatePromise(candidateId) {
     .then(results => {
       let fullCandidate = results[0] || {}
       fullCandidate.metadata = results[1] || {}
-
-      console.log('FULL CANDIDATE!!!', JSON.stringify(fullCandidate, null, 2))
-
       return fullCandidate
     })
 }
@@ -92,5 +86,7 @@ function setCandidateMetadata(candidateId, metadata) {
 }
 
 module.exports = {
+  getCandidatesMetadata,
+  getCandidatesForContests,
   getFullCandidatePromise,
 }
