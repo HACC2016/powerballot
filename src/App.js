@@ -14,8 +14,8 @@ export default class App extends Component {
           <ul>
             {/* 3. Link to some paths with `Link` */}
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/ballot/13-04">Ballot</Link></li>
-            <li><Link to="/candidate/USSa">Candidate</Link></li>
+            <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
+            <li><a href="/candidate/USSa">Edit Example Candidate</a></li>
           </ul>
           <Match exactly pattern="/" component={Home} />
           <Match pattern="/ballot/:precinct" component={BallotPage} />
