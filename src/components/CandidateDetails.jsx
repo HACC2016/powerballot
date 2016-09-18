@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 import CandidateDetailsLink from 'src/components/CandidateDetailsLink.jsx'
 import CandidateDetailsLinks from 'src/components/CandidateDetailsLinks.jsx'
 import { getContestTitle } from 'src/services/contest_utils.js'
+import { partyIdToTitle } from 'src/services/candidate_utils.js'
 
 import styles from './candidate-details.scss'
 
@@ -46,7 +47,7 @@ export default class CandidateDetails extends React.Component {
         <div className={styles['content']}>
           <div>
             <div>Seeking Office: {getContestTitle(candidate.Contest_ID)}</div>
-            <div>Party Affiliations: {candidate.Candidate_Party}</div>
+            <div>Party Affiliations: {partyIdToTitle(candidate.Candidate_Party)}</div>
             <div>Occupation: {candidate.metadata.occupation}</div>
           </div>
 

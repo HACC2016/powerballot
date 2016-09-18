@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import Modal, {closeStyle} from 'simple-react-modal'
 
 import CandidateDetails from './CandidateDetails.jsx'
+import { partyIdToTitle } from 'src/services/candidate_utils.js'
 
 import styles from './ballot-candidate.scss'
 
@@ -20,31 +21,6 @@ export default class BallotCandidate extends React.Component {
     this.setState({showModal: false})
   }
 
-  _renderParty(party) {
-    switch (party.toLowerCase()) {
-    case 'a':
-      return 'American Shopping Party'
-    case 'c':
-      return 'Constitution Party of Hawaii'
-    case 'd':
-      return 'Democratic Party of Hawaii'
-    case 'g':
-      return 'Green Party of Hawaii'
-    case 'i':
-      return 'Hawaii Independent Party'
-    case 'l':
-      return 'Libertarian Party of Hawaii'
-    case 'r':
-      return 'Hawaii Republican Party'
-    case 'ns':
-      return 'Non-Partisan Special'
-    case 'n':
-      return 'Non-Partisan'
-    default:
-      return party
-    }
-  }
-
   render () {
     const { candidate } = this.props
 
@@ -56,7 +32,7 @@ export default class BallotCandidate extends React.Component {
           </a>
         </div>
         <div className={styles['party']}>
-          {this._renderParty(candidate.Candidate_Party)}
+          {partyIdToTitle(candidate.Candidate_Party)}
         </div>
 
         <Modal

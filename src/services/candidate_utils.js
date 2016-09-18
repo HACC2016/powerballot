@@ -1,5 +1,30 @@
 import SuperAgent from 'superagent'
 
+export function partyIdToTitle(partyId) {
+  switch (partyId.toLowerCase()) {
+  case 'a':
+    return 'American Shopping Party'
+  case 'c':
+    return 'Constitution Party of Hawaii'
+  case 'd':
+    return 'Democratic Party of Hawaii'
+  case 'g':
+    return 'Green Party of Hawaii'
+  case 'i':
+    return 'Hawaii Independent Party'
+  case 'l':
+    return 'Libertarian Party of Hawaii'
+  case 'r':
+    return 'Hawaii Republican Party'
+  case 'ns':
+    return 'Non-Partisan Special'
+  case 'n':
+    return 'Non-Partisan'
+  default:
+    return partyId
+  }
+}
+
 export function metadataFieldNameToTitle(fieldName) {
   switch (fieldName) {
 
