@@ -2,6 +2,20 @@ import React, { PropTypes } from 'react'
 
 import CandidateFormField from 'src/components/CandidateFormField'
 
+const ignoredFields = [
+  'id',
+  'Candidate_ID',
+  'created_at',
+  'updated_at',
+  'incumbent_text',
+  'Office',
+  'Party',
+  'District',
+  'name_party',
+  'party_text',
+  'office_district',
+]
+
 export default class CandidateForm extends React.Component {
 
   _renderField(candidateMetadata, fieldName, index) {
@@ -22,7 +36,9 @@ export default class CandidateForm extends React.Component {
     return (
       <div>
         { Object.keys(candidateMetadata).map((fieldName, index) => {
-          return this._renderField(candidateMetadata, fieldName, index)
+          if (!ignoredFields.includes(fieldName)) {
+            return this._renderField(candidateMetadata, fieldName, index)
+          }
         }) }
 
         <div onClick={saveMetadata}>

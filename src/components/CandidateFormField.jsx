@@ -17,7 +17,6 @@ export default class CandidateFormField extends React.Component {
         <span>{metadataFieldNameToTitle(fieldName)}</span>
           <input
             type='text'
-            placeholder="Hello"
             onChange={this._updateField}
             value={value || ''}
           />
