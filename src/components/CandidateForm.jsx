@@ -17,14 +17,18 @@ export default class CandidateForm extends React.Component {
   }
 
   render () {
-    const { candidateMetadata } = this.props
+    const { candidateMetadata, saveMetadata } = this.props
 
     return (
       <div>
-        {JSON.stringify(candidateMetadata, null, 2)}
         { Object.keys(candidateMetadata).map((fieldName, index) => {
           return this._renderField(candidateMetadata, fieldName, index)
         }) }
+
+        <div onClick={saveMetadata}>
+            Save
+        </div>
+
       </div>
     )
   }

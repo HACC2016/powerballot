@@ -1,3 +1,5 @@
+import SuperAgent from 'superagent'
+
 export function metadataFieldNameToTitle(fieldName) {
   switch (fieldName) {
 
@@ -83,4 +85,9 @@ export function metadataFieldNameToTitle(fieldName) {
   }
 
   return fieldName
+}
+
+export function updateCandidateMetadata(candidateId, metadata) {
+  var request = SuperAgent.put('/candidate/' + candidateId).send(metadata)
+  return request
 }

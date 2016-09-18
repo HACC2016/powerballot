@@ -89,4 +89,5 @@ module.exports = {
   getCandidatesMetadata,
   getCandidatesForContests,
   getFullCandidatePromise,
+  setCandidateMetadata,
 }
