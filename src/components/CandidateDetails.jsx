@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react'
+
+import CandidateDetailsLink from 'src/components/CandidateDetailsLink.jsx'
 import CandidateDetailsLinks from 'src/components/CandidateDetailsLinks.jsx'
+import { getContestTitle } from 'src/services/contest_utils.js'
 
 import styles from './candidate-details.scss'
 
@@ -35,13 +38,16 @@ export default class CandidateDetails extends React.Component {
 
     return (
       <div>
-        <div className={styles['candidate-name']}>{candidate.Candidate_Name} ({candidate.Candidate_Party})</div>
+        <div className={styles['candidate-name']}>
+          {candidate.Candidate_Name} ({candidate.Candidate_Party})
+          <span> {candidate.metadata.incumbent_text}</span>
+        </div>
 
         <div className={styles['content']}>
           <div>
-            <div>Seeking Office</div>
-            <div>Party Affiliations</div>
-            <div>Occupation</div>
+            <div>Seeking Office: {getContestTitle(candidate.Contest_ID)}</div>
+            <div>Party Affiliations: {candidate.Candidate_Party}</div>
+            <div>Occupation: {candidate.metadata.occupation}</div>
           </div>
 
           <div className={styles['separator']}></div>
@@ -51,9 +57,10 @@ export default class CandidateDetails extends React.Component {
               <div className={styles['section-title']}>
                 Candidate Committee
               </div>
-              <div>Name</div>
-              <div>Chair</div>
-              <div>Treasurer</div>
+              <div>Name: {candidate.metadata.cc_name}</div>
+              <div>Chair: {candidate.metadata.cc_chair}</div>
+              <div>Treasurer: {candidate.metadata.cc_treasurer}</div>
+              <CandidateDetailsLink candidate={candidate} fieldName='cc_report_url' />
             </div>
             <CandidateDetailsLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
           </div>
