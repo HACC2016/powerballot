@@ -8,6 +8,7 @@ export default class FindYourBallot extends React.Component {
   state = {
     address: '1450 Ala Moana Blvd, Honolulu, HI 96814',
     addressLookupResult: {},
+    fetching: false,
   }
 
   _updateAddress = (e) => {
@@ -27,6 +28,7 @@ export default class FindYourBallot extends React.Component {
       this.setState({addressLookupResult: result})
       this._lookupPrecinct()
     })
+    this.setState({fetching: true})
   }
 
   _lookupPrecinct = () => {
@@ -36,13 +38,14 @@ export default class FindYourBallot extends React.Component {
 
     lookupPrecinct(candidate.location, spatialReference).then((result) => {
       const precinct = result[0].attributes.DP
+      this.setState({fetching: false})
       this.context.router.transitionTo(`/ballot/${precinct}`)
     })
   }
 
   render () {
     const { } = this.props
-    const { address } = this.state
+    const { address, fetching } = this.state
 
     return (
       <div className={styles['container']}>
@@ -57,10 +60,11 @@ export default class FindYourBallot extends React.Component {
             value={address}
             onSubmit={this._submit}
           />
-        <div className={styles['go-button']} onClick={this._lookupAddress}>
+          <div className={styles['go-button']} onClick={this._lookupAddress}>
             GO
           </div>
         </div>
+        {fetching ? 'loading...': null}
       </div>
     )
   }

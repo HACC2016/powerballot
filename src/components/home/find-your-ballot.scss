@@ -20,6 +20,7 @@ $input-padding: 12px;
 }
 
 .go-button {
+  cursor: pointer;
   background: $dark-grey;
   padding: $input-padding;
 }
