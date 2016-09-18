@@ -7,15 +7,15 @@ export function partyIdToTitle(partyId) {
   case 'c':
     return 'Constitution Party of Hawaii'
   case 'd':
-    return 'Democratic Party of Hawaii'
+    return 'Democratic Party'
   case 'g':
-    return 'Green Party of Hawaii'
+    return 'Green Party'
   case 'i':
     return 'Hawaii Independent Party'
   case 'l':
-    return 'Libertarian Party of Hawaii'
+    return 'Libertarian Party'
   case 'r':
-    return 'Hawaii Republican Party'
+    return 'Republican Party'
   case 'ns':
     return 'Non-Partisan Special'
   case 'n':
