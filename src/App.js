@@ -18,7 +18,7 @@ export default class App extends Component {
             <li><Link to="/candidate/USSa">Candidate</Link></li>
           </ul>
           <Match exactly pattern="/" component={Home} />
-          <Match pattern="/ballot" component={BallotPage} />
+          <Match pattern="/ballot/:precinct" component={BallotPage} />
           <Match pattern="/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch}/>
         </div>

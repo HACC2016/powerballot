@@ -4,6 +4,7 @@ var bodyParser = require('body-parser')
 
 var ballotsRoute = require('./server/routes/ballots')
 var candidatesRoute = require('./server/routes/admin_candidates')
+var apiRoute = require('./server/routes/api')
 
 var app = express()
 
@@ -18,6 +19,7 @@ app.use('/assets/', express.static(path.join(__dirname, '/src/assets')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
+app.use('/api', apiRoute)
 app.use('/ballot', ballotsRoute)
 app.use('/candidate', candidatesRoute)
 
