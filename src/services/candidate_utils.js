@@ -1,7 +1,49 @@
 export function metadataFieldNameToTitle(fieldName) {
   switch (fieldName) {
+
+  // General
+  case 'ballot_name':
+    return 'Ballot Name'
+  case 'Office':
+    return 'Office'
+  case 'District':
+    return 'District'
+  case 'Party':
+    return 'Party'
+  case 'name_party':
+    return 'Name of Party'
+  case 'office_district':
+    return 'Office District'
+  case 'incumbent_text':
+    return 'Incumbent Text'
+  case 'photo_url':
+    return 'Photo URL'
+  case 'photo_width':
+    return 'Photo Width'
+  case 'photo_source_text':
+    return 'Photo Alt Text'
+  case 'party_text':
+    return 'Party Text'
+  case 'occupation':
+    return 'Occupation'
+  case 'cc_name':
+    return 'Candidate Committee Name'
+  case 'cc_chair':
+    return 'Candidate Committee Chair'
+  case 'cc_treasurer':
+    return 'Candidate Committee Treasurer'
+  case 'volunteer':
+    return 'Volunteer'
+  case 'bio_cred_url':
+    return 'Bio URL'
+  case 'bio_cred_text':
+    return 'Bio Text'
+  case 'bio':
+    return 'Biography'
+
+  // Links
   case 'cc_report_url':
-    return 'TEST'
+    return 'Organizational Report'
   case 'cand_website_url':
     return 'Website'
   case 'cand_email':
@@ -17,7 +59,7 @@ export function metadataFieldNameToTitle(fieldName) {
   case 'csc_special_url':
     return 'Special Reports'
   case 'fec_url':
-    return 'TEST'
+    return 'FEC URL'
   case 'gov_website_url':
     return 'Official Government Webpage'
   case 'lwv_website_url':
@@ -32,8 +74,6 @@ export function metadataFieldNameToTitle(fieldName) {
     return 'Wikipedia'
   case 'cb_website_url':
     return 'Civil Beat Q&A'
-  case 'bio_cred_url':
-    return 'TEST'
   case 'pbs_hawaii_url':
     return 'PBS Hawaii Insights'
   case 'expenditure_viz_url':
@@ -42,5 +82,5 @@ export function metadataFieldNameToTitle(fieldName) {
     return 'Star Advertiser'
   }
 
-  return 'N/A'
+  return fieldName
 }

@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react'
 
+import { metadataFieldNameToTitle } from 'src/services/candidate_utils'
+
 export default class CandidateFormField extends React.Component {
 
   _updateField = (e) => {
@@ -12,7 +14,7 @@ export default class CandidateFormField extends React.Component {
 
     return (
       <div>
-        <span>{fieldName}</span>
+        <span>{metadataFieldNameToTitle(fieldName)}</span>
           <input
             type='text'
             placeholder="Hello"
