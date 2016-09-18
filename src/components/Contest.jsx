@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import BallotCandidate from './BallotCandidate.jsx'
+import { getContestTitle } from 'src/services/contest_utils.js'
 
 import styles from './contest.scss'
 console.log('styles', styles)
@@ -8,13 +9,7 @@ console.log('styles', styles)
 export default class Contest extends React.Component {
   _renderContestName () {
     const { contest } = this.props
-
-    switch (contest.Contest_ID) {
-    case 'USS':
-      return 'United States Senate'
-    default:
-      return contest.Contest_ID
-    }
+    return getContestTitle(contest.Contest_ID)
   }
 
   render () {
