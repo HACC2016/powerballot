@@ -1,15 +1,12 @@
-
 Install postgres (on Mac you can use Postgres.app)
+Install npm and node.js (https://nodejs.org/en/)
 
-Install knex
+Run these commands:
 
-Install npm
-
-npm install
-npm start
-
-createdb power_ballot_development
-npm install -g knex
-knex migrate:latest
-
-node server/update_data.js
+    npm install -g knex
+    npm install
+    npm start
+    createdb power_ballot_development
+    knex migrate:latest
+    node server/update_data.js
+    node server/insert_candidate_metadata.js
