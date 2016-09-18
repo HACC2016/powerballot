@@ -1,12 +1,14 @@
 import React, { PropTypes } from 'react'
 
 import SvgIcon from './common/SvgIcon.jsx'
+import BallotPrecinct from 'src/components/BallotPrecinct.jsx'
 
 import styles from './ballot-header.scss'
 
 export default class BallotHeader extends React.Component {
+
   render () {
-    const { precinct } = this.props
+    const { ballot, precinct } = this.props
 
     return (
       <div className={styles['container']}>
@@ -23,7 +25,10 @@ export default class BallotHeader extends React.Component {
           </div>
         </div>
         <div className={styles['contents']}>
-          Your Precinct: {precinct}
+          <BallotPrecinct
+            address='222 Drive'
+            pollingPlace={ballot.pollingPlace}
+            precinct={precinct} />
         </div>
       </div>
     )
