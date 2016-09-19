@@ -4,7 +4,6 @@ import BallotCandidate from './BallotCandidate.jsx'
 import { getContestTitle } from 'src/services/contest_utils.js'
 
 import styles from './contest.scss'
-console.log('styles', styles)
 
 export default class Contest extends React.Component {
   _renderContestName () {
