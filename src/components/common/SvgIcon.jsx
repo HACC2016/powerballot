@@ -6,6 +6,7 @@ if (canUseDOM()) {
   var urls = {
     logo: require('../../assets/power_ballot-09.svg'),
     yourIcon: require('../../assets/icon_yourpowerballot-10.svg'),
+    stateIcon: require('../../assets/icon_statewide-12.svg'),
   }
 }
 
