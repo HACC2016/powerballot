@@ -1,6 +1,5 @@
 var config = require('./webpack.config.js')
 
-var path = require('path')
 var webpack = require('webpack')
 var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 
