@@ -3,6 +3,9 @@ import React, { PropTypes } from 'react'
 import styles from './sidebar.scss'
 
 export default function Sidebar() {
+  var t = Date.parse('2016-11-08') - Date.parse(new Date())
+  var daysTillGeneralElection = Math.floor( t/(1000*60*60*24) )
+
   return (
     <div className={styles['container']}>
 
@@ -36,14 +39,22 @@ export default function Sidebar() {
 
       <div className={styles['separator']} />
 
-      <div className={styles['event-title']}>
-        General Election
+      <div className={styles['general-election']}>
+        <div>
+          <div className={styles['event-title']}>
+            General Election
+          </div>
+          <p>
+            November 8, 2016
+            <br />
+            7 am to 6pm
+          </p>
+        </div>
+        <div className={styles['countdown-container']}>
+          COUNTDOWN
+          <div className={styles['countdown']}>{daysTillGeneralElection} DAYS</div>
+        </div>
       </div>
-      <p>
-        Novermber 8, 2016
-        <br />
-        7 am to 6pm
-      </p>
     </div>
   )
 }

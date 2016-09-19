@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 
-import Header from './global/Header'
 import StatewideBallotHeader from 'src/components/StatewideBallotHeader'
 import Contest from 'src/components/Contest'
 
@@ -21,7 +20,6 @@ export default class StatewideBallot extends React.Component {
 
     return (
       <div>
-        <Header />
         <div className='row'>
           <StatewideBallotHeader/>
           {contests.map(this._renderContest)}

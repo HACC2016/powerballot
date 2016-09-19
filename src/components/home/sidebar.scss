@@ -24,3 +24,17 @@
   margin-bottom: 8px;
   border-bottom: 1px solid $key-dates-rule-divider;
 }
+
+.general-election {
+  display: flex;
+  justify-content: space-between;
+}
+
+.countdown-container {
+  color: $medium-blue;
+}
+
+.countdown {
+  font-size: 16px;
+  font-weight: 600;
+}
