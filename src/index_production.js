@@ -4,8 +4,6 @@ import App from './App'
 
 const rootEl = document.getElementById('root')
 ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
+  <App />,
   rootEl
 )

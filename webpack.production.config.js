@@ -22,4 +22,11 @@ config.plugins.push(new webpack.optimize.UglifyJsPlugin({
 // Needed to get the path to statically compiled js
 config.plugins.push(new StatsWriterPlugin())
 
+// Try to fix compiling react in production mode
+config.plugins.push(new webpack.DefinePlugin({
+  'process.env': {
+    'NODE_ENV': JSON.stringify('production'),
+  },
+}))
+
 module.exports = config
