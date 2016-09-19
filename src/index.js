@@ -1,3 +1,4 @@
+// WARNING: Make sure to mirror any changes in index_production.js
 import { AppContainer } from 'react-hot-loader'
 import React from 'react'
 import ReactDOM from 'react-dom'

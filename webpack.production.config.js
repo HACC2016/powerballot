@@ -7,7 +7,7 @@ config.debug = false
 config.devtool = 'source-map'
 
 config.entry = [
-  './src/index',
+  './src/index_production',
 ]
 
 config.output.filename = '[name].[hash].bundle.js'
