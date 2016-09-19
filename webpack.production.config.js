@@ -6,6 +6,10 @@ var webpack = require('webpack')
 config.debug = false
 config.devtool = 'source-map'
 
+config.entry = [
+  './src/index',
+]
+
 config.output.filename = '[name].[hash].bundle.js'
 config.output.publicPath = process.env.ASSET_HOST + '/static/'
 
