@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 
-import Header from './global/Header'
 import BallotHeader from './BallotHeader'
 import Contest from './Contest'
 
@@ -21,7 +20,6 @@ export default class Ballot extends React.Component {
 
     return (
       <div>
-        <Header />
         <div className='row'>
           <BallotHeader ballot={ballot} precinct={precinct} />
           {contests.map(this._renderContest)}

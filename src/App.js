@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
+import Header from 'src/components/global/Header'
 import BallotPage from 'src/components/BallotPage'
 import Home from 'src/components/home/Home'
 import AdminCandidatePage from 'src/components/AdminCandidatePage'
@@ -11,6 +12,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div>
+          <Header />
           <ul>
             {/* 3. Link to some paths with `Link` */}
             <li><Link to="/">Home</Link></li>

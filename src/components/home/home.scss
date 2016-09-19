@@ -1,0 +1,15 @@
+.container {
+}
+
+.body {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.main-section {
+  margin-right: 20px;
+  max-width: 500px;
+}
+.sidebar-container {
+  min-width: 200px;
+}

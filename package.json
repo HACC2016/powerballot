@@ -21,6 +21,7 @@
     "babel-preset-stage-0": "^6.0.15",
     "body-parser": "^1.15.2",
     "bookshelf": "^0.10.0",
+    "classnames": "^2.2.5",
     "css-loader": "^0.25.0",
     "history": "^4.2.0",
     "jade": "^1.11.0",

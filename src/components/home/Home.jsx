@@ -1,6 +1,12 @@
 import React, {PropTypes} from 'react'
+import classnames from 'classnames'
 
-import FindYourBallot from './FindYourBallot'
+import FindYourBallotContainer from './FindYourBallotContainer'
+import Sidebar from './Sidebar'
+import Instructions from './Instructions'
+import OtherLinks from './OtherLinks'
+
+import styles from './home.scss'
 
 export default class Home extends React.Component {
 
@@ -8,9 +14,24 @@ export default class Home extends React.Component {
     const {} = this.props
 
     return (
-      <div>
-        <h1>Welcome to the Powerballot 2016 Home Page</h1>
-        <FindYourBallot />
+      <div className={styles['container']}>
+        <div className={classnames('row', styles['body'])}>
+          <div className={styles['main-section']}>
+            <FindYourBallotContainer />
+            <Instructions />
+          </div>
+          <div className={styles['sidebar-container']}>
+            <Sidebar />
+          </div>
+        </div>
+        <div className={classnames('row', styles['other-links-container'])}>
+          <h3 className='underline-header'>
+            Other Links
+          </h3>
+          <div className={styles['other-links']}>
+            <OtherLinks />
+          </div>
+        </div>
       </div>
     )
   }

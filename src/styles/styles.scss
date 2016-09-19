@@ -1,11 +1,27 @@
+@import 'src/styles/_mixins.scss';
+
 :global {
   body {
     font-family: 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+  }
+  // Prevent horizontal scrolling
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .row {
-    max-width: 700px;
+    max-width: 740px;
     margin: 0 auto;
+  }
+
+  .bold, b {
+    font-weight: 600;
+  }
+
+  .underline-header {
+    @include underline-header();
   }
 }

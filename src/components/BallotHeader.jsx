@@ -3,6 +3,8 @@ import React, { PropTypes } from 'react'
 import SvgIcon from './common/SvgIcon.jsx'
 import BallotPrecinct from 'src/components/BallotPrecinct.jsx'
 
+import YourIcon from 'src/assets/icon_yourpowerballot-10.svg'
+
 import styles from './ballot-header.scss'
 
 export default class BallotHeader extends React.Component {
@@ -13,7 +15,7 @@ export default class BallotHeader extends React.Component {
     return (
       <div className={styles['container']}>
         <div className={styles['header']}>
-          <SvgIcon className={styles['icon']} icon='yourIcon' width='77px' height='65px' />
+          <SvgIcon className={styles['icon']} icon={YourIcon} width='77px' height='65px' />
 
           <div className={styles['title-container']}>
             <span className={styles['title']}>

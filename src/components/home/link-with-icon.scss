@@ -1,0 +1,15 @@
+.container {
+  max-width: 100px;
+  margin: 0 8px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.icon {
+  margin-bottom: 8px;
+}
+
+.title {
+
+}

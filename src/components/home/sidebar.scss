@@ -1,0 +1,26 @@
+@import 'src/styles/_variables.scss';
+@import 'src/styles/_mixins.scss';
+
+.container {
+  padding: 0 8px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.header {
+  @include underline-header();
+  margin: 0 0 10px;
+}
+
+.event-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.separator {
+  padding-top: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid $key-dates-rule-divider;
+}
