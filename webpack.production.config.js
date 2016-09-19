@@ -2,6 +2,7 @@ var config = require('./webpack.config.js')
 
 var path = require('path')
 var webpack = require('webpack')
+var StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin
 
 config.debug = false
 config.devtool = 'source-map'
@@ -19,5 +20,7 @@ config.plugins.push(new webpack.optimize.UglifyJsPlugin({
   sourceMap: true,
   compress: { warnings: false },
 }))
+// Needed to get the path to statically compiled js
+config.plugins.push(new StatsWriterPlugin())
 
 module.exports = config

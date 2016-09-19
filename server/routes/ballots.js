@@ -2,6 +2,7 @@ var express = require('express')
 var queryString = require('query-string')
 var router = express.Router()
 
+const {scriptUrl} = require('../services/server_helpers')
 const {getBallot} = require('../services/ballot')
 
 router.get('/:precinct', function (req, res) {
@@ -30,7 +31,11 @@ router.get('/:precinct', function (req, res) {
 
     res.render('index.jade', {
       initialState,
+      scriptUrl: scriptUrl(),
     })
+  }).catch((reason) => {
+    console.error('ERROR: unable to render', reason)
+    res.status(500).send('Unable to render ' + reason)
   })
 })
 

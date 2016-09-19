@@ -2,6 +2,7 @@ var path = require('path')
 var express = require('express')
 var bodyParser = require('body-parser')
 
+const {scriptUrl} = require('./server/services/server_helpers')
 var ballotsRoute = require('./server/routes/ballots')
 var candidatesRoute = require('./server/routes/admin_candidates')
 var apiRoute = require('./server/routes/api')
@@ -24,7 +25,9 @@ app.use('/ballot', ballotsRoute)
 app.use('/candidate', candidatesRoute)
 
 app.get('*', function (req, res) {
-  res.render('index.jade')
+  res.render('index.jade', {
+    scriptUrl: scriptUrl(),
+  })
 })
 
 app.listen(port, function () {

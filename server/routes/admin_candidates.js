@@ -2,6 +2,7 @@ var express = require('express')
 var queryString = require('query-string')
 var router = express.Router()
 
+const {scriptUrl} = require('../services/server_helpers')
 const { getFullCandidatePromise, setCandidateMetadata } = require('../services/candidate')
 
 router.get('/:candidateId', function (req, res) {
@@ -28,6 +29,7 @@ router.get('/:candidateId', function (req, res) {
 
     res.render('index.jade', {
       initialState,
+      scriptUrl: scriptUrl(),
     })
   })
 })
@@ -55,6 +57,7 @@ router.put('/:candidateId', function (req, res) {
 
     res.render('index.jade', {
       initialState,
+      scriptUrl: scriptUrl(),
     })
   })
 })
