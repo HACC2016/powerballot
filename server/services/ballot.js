@@ -1,10 +1,20 @@
 "use strict"
 
-const { getPrecinct } = require('./arc_gis')
+const { getPrecinct, getAllContests } = require('./arc_gis')
 const { getCandidatesForContests, getCandidatesMetadata } = require('./candidate')
 const { getPollingPlace } = require('./polling_place')
 
 const CANDIDATE_ID = 'Candidate_ID'
+
+function getAllContestIds() {
+  return getAllContests().then(results => {
+    const contestIds = results.map(result => {
+      return result.attributes.Contest_ID
+    })
+
+    return contestIds
+  })
+}
 
 function getDistrictInfo(dp) {
   return getPrecinct(dp).then(results => {
@@ -78,6 +88,20 @@ function getBallot(districtId) {
   })
 }
 
+function getStatewideBallot() {
+  return getAllContestIds().then(contestIds => {
+    const contestsWithCandidatesPr = getCandidatesMappedIntoContests(contestIds)
+    return contestsWithCandidatesPr.then(contests => {
+      const ballot = {
+        contests,
+        amendments: [],
+      }
+      return ballot
+    })
+  })
+}
+
 module.exports = {
   getBallot,
+  getStatewideBallot,
 }

@@ -10,3 +10,12 @@ export function getBallot (precinct) {
     return JSON.parse(data.text)
   })
 }
+
+export function getStatewideBallot () {
+  const url = `${API_BASE_URL}/statewide`
+  const request = SuperAgent.get(url)
+
+  return request.then((data) => {
+    return JSON.parse(data.text)
+  })
+}
