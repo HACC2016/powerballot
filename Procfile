@@ -1,1 +1,1 @@
-web: react-server start -p $PORT
+web: npm run start:production

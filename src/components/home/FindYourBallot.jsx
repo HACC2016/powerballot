@@ -6,7 +6,7 @@ import styles from './find-your-ballot.scss'
 
 export default class FindYourBallot extends React.Component {
   state = {
-    address: '1450 Ala Moana Blvd, Honolulu, HI 96814',
+    address: '',
     addressLookupResult: {},
     fetching: false,
   }
