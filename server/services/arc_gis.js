@@ -2,7 +2,7 @@ const SuperAgent = require('superagent')
 
 function getPowerBallot() {
   // HI2016G_PowerBallot_HACC
-  const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
+  const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
   console.log('service!')
 
   const result = SuperAgent.get(baseUrl)
@@ -19,8 +19,8 @@ function getPowerBallot() {
 
 function getCandidates() {
   // HI2016G_PowerBallot_HACC
-  const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/5/query'
-  // const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
+  const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/5/query'
+  // const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
   console.log('service!')
 
   const result = SuperAgent.get(baseUrl)
@@ -37,7 +37,7 @@ function getCandidates() {
 
 function getPrecincts() {
   // HI2016G_Precincts_HACC
-  const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
+  const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
 
   const result = SuperAgent.get(baseUrl)
   .query({
@@ -53,7 +53,7 @@ function getPrecincts() {
 
 function getPrecinct(dp) {
   // HI2016G_Precincts_HACC
-  const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
+  const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
 
   const result = SuperAgent.get(baseUrl)
   .query({
@@ -69,7 +69,7 @@ function getPrecinct(dp) {
 
 function getContests(ids) {
   // HI2016G_Precincts_HACC
-  const baseUrl = 'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/2/query'
+  const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/2/query'
 
   const idsString = ids.map(id => {return "'" + id + "'"}).join(',')
 
@@ -111,7 +111,7 @@ function geocodeAddress (address) {
 
 // Use the precinct service to lookup an address based on "esri" coordinates
 function lookupPrecinct (coordinates, spatialReference) {
-  const baseUrl =  'http://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
+  const baseUrl =  'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_Candidates/FeatureServer/1/query'
 
   const result = SuperAgent.get(baseUrl)
   .query({
