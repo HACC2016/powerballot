@@ -50,7 +50,8 @@
     "babel-eslint": "^6.1.2",
     "eslint": "3.5.0",
     "eslint-plugin-react": "6.2.1",
-    "nsp": "^2.3.3"
+    "nsp": "^2.3.3",
+    "webpack-notifier": "^1.4.1"
   },
   "engines": {
     "node": "6.4.0"
