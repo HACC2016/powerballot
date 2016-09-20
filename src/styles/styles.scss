@@ -12,6 +12,13 @@
     overflow-x: hidden;
   }
 
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
   .row {
     max-width: 740px;
     margin: 0 auto;

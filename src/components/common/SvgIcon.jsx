@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 
 export default class SvgIcon extends React.Component {
   render () {
-    const { icon, ...otherProps } = this.props
+    const { containerClassName, icon, ...otherProps } = this.props
 
     return (
-      <div>
+      <div className={containerClassName}>
         <svg {...otherProps}>
           <use xlinkHref={icon} />
         </svg>
@@ -15,5 +15,6 @@ export default class SvgIcon extends React.Component {
 }
 
 SvgIcon.propTypes = {
+  containerClassName: PropTypes.string,
   icon: PropTypes.string.isRequired,
 }

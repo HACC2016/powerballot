@@ -1,10 +1,10 @@
-@import '../../styles/_variables.scss';
+@import 'src/styles/_variables.scss';
 
 :local {
-  .header-container {
+  .container {
     background: $dark-grey;
     color: $white;
-    padding: 20px 0 10px;
+    padding: 30px 0 15px;
     font-size: 13px;
     font-weight: 500;
   }
@@ -19,5 +19,17 @@
 
   .subtext {
     max-width: 300px;
+  }
+
+  .row {
+    position: relative;
+  }
+
+  .vote-flag-container {
+    position: absolute;
+    top: -30px; right: 50px;
+    @media (max-width: 575px) {
+      display: none;
+    }
   }
 }

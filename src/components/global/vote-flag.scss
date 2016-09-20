@@ -1,0 +1,42 @@
+@import 'src/styles/_variables.scss';
+
+:local {
+  .flag-container {
+    width: 152px;
+    background: $royal-blue;
+    text-align: center;
+    padding: 10px 15px 20px;
+    box-shadow: 4px 4px 10px 0px #333;
+  }
+
+  .flag-title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .flag-date {
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .flag-link {
+    color: white;
+    font-size: 11px;
+  }
+
+  .stars {
+    font-size: 25px;
+    margin-bottom: 4px;
+  }
+
+  .striped-flag {
+    position: absolute;
+    left: 0; right: 0;
+    margin-top: 12px;
+    svg {
+      filter: drop-shadow(5px 10px 5px #a8a8a8);
+    }
+  }
+}
