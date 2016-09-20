@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 
 import AdminCandidate from 'src/components/AdminCandidate'
 
