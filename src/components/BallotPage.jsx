@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 
 import { getBallot } from 'src/services/api'
 
-import Ballot from 'src/components/Ballot'
+import Ballot from 'src/components/ballot/Ballot'
 
 export default class BallotPage extends React.Component {
   state = {

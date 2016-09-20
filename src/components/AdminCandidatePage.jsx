@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AdminCandidate from 'src/components/AdminCandidate'
+import AdminCandidate from 'src/components/admin/AdminCandidate'
 
 export default class AdminCandidatePage extends React.Component {
   componentDidUpdate () {

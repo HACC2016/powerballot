@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SvgIcon from './common/SvgIcon.jsx'
+import SvgIcon from 'src/components/common/SvgIcon.jsx'
 
 import StatewideIcon from 'src/assets/icon_statewide-12.svg'
 

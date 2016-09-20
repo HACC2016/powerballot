@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import CandidateFormField from 'src/components/CandidateFormField'
+import CandidateFormField from './CandidateFormField'
 
 const ignoredFields = [
   'id',

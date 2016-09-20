@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
-import CandidateDetails from 'src/components/CandidateDetails'
-import CandidateForm from 'src/components/CandidateForm'
+import CandidateDetails from 'src/components/ballot/CandidateDetails'
+import CandidateForm from './CandidateForm'
 
 import { updateCandidateMetadata } from 'src/services/candidate_utils'
 

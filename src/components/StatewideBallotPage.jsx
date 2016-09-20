@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getStatewideBallot } from 'src/services/api'
 
-import StatewideBallot from 'src/components/StatewideBallot'
+import StatewideBallot from 'src/components/ballot/StatewideBallot'
 
 export default class StatewideBallotPage extends React.Component {
   state = {

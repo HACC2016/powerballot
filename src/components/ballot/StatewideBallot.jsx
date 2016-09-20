@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import StatewideBallotHeader from 'src/components/StatewideBallotHeader'
-import Contest from 'src/components/Contest'
-
-import styles from './ballot.scss'
+import StatewideBallotHeader from './StatewideBallotHeader'
+import Contest from './Contest'
 
 export default class StatewideBallot extends React.Component {
 

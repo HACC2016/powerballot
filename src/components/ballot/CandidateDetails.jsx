@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import CandidateDetailsLink from 'src/components/CandidateDetailsLink.jsx'
-import CandidateDetailsLinks from 'src/components/CandidateDetailsLinks.jsx'
+import CandidateDetailsLink from './CandidateDetailsLink.jsx'
+import CandidateDetailsLinks from './CandidateDetailsLinks.jsx'
 import { getContestTitle } from 'src/services/contest_utils.js'
 import { partyIdToTitle } from 'src/services/candidate_utils.js'
 

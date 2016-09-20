@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import BallotPollingPlace from 'src/components/BallotPollingPlace.jsx'
+import BallotPollingPlace from './BallotPollingPlace.jsx'
 
 export default class BallotPrecinct extends React.Component {
 

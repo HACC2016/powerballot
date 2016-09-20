@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import SvgIcon from './common/SvgIcon.jsx'
-import BallotPrecinct from 'src/components/BallotPrecinct.jsx'
+import SvgIcon from 'src/components/common/SvgIcon.jsx'
+import BallotPrecinct from './BallotPrecinct.jsx'
 
 import YourIcon from 'src/assets/icon_yourpowerballot-10.svg'
 

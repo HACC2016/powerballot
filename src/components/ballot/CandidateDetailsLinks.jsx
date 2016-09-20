@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-import CandidateDetailsLink from 'src/components/CandidateDetailsLink.jsx'
+import CandidateDetailsLink from './CandidateDetailsLink.jsx'
 
 import parentStyles from './candidate-details.scss'
 
