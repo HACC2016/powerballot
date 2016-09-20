@@ -1,12 +1,33 @@
 @import 'src/styles/_variables.scss';
 
 :local {
+  .container {
+    position: relative;
+  }
+
+  .edit-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
   .candidate-name {
     font-weight: 600;
     font-size: 24px;
+    margin-bottom: 30px;
   }
 
   .content {
+    display: flex;
+  }
+
+  .photo-container {
+    margin-right: 20px;
+    img {
+      max-width: 150px;
+      height: auto;
+      max-height: 180px;
+    }
   }
 
   .section-title {

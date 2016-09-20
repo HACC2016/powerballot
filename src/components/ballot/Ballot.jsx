@@ -3,8 +3,6 @@ import React, { PropTypes } from 'react'
 import BallotHeader from './BallotHeader'
 import Contest from './Contest'
 
-import styles from './ballot.scss'
-
 export default class Ballot extends React.Component {
 
   _renderContest (contest) {

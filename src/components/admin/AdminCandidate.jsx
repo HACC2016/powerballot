@@ -4,6 +4,8 @@ import CandidateForm from './CandidateForm'
 
 import { updateCandidateMetadata } from 'src/services/candidate_utils'
 
+import styles from './admin-candidate.scss'
+
 export default class AdminCandidate extends React.Component {
 
   state = {
@@ -43,7 +45,9 @@ export default class AdminCandidate extends React.Component {
 
     return (
       <div>
-        <CandidateDetails candidate={candidate} />
+        <div className={styles['candidate-details-container']}>
+          <CandidateDetails candidate={candidate} />
+        </div>
         <CandidateForm
           candidateMetadata={metadata}
           updateCandidateField={this._updateCandidateField}
