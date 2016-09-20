@@ -20,21 +20,25 @@ export default function OtherLinks (props) {
         icon={ButtonStatewide}
         title='Statewide Power Ballot'
         description='All candidates and issues statewide'
+        to="/statewide"
       />
       <LinkWithIcon
         icon={ButtonVote}
         title='Register to Vote'
         description='Register to vote, update your voter file, and confirm registration'
+        href="http://elections.hawaii.gov/"
       />
       <LinkWithIcon
         icon={ButtonMailIn}
         title='Vote by Mail'
         description='Request to vote by mail'
+        href='https://olvr.hawaii.gov/'
       />
       <LinkWithIcon
         icon={ButtonVolunteer}
         title='Volunteer'
         description='Sign up to be an Election Day Official'
+        href='https://go.elections.hawaii.gov/signup/'
       />
       <LinkWithIcon
         icon={ButtonPollOfficial}
@@ -45,6 +49,7 @@ export default function OtherLinks (props) {
         icon={ButtonPollUnofficial}
         title='Find your polling place, Unofficial'
         description='Using your address'
+        href='http://civic-celerator.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=eabd4dbf3fcb48468cd92587b2d8729c'
       />
     </div>
   )

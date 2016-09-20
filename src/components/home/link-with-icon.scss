@@ -1,6 +1,10 @@
+@import 'src/styles/_variables.scss';
+
 .container {
   max-width: 100px;
   margin: 0 8px;
+  text-decoration: none;
+  color: black;
   &:first-child {
     margin-left: 0;
   }
