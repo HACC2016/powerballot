@@ -8,7 +8,7 @@ import VoteFlag from './VoteFlag'
 import 'normalize.css'
 import Logo from 'src/assets/power_ballot-09.svg'
 import styles from './header.scss'
-import '../../styles/styles.scss'
+import 'src/styles/styles.scss'
 
 export default class Header extends React.Component {
   render () {
