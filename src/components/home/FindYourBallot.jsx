@@ -4,7 +4,7 @@ import styles from './find-your-ballot.scss'
 
 export default class FindYourBallot extends React.Component {
   render () {
-    const { fetching, onChange, onKeyPress, value } = this.props
+    const { fetching, onChange, onKeyPress, value, onSubmitHandler } = this.props
 
     return (
       <div className={styles['container']}>
@@ -19,8 +19,8 @@ export default class FindYourBallot extends React.Component {
             onChange={onChange}
             onKeyPress={onKeyPress}
             value={value}
-          z/>
-          <div className={styles['go-button']} onClick={this._lookupAddress}>
+          />
+          <div className={styles['go-button']} onClick={onSubmitHandler}>
             GO
           </div>
         </div>
@@ -35,4 +35,5 @@ FindYourBallot.propTypes = {
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
   value: PropTypes.string,
+  onSubmitHandler: PropTypes.func,
 }

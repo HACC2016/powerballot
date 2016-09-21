@@ -53,6 +53,7 @@ export default class FindYourBallotContainer extends React.Component {
         onChange={this._updateAddress}
         onKeyPress={this._onKeyPress}
         value={address}
+        onSubmitHandler={this._lookupAddress}
       />
     )
   }
