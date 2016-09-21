@@ -26,11 +26,12 @@ export default class BallotCandidate extends React.Component {
 
     return (
       <div className={styles['container']}>
-        <div className={styles['photo-container']}>
+        <div className={styles['photo-container']} onClick={this._showModal}>
           {candidate.metadata.photo_url
           ? <img src={candidate.metadata.photo_url} />
           : <SvgIcon icon={NoPhoto} width={64} height={75} /> }
         </div>
+
         <div className={styles['details']}>
           <div className={styles['name']}>
             <a onClick={this._showModal}>
@@ -44,6 +45,7 @@ export default class BallotCandidate extends React.Component {
 
         <Modal
           containerClassName={styles['modal-container']}
+          style={{fontFamily: 'inherit'}}
           closeOnOuterClick={true}
           show={this.state.showModal}
           onClose={this._closeModal}

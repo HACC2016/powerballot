@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react'
 
-import CandidateDetailsLink from './CandidateDetailsLink.jsx'
-import CandidateDetailsLinks from './CandidateDetailsLinks.jsx'
 import { getContestTitle } from 'src/services/contest_utils.js'
 import { partyIdToTitle } from 'src/services/candidate_utils.js'
+
+import CandidateDetailsLink from './CandidateDetailsLink.jsx'
+import CandidateDetailsLinks from './CandidateDetailsLinks.jsx'
+import Fact from './Fact'
 
 import styles from './candidate-details.scss'
 
@@ -41,7 +43,9 @@ export default class CandidateDetails extends React.Component {
       <div className={styles['container']}>
         <div className={styles['candidate-name']}>
           {candidate.Candidate_Name} ({candidate.Candidate_Party})
-          <span> {candidate.metadata.incumbent_text}</span>
+          <span className={styles['incumbent-text']}>
+            {candidate.metadata.incumbent_text}
+          </span>
         </div>
         <div className={styles['edit-link']}><a href={`/candidate/${candidate.Candidate_ID}`}>Edit</a></div>
 
@@ -51,17 +55,9 @@ export default class CandidateDetails extends React.Component {
           </div>
           <div>
             <div>
-              <div>
-                <span className='bold'>Seeking Office:</span>
-                {getContestTitle(candidate.Contest_ID)}</div>
-              <div>
-                <span className='bold'>Party Affiliations:</span>
-                {partyIdToTitle(candidate.Candidate_Party)}
-              </div>
-              <div>
-                <span className='bold'>Occupation:</span>
-                {candidate.metadata.occupation}
-              </div>
+              <Fact label='Seeking Office' value={getContestTitle(candidate.Contest_ID)} />
+              <Fact label='Party Affiliations' value={partyIdToTitle(candidate.Candidate_Party)} />
+              <Fact label='Occupation' value={candidate.metadata.occupation} />
             </div>
 
             <div className={styles['separator']}></div>
@@ -71,9 +67,9 @@ export default class CandidateDetails extends React.Component {
                 <div className={styles['section-title']}>
                   Candidate Committee
                 </div>
-                <div>Name: {candidate.metadata.cc_name}</div>
-                <div>Chair: {candidate.metadata.cc_chair}</div>
-                <div>Treasurer: {candidate.metadata.cc_treasurer}</div>
+                <Fact label='Name' value={candidate.metadata.cc_name} />
+                <Fact label='Chair' value={candidate.metadata.cc_chair} />
+                <Fact label='Treasurer' value={candidate.metadata.cc_treasurer} />
                 <CandidateDetailsLink candidate={candidate} fieldName='cc_report_url' />
               </div>
               <CandidateDetailsLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
