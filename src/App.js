@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
 import Header from 'src/components/global/Header'
+import Footer from 'src/components/global/Footer'
 import BallotPage from 'src/components/BallotPage'
 import Home from 'src/components/home/Home'
 import StatewideBallotPage from 'src/components/StatewideBallotPage'
@@ -26,6 +27,7 @@ export default class App extends Component {
           <Match pattern="/ballot/:precinct" component={BallotPage} />
           <Match pattern="/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch}/>
+          <Footer />
         </div>
       </BrowserRouter>
     )

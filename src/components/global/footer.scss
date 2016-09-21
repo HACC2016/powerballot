@@ -1,0 +1,28 @@
+@import 'src/styles/_variables.scss';
+
+.container {
+  display: flex;
+  padding: 15px 20px;
+  background: $dark-grey;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.info-text {
+  font-size: 13px;
+  font-weight: 600;
+  margin-right: 30px;
+  line-height: 1.5;
+}
+
+.civic-celerator-logo {
+  max-width: 150px;
+}
+
+.about-text {
+  font-size: 10px;
+  padding-left: 10px;
+  border-left: 1px solid white;
+}
