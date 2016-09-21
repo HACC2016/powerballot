@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 
 import { metadataFieldNameToTitle } from 'src/services/candidate_utils'
 
+import styles from './candidate-form-field.scss'
+
 export default class CandidateFormField extends React.Component {
 
   _updateField = (e) => {
@@ -14,12 +16,14 @@ export default class CandidateFormField extends React.Component {
 
     return (
       <div>
-        <span>{metadataFieldNameToTitle(fieldName)}</span>
-          <input
-            type='text'
-            onChange={this._updateField}
-            value={value || ''}
-          />
+        <span className={styles['label']}>
+          {metadataFieldNameToTitle(fieldName)}
+        </span>
+        <input
+          type='text'
+          onChange={this._updateField}
+          value={value || ''}
+        />
       </div>
     )
   }

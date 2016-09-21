@@ -13,6 +13,7 @@ const ignoredFields = [
   'District',
   'name_party',
   'party_text',
+  'photo_width',
   'office_district',
 ]
 
