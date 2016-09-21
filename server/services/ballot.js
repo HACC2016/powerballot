@@ -8,8 +8,31 @@ const CANDIDATE_ID = 'Candidate_ID'
 
 function getAllContestIds() {
   return getAllContests().then(results => {
-    const contestIds = results.map(result => {
-      return result.attributes.Contest_ID
+    let contestIds = []
+    results.forEach(result => {
+      let contestId = undefined
+      switch (result.attributes.Contest_ID) {
+
+      // TODO: HACK: Need to resolve the issue between PVP and USPVP, shows up
+      // as USPVP in the contest ids, but for the candidates field its stored
+      // as PVP
+      case 'USPVP':
+        contestId = 'PVP'
+        break
+
+      // TODO: HACK: Also limit the results for some presidential fields that
+      // are unused
+      case 'USP':
+      case 'USVP':
+        break
+
+      default:
+        contestId = result.attributes.Contest_ID
+      }
+
+      if (contestId) {
+        contestIds.push(contestId)
+      }
     })
 
     return contestIds
