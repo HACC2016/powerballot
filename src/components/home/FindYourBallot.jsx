@@ -24,7 +24,7 @@ export default class FindYourBallot extends React.Component {
             GO
           </div>
         </div>
-        {fetching ? 'loading...': null}
+        {fetching ? 'searching...': null}
       </div>
     )
   }

@@ -36,11 +36,24 @@ export default class FindYourBallotContainer extends React.Component {
     const candidate = addressLookupResult.candidates[0]
     const spatialReference = addressLookupResult.spatialReference.wkid
 
-    lookupPrecinct(candidate.location, spatialReference).then((result) => {
-      const precinct = result[0].attributes.DP
-      this.setState({fetching: false})
-      this.context.router.transitionTo(`/ballot/${precinct}`)
-    })
+    if (candidate) {
+      lookupPrecinct(candidate.location, spatialReference).then((result) => {
+        if (result[0]) {
+          const precinct = result[0].attributes.DP
+          this.setState({fetching: false})
+          this.context.router.transitionTo(`/ballot/${precinct}`)
+        } else {
+          this._unableToFindPrecinct()
+        }
+      })
+    } else {
+      this._unableToFindPrecinct()
+    }
+  }
+
+  _unableToFindPrecinct () {
+    alert('unable to find precinct!')
+    this.setState({fetching: false})
   }
 
   render () {
