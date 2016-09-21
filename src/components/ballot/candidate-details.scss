@@ -12,9 +12,16 @@
   }
 
   .candidate-name {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 24px;
     margin-bottom: 30px;
+  }
+
+  .incumbent-text {
+    margin-left: 1em;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
   }
 
   .content {
@@ -32,14 +39,16 @@
 
   .section-title {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 8px;
+    font-weight: 700;
+    margin-bottom: 0.3em;
   }
 
   .separator {
     flex: 1 100%;
     background-color: black;
     height: 1px;
-    margin: 5px 0;
+    margin: 15px 0;
   }
 
   .section {

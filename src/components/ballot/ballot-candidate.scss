@@ -8,6 +8,7 @@
 
   .photo-container {
     margin-right: 8px;
+    cursor: pointer;
     img {
       width: 64px;
       height: auto;
@@ -28,7 +29,7 @@
   }
 
   .modal-container {
-    width: 80vw !important;
+    width: 90vw !important;
     max-width: 750px;
   }
 }
