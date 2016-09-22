@@ -4731,14 +4731,8 @@
     },
     "query-string": {
       "version": "4.2.3",
-      "from": "query-string@latest",
-      "resolved": "https://registry.npmjs.org/query-string/-/query-string-4.2.3.tgz",
-      "dependencies": {
-        "object-assign": {
-          "version": "4.1.0",
-          "from": "object-assign@>=4.1.0 <5.0.0"
-        }
-      }
+      "from": "query-string@>=4.2.3 <5.0.0",
+      "resolved": "https://registry.npmjs.org/query-string/-/query-string-4.2.3.tgz"
     },
     "querystring": {
       "version": "0.2.0",
