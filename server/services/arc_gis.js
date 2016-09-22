@@ -75,6 +75,7 @@ function getAllContests() {
   .query({
     where: "1=1",
     outFields: '*',
+    orderByFields: 'Contest_Order',
     f: 'pjson',
   })
 
