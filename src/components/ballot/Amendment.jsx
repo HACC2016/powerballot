@@ -30,7 +30,10 @@ export default class Amendment extends React.Component {
           {contests.map((contest, i) => {
             return (
               <div key={i} className={styles['amendment-name']}>
-                #{i+1}: {this._renderSingleAmendmentName(contest.Contest_Name)}
+                <a href="http://elections.hawaii.gov/voters/constitutional-and-charter-amendment-questions/"
+                  className={styles['amendment-link']}>
+                  #{i+1}: {this._renderSingleAmendmentName(contest.Contest_Name)}
+                </a>
               </div>
             )
           })}
