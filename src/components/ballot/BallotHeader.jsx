@@ -2,15 +2,28 @@ import React, { PropTypes } from 'react'
 
 import SvgIcon from 'src/components/common/SvgIcon.jsx'
 import BallotPrecinct from './BallotPrecinct.jsx'
+import EmbeddedMap from './EmbeddedMap.jsx'
 
 import YourIcon from 'src/assets/icon_yourpowerballot-10.svg'
 
 import styles from './ballot-header.scss'
 
 export default class BallotHeader extends React.Component {
+  state = {
+    showEmbeddedMap: false,
+  }
+
+  _toggleEmbeddedMap = () => {
+    this.setState((state) => {
+      return {
+        showEmbeddedMap: !state.showEmbeddedMap,
+      }
+    })
+  }
 
   render () {
-    const { address, ballot, precinct } = this.props
+    const { address, ballot, coordinates, precinct } = this.props
+    const { showEmbeddedMap } = this.state
 
     return (
       <div className={styles['container']}>
@@ -30,7 +43,12 @@ export default class BallotHeader extends React.Component {
           <BallotPrecinct
             address={address}
             pollingPlace={ballot.pollingPlace}
-            precinct={precinct} />
+            precinct={precinct}
+          />
+          <a className={styles['toggle-map-link']} onClick={this._toggleEmbeddedMap}>Toggle Map</a>
+          {showEmbeddedMap
+          ? <EmbeddedMap latitude={coordinates.latitude} longitude={coordinates.longitude} />
+          : null}
         </div>
       </div>
     )
@@ -39,6 +57,7 @@ export default class BallotHeader extends React.Component {
 
 BallotHeader.propTypes = {
   address: PropTypes.string,
+  coordinates: PropTypes.object,
   ballot: PropTypes.object,
   precinct: PropTypes.string,
 }

@@ -11,7 +11,7 @@ import styles from './home.scss'
 export default class Home extends React.Component {
 
   render () {
-    const {updateMatchedAddress} = this.props
+    const {updateMatchedAddress, updateMatchedCoordinates} = this.props
 
     return (
       <div className={styles['container']}>
@@ -19,6 +19,7 @@ export default class Home extends React.Component {
           <div className={styles['main-section']}>
             <FindYourBallotContainer
               updateMatchedAddress={updateMatchedAddress}
+              updateMatchedCoordinates={updateMatchedCoordinates}
             />
             <Instructions />
           </div>
@@ -41,4 +42,5 @@ export default class Home extends React.Component {
 
 Home.propTypes = {
   updateMatchedAddress: PropTypes.func,
+  updateMatchedCoordinates: PropTypes.func,
 }

@@ -13,21 +13,24 @@ import AdminCandidatePage from 'src/components/AdminCandidatePage'
 export default class App extends Component {
   state = {
     matchedAddress: '',
+    matchedCoordinates: {},
   }
 
   _updateMatchedAddress = (matchedAddress) => this.setState({matchedAddress})
+  _updateMatchedCoordinates = (matchedCoordinates) => this.setState({matchedCoordinates})
 
   _renderHomePage = () => {
     return (
       <Home
         updateMatchedAddress={this._updateMatchedAddress}
+        updateMatchedCoordinates={this._updateMatchedCoordinates}
       />
     )
   }
 
   _renderBallotPage = (props) => {
-    const { matchedAddress } = this.state
-    return <BallotPage {...props} matchedAddress={matchedAddress} />
+    const { matchedAddress, matchedCoordinates } = this.state
+    return <BallotPage {...props} matchedAddress={matchedAddress} matchedCoordinates={matchedCoordinates} />
   }
 
   render() {

@@ -110,9 +110,7 @@ function geocodeAddress (address) {
   const result = SuperAgent.get(baseUrl)
   .query({
     SingleLine: address,
-    // Might need to change formatting
-    // inSR: { wkid: 4326 }????
-    outSR: { wkid: 102100 },
+    outSR: { wkid: 4326 },
     outFields: 'Match_addr,stAddr,City',
     // TOO: add auto suggest to get a magicKey
     // &magicKey=GST7YMc0AM9UOsE3GY8tIS9GOghnYnwZIip_GQypG1c915KHUTFOYNaHUTBtQNcpOh9bZgKZQoc3YSyaagDIZhkZQsxKQN4mDb8uAgTvDM8F
