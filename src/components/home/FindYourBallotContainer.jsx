@@ -1,5 +1,7 @@
+/* global ga:false */
 import React, { PropTypes } from 'react'
 
+// eslint-disable-next-line import/named
 import { geocodeAddress, lookupPrecinct } from 'server/services/arc_gis'
 
 import FindYourBallot from './FindYourBallot'
@@ -21,6 +23,10 @@ export default class FindYourBallotContainer extends React.Component {
   }
 
   _lookupAddress = () => {
+    if (typeof ga !== 'undefined') {
+      ga('send', 'event', 'button', 'navigation', 'find_your_power_ballot', 1)
+    }
+
     const { address } = this.state
     // Do query and then update state with output and display below
     geocodeAddress(address).then((result) => {

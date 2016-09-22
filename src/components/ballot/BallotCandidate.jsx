@@ -1,3 +1,4 @@
+/* global ga:true */
 import React, { PropTypes } from 'react'
 import Modal, {closeStyle} from 'simple-react-modal'
 
@@ -14,7 +15,11 @@ export default class BallotCandidate extends React.Component {
   state = {}
 
   _showModal = () => {
+    const { Candidate_Name } = this.props.candidate
     this.setState({showModal: true})
+    if (typeof ga !== 'undefined') {
+      ga('send', 'event', 'button', 'click', Candidate_Name, 1)
+    }
   }
 
   _closeModal = () => {
