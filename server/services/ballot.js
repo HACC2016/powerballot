@@ -15,9 +15,9 @@ function getAllContestIds() {
 
       // TODO: HACK: Need to resolve the issue between PVP and USPVP, shows up
       // as USPVP in the contest ids, but for the candidates field its stored
-      // as PVP
+      // as PVP.
+      // UPDATE: both now show up, so just skip it
       case 'USPVP':
-        contestId = 'PVP'
         break
 
       // TODO: HACK: Also limit the results for some presidential fields that
