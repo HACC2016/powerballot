@@ -3,7 +3,6 @@ const SuperAgent = require('superagent')
 function getPowerBallot() {
   // HI2016G_PowerBallot_HACC
   const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
-  console.log('service!')
 
   const result = SuperAgent.get(baseUrl)
   .query({

@@ -63,12 +63,14 @@ export default class BallotPage extends React.Component {
   }
 
   render () {
+    const { matchedAddress } = this.props
     const { precinct } = this.props.params
     const { ballot } = this.state
     if (!this._hasData()) return <div>Loading...</div>
 
     return (
       <Ballot
+        address={matchedAddress}
         ballot={ballot}
         precinct={precinct}
       />
@@ -77,6 +79,7 @@ export default class BallotPage extends React.Component {
 }
 
 BallotPage.propTypes = {
+  matchedAddress: PropTypes.string,
   params: PropTypes.object,
   precinct: PropTypes.string,
 }

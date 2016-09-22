@@ -11,6 +11,25 @@ import StatewideBallotPage from 'src/components/StatewideBallotPage'
 import AdminCandidatePage from 'src/components/AdminCandidatePage'
 
 export default class App extends Component {
+  state = {
+    matchedAddress: '',
+  }
+
+  _updateMatchedAddress = (matchedAddress) => this.setState({matchedAddress})
+
+  _renderHomePage = () => {
+    return (
+      <Home
+        updateMatchedAddress={this._updateMatchedAddress}
+      />
+    )
+  }
+
+  _renderBallotPage = (props) => {
+    const { matchedAddress } = this.state
+    return <BallotPage {...props} matchedAddress={matchedAddress} />
+  }
+
   render() {
     const adminNav = (
       <ul>
@@ -26,9 +45,9 @@ export default class App extends Component {
         <div>
           <Header />
           {authenticated() ? adminNav : null}
-          <Match exactly pattern="/" component={Home} />
+          <Match exactly pattern="/" render={this._renderHomePage} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
-          <Match pattern="/ballot/:precinct" component={BallotPage} />
+          <Match pattern="/ballot/:precinct" render={this._renderBallotPage} />
           <Match pattern="/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch} />
           <Footer />

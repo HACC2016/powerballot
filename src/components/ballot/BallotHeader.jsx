@@ -10,7 +10,7 @@ import styles from './ballot-header.scss'
 export default class BallotHeader extends React.Component {
 
   render () {
-    const { ballot, precinct } = this.props
+    const { address, ballot, precinct } = this.props
 
     return (
       <div className={styles['container']}>
@@ -28,7 +28,7 @@ export default class BallotHeader extends React.Component {
         </div>
         <div className={styles['contents']}>
           <BallotPrecinct
-            address='222 Drive'
+            address={address}
             pollingPlace={ballot.pollingPlace}
             precinct={precinct} />
         </div>
@@ -38,6 +38,7 @@ export default class BallotHeader extends React.Component {
 }
 
 BallotHeader.propTypes = {
+  address: PropTypes.string,
   ballot: PropTypes.object,
   precinct: PropTypes.string,
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import classnames from 'classnames'
 
 import FindYourBallotContainer from './FindYourBallotContainer'
@@ -11,13 +11,15 @@ import styles from './home.scss'
 export default class Home extends React.Component {
 
   render () {
-    const {} = this.props
+    const {updateMatchedAddress} = this.props
 
     return (
       <div className={styles['container']}>
         <div className={classnames('row', styles['body'])}>
           <div className={styles['main-section']}>
-            <FindYourBallotContainer />
+            <FindYourBallotContainer
+              updateMatchedAddress={updateMatchedAddress}
+            />
             <Instructions />
           </div>
           <div className={styles['sidebar-container']}>
@@ -38,4 +40,5 @@ export default class Home extends React.Component {
 }
 
 Home.propTypes = {
+  updateMatchedAddress: PropTypes.func,
 }

@@ -12,14 +12,14 @@ export default class Ballot extends React.Component {
   }
 
   render () {
-    const { ballot, precinct } = this.props
+    const { address, ballot, precinct } = this.props
     if (!ballot) return null
     const { contests } = ballot
 
     return (
       <div>
         <div className='row'>
-          <BallotHeader ballot={ballot} precinct={precinct} />
+          <BallotHeader address={address} ballot={ballot} precinct={precinct} />
           {contests.map(this._renderContest)}
         </div>
       </div>
@@ -28,6 +28,7 @@ export default class Ballot extends React.Component {
 }
 
 Ballot.propTypes = {
+  address: PropTypes.string,
   ballot: PropTypes.object,
   precinct: PropTypes.string,
 }
