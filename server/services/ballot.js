@@ -105,10 +105,14 @@ function getCandidatesMappedIntoContests(contestIds) {
         }
       })
 
-      const contests = contestIds.map(contestId => {
-        return {
-          Contest_ID: contestId,
-          candidates: contestIdToCandidates[contestId] || [],
+      // Only build up the array of contests with candidates
+      let contests = []
+      contestIds.forEach(contestId => {
+        if (contestIdToCandidates[contestId]) {
+          contests.push({
+            Contest_ID: contestId,
+            candidates: contestIdToCandidates[contestId],
+          })
         }
       })
 
