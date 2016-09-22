@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
+import { authenticated } from 'src/services/authentication_utils'
+
 import Header from 'src/components/global/Header'
 import Footer from 'src/components/global/Footer'
 import BallotPage from 'src/components/BallotPage'
@@ -10,18 +12,20 @@ import AdminCandidatePage from 'src/components/AdminCandidatePage'
 
 export default class App extends Component {
   render() {
+    const adminNav = (
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/statewide">View Statewide Ballot</Link></li>
+        <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
+        <li><a href="/candidate/USSa">Edit Example Candidate</a></li>
+      </ul>
+    )
 
     return (
       <BrowserRouter>
         <div>
           <Header />
-          <ul>
-            {/* 3. Link to some paths with `Link` */}
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/statewide">View Statewide Ballot</Link></li>
-            <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
-            <li><a href="/candidate/USSa">Edit Example Candidate</a></li>
-          </ul>
+          {authenticated() ? adminNav : null}
           <Match exactly pattern="/" component={Home} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
           <Match pattern="/ballot/:precinct" component={BallotPage} />
