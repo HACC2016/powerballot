@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import { Link } from 'react-router'
 
 import SvgIcon from 'src/components/common/SvgIcon.jsx'
 
@@ -18,7 +19,9 @@ export default class Header extends React.Component {
       <div className={styles['container']}>
         <div className={classnames('row', styles['row'])}>
           <div>STATE OF HAWAII</div>
-          <SvgIcon icon={Logo} className={styles['logo']} />
+          <Link to="/">
+            <SvgIcon icon={Logo} className={styles['logo']} />
+          </Link>
           <div className={styles['subtext']}>
             A robust guide to <u>who</u> and <u>what</u> we will be voting for in the 2016 General Election.
           </div>
