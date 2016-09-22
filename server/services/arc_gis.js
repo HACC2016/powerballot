@@ -89,8 +89,6 @@ function getContests(ids) {
 
   const idsString = ids.map(id => {return "'" + id + "'"}).join(',')
 
-  console.log('idsString', idsString)
-
   const result = SuperAgent.get(baseUrl)
   .query({
     where: "Contest_ID in (" + idsString + ")",
