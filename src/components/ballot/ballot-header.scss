@@ -18,6 +18,10 @@
     background: $dark-grey;
     color: $white;
     height: 50px;
+
+    @media (max-width: 450px) {
+      height: auto;
+    }
   }
 
   .icon {
