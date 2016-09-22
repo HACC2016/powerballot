@@ -1,17 +1,19 @@
 "use strict"
 
-const { getPrecinct, getAllContests } = require('./arc_gis')
+const { getPrecinct, getContests, getAllContests } = require('./arc_gis')
 const { getCandidatesForContests, getCandidatesMetadata } = require('./candidate')
 const { getPollingPlace } = require('./polling_place')
 
 const CANDIDATE_ID = 'Candidate_ID'
 
-function getAllContestIds() {
+function getAllContestsAndAmendments() {
   return getAllContests().then(results => {
     let contestIds = []
+    let amendmentResults = []
     results.forEach(result => {
+      const contest = result.attributes
       let contestId = undefined
-      switch (result.attributes.Contest_ID) {
+      switch (contest.Contest_ID) {
 
       // TODO: HACK: Need to resolve the issue between PVP and USPVP, shows up
       // as USPVP in the contest ids, but for the candidates field its stored
@@ -30,12 +32,24 @@ function getAllContestIds() {
         contestId = result.attributes.Contest_ID
       }
 
+      const isAmendment = Number(contest.Contest_Order) >= 1500
+
       if (contestId) {
-        contestIds.push(contestId)
+        if (!isAmendment) {
+          contestIds.push(contestId)
+        }
+        else {
+          amendmentResults.push(result)
+        }
       }
     })
 
-    return contestIds
+    let amendments = parseContestResultsIntoAmendmentsArray(amendmentResults)
+
+    return {
+      contestIds,
+      amendments,
+    }
   })
 }
 
@@ -47,10 +61,21 @@ function getDistrictInfo(dp) {
       return result.attributes.Contests.split('-')
     })
 
+    let amendmentsFromAllDistricts = results.map(result => {
+      return result.attributes.Amendments.split('-')
+    })
+
     const allContests = [].concat.apply([], contestsFromAllDistricts)
+    const allAmendmentContestIds = [].concat.apply([], amendmentsFromAllDistricts)
+
+    const allCandidateContests = allContests.filter(contestId => {
+      return allAmendmentContestIds.indexOf(contestId) < 0
+    })
+
     return {
       pollingId: pollingId,
-      contestIds: allContests,
+      contestIds: allCandidateContests,
+      amendmentIds: allAmendmentContestIds,
     }
   })
 }
@@ -92,18 +117,59 @@ function getCandidatesMappedIntoContests(contestIds) {
   })
 }
 
+function parseContestResultsIntoAmendmentsArray(results) {
+  let amendmentMap = {}
+  results.forEach(result => {
+    const contest = result.attributes
+    const amendmentGroupId = Math.floor(contest.Contest_Order / 100)
+
+    if (amendmentMap[amendmentGroupId]) {
+      amendmentMap[amendmentGroupId].contests.push(contest)
+    }
+    else {
+      amendmentMap[amendmentGroupId] = {
+        id: amendmentGroupId,
+        name: parseAmendmentGroupName(contest.Contest_Name),
+        contests: [
+          contest,
+        ],
+      }
+    }
+  })
+
+  let amendmentArray = []
+  Object.keys(amendmentMap).forEach(id => {
+    amendmentArray.push(amendmentMap[id])
+  })
+
+  return amendmentArray
+}
+
+function getAmendmentsArray(contestIds) {
+  return getContests(contestIds).then(results => {
+    const amendmentsArray = parseContestResultsIntoAmendmentsArray(results)
+    return amendmentsArray
+  })
+}
+
+function parseAmendmentGroupName(contestName) {
+  const n = contestName.indexOf(':')
+  return contestName.substring(0, n !== -1 ? n : contestName.length)
+}
+
 function getBallot(districtId) {
   return getDistrictInfo(districtId).then(districtInfo => {
-    const {pollingId, contestIds} = districtInfo
+    const {pollingId, contestIds, amendmentIds} = districtInfo
 
     const pollingPlacePr = getPollingPlace(pollingId)
     const contestsWithCandidatesPr = getCandidatesMappedIntoContests(contestIds)
+    const amendmentsPr = getAmendmentsArray(amendmentIds)
 
-    return Promise.all([pollingPlacePr, contestsWithCandidatesPr]).then(results => {
+    return Promise.all([pollingPlacePr, contestsWithCandidatesPr, amendmentsPr]).then(results => {
       const ballot = {
         pollingPlace: results[0],
         contests: results[1],
-        amendments: [],
+        amendments: results[2],
       }
 
       return ballot
@@ -112,12 +178,13 @@ function getBallot(districtId) {
 }
 
 function getStatewideBallot() {
-  return getAllContestIds().then(contestIds => {
+  return getAllContestsAndAmendments().then(results => {
+    const { contestIds, amendments } = results
     const contestsWithCandidatesPr = getCandidatesMappedIntoContests(contestIds)
     return contestsWithCandidatesPr.then(contests => {
       const ballot = {
         contests,
-        amendments: [],
+        amendments: amendments,
       }
       return ballot
     })

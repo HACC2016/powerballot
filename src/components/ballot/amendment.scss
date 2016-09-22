@@ -1,0 +1,28 @@
+@import 'src/styles/_variables.scss';
+
+:local {
+  .header {
+    font-size: 18px;
+    font-weight: 600;
+    color: $white;
+    background: $medium-grey;
+    padding: 8px 20px;
+  }
+
+  .amendment-group-description {
+    background: $light-grey;
+    padding: 16px 20px 8px 20px
+  }
+
+  .amendment-list {
+    background: $light-grey;
+    padding: 8px 20px;
+  }
+
+  .amendment-name {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+  }
+}
