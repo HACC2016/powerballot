@@ -77,5 +77,6 @@ export default class BallotPage extends React.Component {
 }
 
 BallotPage.propTypes = {
+  params: PropTypes.object,
   precinct: PropTypes.string,
 }

@@ -63,7 +63,7 @@ export default class CandidateDetails extends React.Component {
               <Fact label='Occupation' value={candidate.metadata.occupation} />
             </div>
 
-            <div className={styles['separator']}></div>
+            <div className={styles['separator']} />
 
             <div className={styles['section']}>
               <div className={styles['column']}>
@@ -78,14 +78,14 @@ export default class CandidateDetails extends React.Component {
               <CandidateDetailsLinks className={styles['column']} title="Campaign Finance Links" candidate={candidate} links={campaignLinks} />
             </div>
 
-            <div className={styles['separator']}></div>
+            <div className={styles['separator']} />
 
             <div className={styles['section']}>
               <CandidateDetailsLinks className={styles['column']} title="Candidate Links" candidate={candidate} links={candidateLinks} />
               <CandidateDetailsLinks className={styles['column']} title="Other Links" candidate={candidate} links={otherLinks} />
             </div>
 
-            <div className={styles['separator']}></div>
+            <div className={styles['separator']} />
             <div>See a mistake? Have a suggestion? <a href='mailto:hawaiipowerballot@gmail.com'>Let us know</a></div>
           </div>
         </div>

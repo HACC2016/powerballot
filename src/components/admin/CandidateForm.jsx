@@ -53,4 +53,6 @@ export default class CandidateForm extends React.Component {
 
 CandidateForm.propTypes = {
   candidateMetadata: PropTypes.object,
+  updateCandidateField: PropTypes.func.isRequired,
+  saveMetadata: PropTypes.func.isRequired,
 }

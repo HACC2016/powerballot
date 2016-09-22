@@ -39,11 +39,11 @@ export default class CandidateDetailsLink extends React.Component {
     const linkObject = this._createLinkObject(metadata, fieldName)
 
     return (
-        <div>
-          { linkObject.href ?
-            this._renderKnownLink(linkObject) :
-            this._renderUnknownLink(linkObject) }
-        </div>
+      <div>
+        { linkObject.href
+        ? this._renderKnownLink(linkObject)
+        : this._renderUnknownLink(linkObject) }
+      </div>
     )
   }
 }

@@ -30,7 +30,7 @@ export default class App extends Component {
           <Match pattern="/statewide" component={StatewideBallotPage} />
           <Match pattern="/ballot/:precinct" component={BallotPage} />
           <Match pattern="/candidate" component={AdminCandidatePage} />
-          <Miss component={NoMatch}/>
+          <Miss component={NoMatch} />
           <Footer />
         </div>
       </BrowserRouter>
@@ -38,9 +38,14 @@ export default class App extends Component {
   }
 }
 
-const NoMatch = ({ location }) => (
-  <div>
+const NoMatch = () => (
+  <div className='row'>
     <h2>Whoops</h2>
-    <p>Sorry but {location.pathname} didn’t match any pages</p>
+    <p>Sorry but we weren't able to find the page you were looking for</p>
+    <Link to="/">Start Over</Link>
+    <br />
+    <br />
+    <br />
+    <br />
   </div>
 )

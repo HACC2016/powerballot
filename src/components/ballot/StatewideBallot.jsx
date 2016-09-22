@@ -19,7 +19,7 @@ export default class StatewideBallot extends React.Component {
     return (
       <div>
         <div className='row'>
-          <StatewideBallotHeader/>
+          <StatewideBallotHeader />
           {contests.map(this._renderContest)}
         </div>
       </div>

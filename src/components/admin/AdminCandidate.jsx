@@ -51,7 +51,8 @@ export default class AdminCandidate extends React.Component {
         <CandidateForm
           candidateMetadata={metadata}
           updateCandidateField={this._updateCandidateField}
-          saveMetadata={this._saveMetadata}/>
+          saveMetadata={this._saveMetadata}
+        />
       </div>
     )
   }

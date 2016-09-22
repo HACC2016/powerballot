@@ -24,5 +24,7 @@ export default class CandidateDetailsLinks extends React.Component {
 
 CandidateDetailsLinks.propTypes = {
   candidate: PropTypes.object,
+  className: PropTypes.string,
   links: PropTypes.array,
+  title: PropTypes.string,
 }

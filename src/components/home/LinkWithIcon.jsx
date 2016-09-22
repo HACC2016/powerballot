@@ -33,6 +33,7 @@ export default function LinkWithIcon (props) {
 }
 
 LinkWithIcon.propTypes = {
+  href: PropTypes.string,
   icon: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

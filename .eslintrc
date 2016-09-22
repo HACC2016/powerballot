@@ -16,7 +16,9 @@
     "node": true,
     "jasmine": true
   },
+  "extends": [ "standard-react" ],
   "plugins": [
+    "import",
     "react"
   ],
   "rules": {
@@ -93,7 +95,14 @@
       0,
       "double"
     ],
+    "import/no-unresolved": [2, {"commonjs": true, "amd": true}],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
     "react/jsx-uses-react": 2,
+    "react/no-unused-prop-types": 2,
+    "jsx-quotes": 0,
     "semi": [
       2,
       "never"
@@ -104,5 +113,14 @@
     "space-unary-ops": 2,
     "valid-typeof": 2,
     "yoda": 0
+  },
+  "settings": {
+    "import/resolver": {
+       "webpack": { "config": "webpack.config.js" }
+     },
+    "import/ignore": [
+      "node_modules",
+      "\\.(scss|less|css|svg|png|jpg|gif)"
+    ]
   }
 }

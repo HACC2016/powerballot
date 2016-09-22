@@ -23,7 +23,7 @@ if (module.hot) {
     const NextApp = require('./App').default
     ReactDOM.render(
       <AppContainer>
-         <NextApp />
+        <NextApp />
       </AppContainer>,
       rootEl
     )

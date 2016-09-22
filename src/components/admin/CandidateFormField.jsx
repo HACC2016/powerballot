@@ -31,4 +31,6 @@ export default class CandidateFormField extends React.Component {
 
 CandidateFormField.propTypes = {
   fieldName: PropTypes.string,
+  updateCandidateField: PropTypes.func.isRequired,
+  value: PropTypes.string,
 }
