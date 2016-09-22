@@ -38,6 +38,7 @@ export default class FindYourBallotContainer extends React.Component {
   }
 
   _lookupPrecinct = () => {
+    const { updateMatchedAddress, updateMatchedCoordinates } = this.props
     const { addressLookupResult } = this.state
     const candidate = addressLookupResult.candidates[0]
     const spatialReference = addressLookupResult.spatialReference.wkid
@@ -47,6 +48,8 @@ export default class FindYourBallotContainer extends React.Component {
         if (result[0]) {
           const precinct = result[0].attributes.DP
           this.setState({fetching: false})
+          updateMatchedAddress(candidate.address)
+          updateMatchedCoordinates({latitude: candidate.location.x, longitude: candidate.location.y})
           this.context.router.transitionTo(`/ballot/${precinct}`)
         } else {
           this._unableToFindPrecinct()
@@ -79,6 +82,8 @@ export default class FindYourBallotContainer extends React.Component {
 }
 
 FindYourBallotContainer.propTypes = {
+  updateMatchedAddress: PropTypes.func,
+  updateMatchedCoordinates: PropTypes.func,
 }
 FindYourBallotContainer.contextTypes = {
   router: PropTypes.object,

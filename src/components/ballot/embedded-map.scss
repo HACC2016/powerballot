@@ -1,0 +1,23 @@
+:local {
+  .container {
+    position: relative;
+    padding-bottom: 80%;
+    height: 0;
+    max-width: 100%;
+  }
+  .container iframe, .container object, .container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+:global {
+  // I don't see what this is supposed to style
+  // small {
+  //   position: absolute;
+  //   z-index: 40;
+  //   bottom: 0;
+  //   margin-bottom: -15px;
+  // }
+}

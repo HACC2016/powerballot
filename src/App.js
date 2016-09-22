@@ -11,6 +11,28 @@ import StatewideBallotPage from 'src/components/StatewideBallotPage'
 import AdminCandidatePage from 'src/components/AdminCandidatePage'
 
 export default class App extends Component {
+  state = {
+    matchedAddress: '',
+    matchedCoordinates: {},
+  }
+
+  _updateMatchedAddress = (matchedAddress) => this.setState({matchedAddress})
+  _updateMatchedCoordinates = (matchedCoordinates) => this.setState({matchedCoordinates})
+
+  _renderHomePage = () => {
+    return (
+      <Home
+        updateMatchedAddress={this._updateMatchedAddress}
+        updateMatchedCoordinates={this._updateMatchedCoordinates}
+      />
+    )
+  }
+
+  _renderBallotPage = (props) => {
+    const { matchedAddress, matchedCoordinates } = this.state
+    return <BallotPage {...props} matchedAddress={matchedAddress} matchedCoordinates={matchedCoordinates} />
+  }
+
   render() {
     const adminNav = (
       <ul>
@@ -26,9 +48,9 @@ export default class App extends Component {
         <div>
           <Header />
           {authenticated() ? adminNav : null}
-          <Match exactly pattern="/" component={Home} />
+          <Match exactly pattern="/" render={this._renderHomePage} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
-          <Match pattern="/ballot/:precinct" component={BallotPage} />
+          <Match pattern="/ballot/:precinct" render={this._renderBallotPage} />
           <Match pattern="/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch} />
           <Footer />

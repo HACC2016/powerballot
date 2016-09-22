@@ -3,7 +3,6 @@ const SuperAgent = require('superagent')
 function getPowerBallot() {
   // HI2016G_PowerBallot_HACC
   const baseUrl = 'https://services2.arcgis.com/tuFQUQg1xd48W6M5/ArcGIS/rest/services/HACC_HI2016G_PowerBallot/FeatureServer/0/query'
-  console.log('service!')
 
   const result = SuperAgent.get(baseUrl)
   .query({
@@ -111,9 +110,7 @@ function geocodeAddress (address) {
   const result = SuperAgent.get(baseUrl)
   .query({
     SingleLine: address,
-    // Might need to change formatting
-    // inSR: { wkid: 4326 }????
-    outSR: { wkid: 102100 },
+    outSR: { wkid: 4326 },
     outFields: 'Match_addr,stAddr,City',
     // TOO: add auto suggest to get a magicKey
     // &magicKey=GST7YMc0AM9UOsE3GY8tIS9GOghnYnwZIip_GQypG1c915KHUTFOYNaHUTBtQNcpOh9bZgKZQoc3YSyaagDIZhkZQsxKQN4mDb8uAgTvDM8F
