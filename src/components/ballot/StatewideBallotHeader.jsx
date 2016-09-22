@@ -12,7 +12,7 @@ export default class StatewideBallotHeader extends React.Component {
     return (
       <div className={styles['container']}>
         <div className={styles['header']}>
-          <SvgIcon className={styles['icon']} icon={StatewideIcon} width='77px' height='65px' />
+          <SvgIcon className={styles['icon']} icon={StatewideIcon} width='77px' height='60px' />
 
           <div className={styles['title-container']}>
             <span className={styles['title']}>

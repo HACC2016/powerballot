@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 
 import { getContestTitle } from 'src/services/contest_utils.js'
 import { partyIdToTitle } from 'src/services/candidate_utils.js'
+import { authenticated } from 'src/services/authentication_utils'
 
 import CandidateDetailsLink from './CandidateDetailsLink.jsx'
 import CandidateDetailsLinks from './CandidateDetailsLinks.jsx'
@@ -47,7 +48,9 @@ export default class CandidateDetails extends React.Component {
             {candidate.metadata.incumbent_text}
           </span>
         </div>
-        <div className={styles['edit-link']}><a href={`/candidate/${candidate.Candidate_ID}`}>Edit</a></div>
+        {authenticated()
+        ? <div className={styles['edit-link']}><a href={`/candidate/${candidate.Candidate_ID}`}>Edit</a></div>
+        : null}
 
         <div className={styles['content']}>
           <div className={styles['photo-container']}>
