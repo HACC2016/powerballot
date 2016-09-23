@@ -49,7 +49,7 @@ export default function OtherLinks (props) {
         icon={ButtonPollUnofficial}
         title='Find your polling place, Unofficial'
         description='Using your address'
-        href='http://civic-celerator.maps.arcgis.com/apps/OnePane/basicviewer/index.html?appid=eabd4dbf3fcb48468cd92587b2d8729c'
+        href='http://civic-celerator.maps.arcgis.com/apps/webappviewer/index.html?id=5fba18ab076145109c62c3f2ab3b6e4f'
       />
     </div>
   )
