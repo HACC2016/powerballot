@@ -5,7 +5,7 @@ export function partyIdToTitle(partyId) {
   case 'a':
     return 'American Shopping Party'
   case 'c':
-    return 'Constitution Party of Hawaii'
+    return 'Constitution Party'
   case 'd':
     return 'Democratic Party'
   case 'g':

@@ -1,4 +1,3 @@
-
 @import 'src/styles/_variables.scss';
 
 $input-padding: 12px;
@@ -7,6 +6,7 @@ $input-padding: 12px;
   .candidate-form {
     display: table;
     width: 100%;
+    padding-left: 10px;
   }
 
   .save-button {

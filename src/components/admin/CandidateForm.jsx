@@ -17,6 +17,8 @@ const ignoredFields = [
   'party_text',
   'photo_width',
   'office_district',
+  'OE_SORT_ID',
+  'FTMORG_ID',
 ]
 
 export default class CandidateForm extends React.Component {
