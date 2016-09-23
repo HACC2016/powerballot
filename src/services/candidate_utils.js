@@ -104,7 +104,7 @@ export function metadataFieldNameToTitle(fieldName) {
   case 'pbs_hawaii_url':
     return 'PBS Hawaii Insights'
   case 'expenditure_viz_url':
-    return 'Campaign Expendictures Visualization'
+    return 'Campaign Expenditures Visualization'
   case 'staradvertiser_url':
     return 'Star Advertiser'
   }
