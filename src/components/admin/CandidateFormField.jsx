@@ -15,11 +15,12 @@ export default class CandidateFormField extends React.Component {
     const { fieldName, value} = this.props
 
     return (
-      <div>
+      <div className={styles['row']}>
         <span className={styles['label']}>
           {metadataFieldNameToTitle(fieldName)}
         </span>
         <input
+          className={styles['field']}
           type='text'
           onChange={this._updateField}
           value={value || ''}

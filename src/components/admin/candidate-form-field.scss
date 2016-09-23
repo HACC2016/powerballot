@@ -1,3 +1,20 @@
-.label {
-  margin-right: 8px;
+
+@import 'src/styles/_variables.scss';
+:local {
+  .row {
+    display: table-row;
+  }
+
+  .label {
+    display: table-cell;
+    margin-right: 8px;
+    text-align: right;
+    padding: 5px;
+    width: 220px;
+  }
+
+  .field {
+    display: table-cell;
+    width: 100%;
+  }
 }

@@ -1,0 +1,18 @@
+
+@import 'src/styles/_variables.scss';
+
+$input-padding: 12px;
+
+:local {
+  .candidate-form {
+    display: table;
+    width: 100%;
+  }
+
+  .save-button {
+    cursor: pointer;
+    background: $medium-blue;
+    padding: $input-padding;
+    text-align: center;
+  }
+}

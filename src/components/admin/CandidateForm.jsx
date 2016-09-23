@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react'
 
 import CandidateFormField from './CandidateFormField'
 
+import styles from './candidate-form.scss'
+
 const ignoredFields = [
   'id',
   'Candidate_ID',
@@ -36,13 +38,15 @@ export default class CandidateForm extends React.Component {
 
     return (
       <div>
-        { Object.keys(candidateMetadata).map((fieldName, index) => {
-          if (!ignoredFields.includes(fieldName)) {
-            return this._renderField(candidateMetadata, fieldName, index)
-          }
-        }) }
+        <div className={styles['candidate-form']}>
+          { Object.keys(candidateMetadata).map((fieldName, index) => {
+            if (!ignoredFields.includes(fieldName)) {
+              return this._renderField(candidateMetadata, fieldName, index)
+            }
+          }) }
+        </div>
 
-        <div onClick={saveMetadata}>
+        <div className={styles['save-button']} onClick={saveMetadata}>
             Save
         </div>
 
