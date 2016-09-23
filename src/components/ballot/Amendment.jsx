@@ -12,8 +12,7 @@ export default class Amendment extends React.Component {
   _renderSingleAmendmentName (contestName) {
     const n = contestName.indexOf(':')
     const nameWithoutPrefix = contestName.substring(n !== -1 ? n+1 : 0)
-    const nameWithoutRelatingTo = nameWithoutPrefix.split('Relating to')[1]
-    return nameWithoutRelatingTo
+    return nameWithoutPrefix.replace(/^Relating to/,'')
   }
 
   render () {
