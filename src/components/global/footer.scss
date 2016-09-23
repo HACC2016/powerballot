@@ -1,8 +1,8 @@
 @import 'src/styles/_variables.scss';
 
 .container {
-  display: flex;
-  padding: 15px 20px;
+  margin-top: 60px;
+  padding: 35px 20px;
   background: $dark-grey;
   color: white;
   a {
@@ -10,19 +10,35 @@
   }
 }
 
+.inner-container {
+  display: flex;
+}
+
 .info-text {
   font-size: 13px;
   font-weight: 600;
   margin-right: 30px;
   line-height: 1.5;
+  min-width: 150px;
+}
+
+.email-link {
+  font-weight: 400;
+  font-style: italic;
 }
 
 .civic-celerator-logo {
-  max-width: 150px;
+  max-width: 130px;
+  margin-bottom: 8px;
 }
 
 .about-text {
   font-size: 10px;
-  padding-left: 10px;
+  padding-left: 20px;
   border-left: 1px solid white;
+
+  // Top-align text
+  p:first-child {
+    margin-top: -2px;
+  }
 }

@@ -2,6 +2,7 @@
 
 :local {
   .flag-container {
+    line-height: 1.1;
     width: 152px;
     background: $royal-blue;
     text-align: center;
@@ -11,19 +12,22 @@
 
   .flag-title {
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 16px;
     margin-bottom: 8px;
   }
 
   .flag-date {
     text-transform: uppercase;
     margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 12px;
   }
 
   .flag-link {
     color: white;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 700;
   }
 
   .stars {

@@ -18,7 +18,7 @@ export default class Header extends React.Component {
     return (
       <div className={styles['container']}>
         <div className={classnames('row', styles['row'])}>
-          <div>STATE OF HAWAII</div>
+          <div className={styles['hawaii-text']}>STATE OF HAWAII</div>
           <Link to="/">
             <SvgIcon icon={Logo} className={styles['logo']} />
           </Link>

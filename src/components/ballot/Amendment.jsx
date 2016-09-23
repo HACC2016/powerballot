@@ -11,7 +11,9 @@ export default class Amendment extends React.Component {
 
   _renderSingleAmendmentName (contestName) {
     const n = contestName.indexOf(':')
-    return contestName.substring(n !== -1 ? n+1 : 0)
+    const nameWithoutPrefix = contestName.substring(n !== -1 ? n+1 : 0)
+    const nameWithoutRelatingTo = nameWithoutPrefix.split('Relating to')[1]
+    return nameWithoutRelatingTo
   }
 
   render () {
@@ -21,7 +23,8 @@ export default class Amendment extends React.Component {
     return (
       <div>
         <div className={styles['header']}>
-          Proposed Amendments to the {this._renderAmendmentGroupName()}
+          <div className={styles['proposed-text']}>Proposed Amendments to the</div>
+          <div>{this._renderAmendmentGroupName()}</div>
         </div>
         <div className={styles['amendment-group-description']}>
           The following lists the related topics for the proposed {this._renderAmendmentGroupName()} amendments. You can vote YES or NO on each proposed amendment.
@@ -32,7 +35,8 @@ export default class Amendment extends React.Component {
               <div key={i} className={styles['amendment-name']}>
                 <a href="http://elections.hawaii.gov/voters/constitutional-and-charter-amendment-questions/"
                   className={styles['amendment-link']}>
-                  #{i+1}: {this._renderSingleAmendmentName(contest.Contest_Name)}
+                  <div className={styles['relating-to']}>Relating to</div>
+                  {this._renderSingleAmendmentName(contest.Contest_Name)}
                 </a>
               </div>
             )

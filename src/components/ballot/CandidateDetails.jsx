@@ -42,8 +42,10 @@ export default class CandidateDetails extends React.Component {
 
     return (
       <div className={styles['container']}>
-        <div className={styles['candidate-name']}>
-          {candidate.Candidate_Name} ({candidate.Candidate_Party})
+        <div className={styles['candidate-name-container']}>
+          <span className={styles['candidate-name']}>
+            {candidate.Candidate_Name} ({candidate.Candidate_Party})
+          </span>
           <span className={styles['incumbent-text']}>
             {candidate.metadata.incumbent_text}
           </span>
@@ -53,9 +55,11 @@ export default class CandidateDetails extends React.Component {
         : null}
 
         <div className={styles['content']}>
-          <div className={styles['photo-container']}>
+          {candidate.metadata.photo_url
+          ? <div className={styles['photo-container']}>
             <img src={candidate.metadata.photo_url} />
           </div>
+          : null}
           <div>
             <div>
               <Fact label='Seeking Office' value={getContestTitle(candidate.Contest_ID)} />
@@ -86,7 +90,10 @@ export default class CandidateDetails extends React.Component {
             </div>
 
             <div className={styles['separator']} />
-            <div>See a mistake? Have a suggestion? <a href='mailto:hawaiipowerballot@gmail.com'>Let us know</a></div>
+            <div>
+              See a mistake? Have a suggestion?
+              &nbsp;<a className={styles['let-us-know']} href='mailto:hawaiipowerballot@gmail.com'>Let us know</a>
+            </div>
           </div>
         </div>
       </div>

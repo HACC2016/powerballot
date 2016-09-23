@@ -61,7 +61,7 @@ export default class FindYourBallotContainer extends React.Component {
   }
 
   _unableToFindPrecinct () {
-    alert('unable to find precinct!')
+    alert('The address as you entered it cannot be found. Please double-check and try again.')
     this.setState({fetching: false})
   }
 

@@ -9,7 +9,7 @@ export default class BallotPrecinct extends React.Component {
   render () {
     const { address, pollingPlace, precinct } = this.props
     const addressInfo = (
-      <div>
+      <div className={styles['section']}>
         <div className={styles['header']}>Your Address</div>
         <div>{address}</div>
       </div>
@@ -19,12 +19,12 @@ export default class BallotPrecinct extends React.Component {
       <div className={styles['container']}>
         <div>
           {address ? addressInfo : null}
-          <div>
+          <div className={styles['section']}>
             <div className={styles['header']}>Your Precinct</div>
             <div>{precinct}</div>
           </div>
         </div>
-        <div>
+        <div className={styles['section']}>
           <div className={styles['header']}>Your Polling Place</div>
           <BallotPollingPlace pollingPlace={pollingPlace} />
         </div>

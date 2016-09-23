@@ -3,7 +3,7 @@
 :local {
   .container {
     display: flex;
-    padding: 5px 0;
+    padding: 7px 0;
   }
 
   .photo-container {
@@ -17,10 +17,9 @@
   }
 
   .name {
-    font-weight: 500;
+    margin-top: -5px;
     cursor: pointer;
     font-size: 18px;
-    margin-bottom: 4px;
   }
 
   .party {

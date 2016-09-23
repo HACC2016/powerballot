@@ -1,10 +1,18 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-}
+:local {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.header {
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
+  .header {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .section {
+    flex-basis: 50%;
+    margin: 10px 0;
+    font-size: 16px;
+  }
 }
