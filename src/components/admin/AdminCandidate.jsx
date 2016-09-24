@@ -46,6 +46,7 @@ export default class AdminCandidate extends React.Component {
       },
       failure => {
         console.error('Unable to update', failure)
+        alert('error white udating')
       }
     )
   }

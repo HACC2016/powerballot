@@ -59,7 +59,7 @@ export default class CandidateDetails extends React.Component {
           </span>
         </div>
         {authenticated()
-        ? <div className={styles['edit-link']}><a href={`/candidate/${candidate.Candidate_ID}`}>Edit</a></div>
+        ? <div className={styles['edit-link']}><a href={`/admin/candidate/${candidate.Candidate_ID}`}>Edit</a></div>
         : null}
 
         <div className={styles['content']}>
