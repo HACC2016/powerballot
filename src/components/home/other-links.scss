@@ -2,6 +2,8 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  // Inverse the item horizontal margin
+  margin: 0 -8px;
 
   > * {
     margin: 10px 8px;
