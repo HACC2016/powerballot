@@ -115,7 +115,10 @@ function geocodeAddress (address) {
   })
 
   return result.then((data) => {
+    console.log('got data')
     return JSON.parse(data.text)
+  }).catch((reason) => {
+    console.log("unable to fetch", reason)
   })
 }
 
