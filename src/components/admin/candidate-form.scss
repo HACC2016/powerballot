@@ -14,5 +14,11 @@ $input-padding: 12px;
     background: $medium-blue;
     padding: $input-padding;
     text-align: center;
+    max-width: 200px;
+    color: white;
+    position: fixed;
+    right: 30px;
+    top: 80px;
+    z-index: 10;
   }
 }
