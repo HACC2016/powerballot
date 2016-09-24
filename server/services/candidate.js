@@ -9,6 +9,7 @@ function getCandidatesForContests(contestIds) {
     .query(function(qb) {
       qb.whereIn('Contest_ID', contestIds)
     })
+    .orderBy(CANDIDATE_ID, 'ASC')
     .fetchAll()
     .then(results => {
       let candidates = results.map(candidateModel => {
@@ -43,6 +44,7 @@ function getCandidatesMetadata(candidateIds) {
     .query(function(qb) {
       qb.whereIn(CANDIDATE_ID, candidateIds)
     })
+    .orderBy(CANDIDATE_ID, 'ASC')
     .fetchAll()
     .then(results => {
       let candidatesMetadata = results.map(candidateMetadataModel => {
