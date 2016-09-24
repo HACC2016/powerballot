@@ -6,9 +6,7 @@ import App from './App'
 
 // To facilitate the temporary "auth"
 import jsCookie from 'js-cookie'
-console.log('set jscookie')
 window.jsCookie = jsCookie
-console.log('set jscookie', window.jsCookie)
 
 const rootEl = document.getElementById('root')
 ReactDOM.render(
