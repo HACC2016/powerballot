@@ -3,7 +3,6 @@ import classnames from 'classnames'
 
 import FindYourBallotContainer from './FindYourBallotContainer'
 import Sidebar from './Sidebar'
-import Instructions from './Instructions'
 import OtherLinks from './OtherLinks'
 
 import styles from './home.scss'
