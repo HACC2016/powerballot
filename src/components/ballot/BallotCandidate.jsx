@@ -52,6 +52,7 @@ export default class BallotCandidate extends React.Component {
 
         <Modal
           containerClassName={styles['modal-container']}
+          containerStyle={{marginTop: '5vh'}}
           style={{fontFamily: 'inherit'}}
           closeOnOuterClick
           show={this.state.showModal}
