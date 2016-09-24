@@ -38,7 +38,14 @@ export default class CandidateDetails extends React.Component {
       'bp_website_url',
       'wp_website_url',
       'cb_website_url',
-      'pbs_hawaii_url',
+      {
+        field: 'pbs_hawaii_url',
+        alwaysShow: false,
+      },
+      {
+        field: 'staradvertiser_url',
+        alwaysShow: false,
+      },
     ]
 
     return (

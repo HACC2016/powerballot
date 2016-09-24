@@ -28,6 +28,9 @@ export default class CandidateDetailsLink extends React.Component {
   }
 
   _renderUnknownLink(link) {
+    const { alwaysShow } = this.props
+    if (!alwaysShow) return null
+
     return (
       <span className={styles['unknown-link']}>{link.title}<span className={styles['unknown-link-href']}> Unknown</span></span>
     )
@@ -49,6 +52,10 @@ export default class CandidateDetailsLink extends React.Component {
 }
 
 CandidateDetailsLink.propTypes = {
+  alwaysShow: PropTypes.bool,
   candidate: PropTypes.object,
   fieldName: PropTypes.string,
+}
+CandidateDetailsLink.defaultProps = {
+  alwaysShow: true,
 }

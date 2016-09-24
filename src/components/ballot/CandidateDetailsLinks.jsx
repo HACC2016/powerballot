@@ -12,10 +12,17 @@ export default class CandidateDetailsLinks extends React.Component {
     return (
       <div className={this.props.className}>
         <span className={parentStyles['section-title']}>{title}</span>
-        {links.map((linkFieldName, i) => {
-          return (
-            <CandidateDetailsLink key={i} candidate={candidate} fieldName={linkFieldName} />
-          )
+        {links.map((link, i) => {
+          if (typeof link === 'string') {
+            return (
+              <CandidateDetailsLink key={i} candidate={candidate} fieldName={link} />
+            )
+          } else {
+            console.log('on', link)
+            return (
+              <CandidateDetailsLink key={i} candidate={candidate} fieldName={link.field} alwaysShow={link.alwaysShow} />
+            )
+          }
         })}
       </div>
     )
