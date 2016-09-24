@@ -51,6 +51,12 @@ export default function OtherLinks (props) {
         description='Using your address'
         href='http://civic-celerator.maps.arcgis.com/apps/webappviewer/index.html?id=5fba18ab076145109c62c3f2ab3b6e4f'
       />
+      {/* Fill out the last row */}
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
     </div>
   )
 }
