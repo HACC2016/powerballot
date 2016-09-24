@@ -49,7 +49,7 @@ export default class CandidateForm extends React.Component {
         </div>
 
         <div className={styles['save-button']} onClick={saveMetadata}>
-            Save
+          SAVE
         </div>
 
       </div>
