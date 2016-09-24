@@ -2,6 +2,9 @@
 
 .container {
   margin-top: 60px;
+  @media (max-width: 450px) {
+    margin-top: 0
+  }
   padding: 35px 20px;
   background: $dark-grey;
   color: white;
