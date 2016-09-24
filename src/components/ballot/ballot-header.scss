@@ -17,7 +17,6 @@
     padding: 0 12px;
     background: $dark-grey;
     color: $white;
-    height: 50px;
 
     @media (max-width: 450px) {
       height: auto;
@@ -32,6 +31,8 @@
   .title-container {
     font-size: 24px;
     margin-left: 93px;
+    padding: 11px 0;
+    line-height: 1.2;
   }
 
   .title {
