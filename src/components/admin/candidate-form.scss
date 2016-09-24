@@ -1,7 +1,5 @@
 @import 'src/styles/_variables.scss';
 
-$input-padding: 12px;
-
 :local {
   .candidate-form {
     display: table;
@@ -12,7 +10,7 @@ $input-padding: 12px;
   .save-button {
     cursor: pointer;
     background: $medium-blue;
-    padding: $input-padding;
+    padding: 14px 20px;
     text-align: center;
     max-width: 200px;
     color: white;
