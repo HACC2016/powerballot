@@ -16,8 +16,12 @@ html
       ga('create', 'UA-53294565-1', 'auto');
       ga('send', 'pageview');
     script.
-      if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-       document.write('<script src="assets/js/polyfills.js"><\/script>');
+      if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        document.write('<script src="assets/js/polyfill-ie.js"><\/script>');
+      }
+      if(typeof Promise === "undefined" || Promise.toString().indexOf("[native code]") === -1) {
+        document.write('<script src="assets/js/polyfill-promise.js"><\/script>');
+      }
   body
     #root
     script(src="#{scriptUrl}")
