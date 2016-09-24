@@ -12,7 +12,7 @@ export default class Amendment extends React.Component {
   _renderSingleAmendmentName (contestName) {
     const n = contestName.indexOf(':')
     const nameWithoutPrefix = contestName.substring(n !== -1 ? n+1 : 0)
-    return nameWithoutPrefix.replace(/^Relating to/,'')
+    return nameWithoutPrefix.trim().replace(/^Relating to/,'')
   }
 
   render () {
@@ -33,7 +33,9 @@ export default class Amendment extends React.Component {
             return (
               <div key={i} className={styles['amendment-name']}>
                 <a href="http://elections.hawaii.gov/voters/constitutional-and-charter-amendment-questions/"
-                  className={styles['amendment-link']}>
+                  className={styles['amendment-link']}
+                  target="_blank"
+                >
                   <div className={styles['relating-to']}>Relating to</div>
                   {this._renderSingleAmendmentName(contest.Contest_Name)}
                 </a>
