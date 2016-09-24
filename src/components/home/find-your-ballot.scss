@@ -7,6 +7,9 @@ $input-padding: 12px;
   color: $white;
   padding: 20px;
   box-shadow: 4px 4px 10px 0px rgba(168,168,168,1);
+  a {
+    color: $white;
+  }
 }
 
 .feature {
@@ -30,4 +33,9 @@ $input-padding: 12px;
   cursor: pointer;
   background: $dark-grey;
   padding: $input-padding;
+}
+
+.instructions {
+  margin-top: 15px;
+  font-style: italic;
 }

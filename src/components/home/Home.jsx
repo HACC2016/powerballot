@@ -15,24 +15,21 @@ export default class Home extends React.Component {
 
     return (
       <div className={styles['container']}>
+        <FindYourBallotContainer
+          updateMatchedAddress={updateMatchedAddress}
+          updateMatchedCoordinates={updateMatchedCoordinates}
+        />
         <div className={classnames('row', styles['body'])}>
-          <div className={styles['main-section']}>
-            <FindYourBallotContainer
-              updateMatchedAddress={updateMatchedAddress}
-              updateMatchedCoordinates={updateMatchedCoordinates}
-            />
-            <Instructions />
-          </div>
           <div className={styles['sidebar-container']}>
             <Sidebar />
           </div>
-        </div>
-        <div className={classnames('row', styles['other-links-container'])}>
-          <h3 className='underline-header'>
-            Other Links
-          </h3>
-          <div className={styles['other-links']}>
-            <OtherLinks />
+          <div className={styles['main-section']}>
+            <h3 className='underline-header'>
+              Other Links
+            </h3>
+            <div className={styles['other-links']}>
+              <OtherLinks />
+            </div>
           </div>
         </div>
       </div>
