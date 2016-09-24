@@ -15,6 +15,9 @@ html
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-53294565-1', 'auto');
       ga('send', 'pageview');
+    script.
+      if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+       document.write('<script src="assets/js/polyfills.js"><\/script>');
   body
     #root
     script(src="#{scriptUrl}")

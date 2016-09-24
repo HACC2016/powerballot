@@ -42,3 +42,14 @@
     margin-top: -2px;
   }
 }
+
+@media (max-width: 450px) {
+  .inner-container {
+    display: block;
+  }
+  .about-text {
+    margin-top: 20px;
+    padding-left: 0;
+    border: none;
+  }
+}

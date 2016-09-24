@@ -51,10 +51,12 @@ export default function Sidebar() {
           </p>
         </div>
         <div className={styles['countdown-container']}>
-          COUNTDOWN
-          <div className={styles['countdown']}>{daysTillGeneralElection} DAYS</div>
+          <div className={styles['countdown-number']}>{daysTillGeneralElection}</div>
+          <div className={styles['countdown-days']}>days left</div>
         </div>
       </div>
+
+      <div className={styles['separator']} />
     </div>
   )
 }
