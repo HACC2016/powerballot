@@ -23,6 +23,9 @@ export default class StatewideBallotHeader extends React.Component {
             </span>
           </div>
         </div>
+        <div className={styles['instructions']}>
+          The Statewide Power Ballot lists all the candidates and issues throughout the State of Hawaii for the coming election.
+        </div>
       </div>
     )
   }
