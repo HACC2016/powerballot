@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
-import { authenticated } from 'src/services/authentication_utils'
-
 import AdminHeader from 'src/components/global/AdminHeader'
 import Header from 'src/components/global/Header'
 import Footer from 'src/components/global/Footer'
@@ -36,14 +34,14 @@ export default class App extends Component {
   }
 
   render() {
-    const adminNav = (
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/statewide">View Statewide Ballot</Link></li>
-        <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
-        <li><a href="/admin/candidate/USSe">Edit Example Candidate</a></li>
-      </ul>
-    )
+    // const adminNav = (
+    //   <ul>
+    //     <li><Link to="/">Home</Link></li>
+    //     <li><Link to="/statewide">View Statewide Ballot</Link></li>
+    //     <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
+    //     <li><a href="/admin/candidate/USSe">Edit Example Candidate</a></li>
+    //   </ul>
+    // )
 
     return (
       <BrowserRouter>
@@ -56,7 +54,6 @@ export default class App extends Component {
               </div>
             )
           }} />
-          {authenticated() ? adminNav : null}
           <Match exactly pattern="/" render={this._renderHomePage} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
           <Match pattern="/ballot/:precinct" render={this._renderBallotPage} />
