@@ -3,6 +3,7 @@ import React from 'react'
 import { getStatewideBallot } from 'src/services/api'
 
 import StatewideBallot from 'src/components/ballot/StatewideBallot'
+import Loading from 'src/components/ballot/Loading'
 
 export default class StatewideBallotPage extends React.Component {
   state = {
@@ -49,8 +50,7 @@ export default class StatewideBallotPage extends React.Component {
 
   render () {
     const { ballot } = this.state
-
-    if (!this._hasData()) return <div>Loading...</div>
+    if (!this._hasData()) return <Loading />
 
     return (
       <StatewideBallot

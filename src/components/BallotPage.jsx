@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react'
 import { getBallot } from 'src/services/api'
 
 import Ballot from 'src/components/ballot/Ballot'
+import Loading from 'src/components/ballot/Loading'
 
 export default class BallotPage extends React.Component {
   state = {
@@ -66,7 +67,7 @@ export default class BallotPage extends React.Component {
     const { matchedAddress, matchedCoordinates } = this.props
     const { precinct } = this.props.params
     const { ballot } = this.state
-    if (!this._hasData()) return <div>Loading...</div>
+    if (!this._hasData()) return <Loading />
 
     return (
       <Ballot
