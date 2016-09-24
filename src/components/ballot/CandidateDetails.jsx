@@ -6,6 +6,7 @@ import { authenticated } from 'src/services/authentication_utils'
 
 import CandidateDetailsLink from './CandidateDetailsLink.jsx'
 import CandidateDetailsLinks from './CandidateDetailsLinks.jsx'
+import CandidateImage from './CandidateImage.jsx'
 import Fact from './Fact'
 
 import styles from './candidate-details.scss'
@@ -57,7 +58,7 @@ export default class CandidateDetails extends React.Component {
         <div className={styles['content']}>
           {candidate.metadata.photo_url
           ? <div className={styles['photo-container']}>
-            <img src={candidate.metadata.photo_url} />
+            <CandidateImage candidate={candidate} />
           </div>
           : null}
           <div>

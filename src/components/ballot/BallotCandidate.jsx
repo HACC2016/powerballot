@@ -5,6 +5,8 @@ import Modal, {closeStyle} from 'simple-react-modal'
 import SvgIcon from 'src/components/common/SvgIcon'
 
 import CandidateDetails from './CandidateDetails.jsx'
+import CandidateImage from './CandidateImage.jsx'
+
 import { partyIdToTitle } from 'src/services/candidate_utils.js'
 
 import NoPhoto from 'src/assets/no_photo-14.svg'
@@ -33,7 +35,7 @@ export default class BallotCandidate extends React.Component {
       <div className={styles['container']}>
         <div className={styles['photo-container']} onClick={this._showModal}>
           {candidate.metadata.photo_url
-          ? <img src={candidate.metadata.photo_url} />
+          ? <CandidateImage candidate={candidate} />
           : <SvgIcon icon={NoPhoto} width={64} height={75} /> }
         </div>
 
