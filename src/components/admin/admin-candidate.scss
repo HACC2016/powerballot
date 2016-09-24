@@ -1,3 +1,10 @@
 .candidate-details-container {
   padding: 8px;
 }
+
+.navigation {
+  display: flex;
+  > * {
+    margin: 0 8px;
+  }
+}

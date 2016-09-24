@@ -17,9 +17,19 @@ export default class AdminCandidate extends React.Component {
     this.setState({candidate})
   }
 
-  _updateCandidateField = (fieldName, value) => {
-    console.log(fieldName, value)
+  _showPreviousCandidate = () => {
+    this._showCandidate(this.props.candidate.id - 1)
+  }
 
+  _showNextCandidate = () => {
+    this._showCandidate(this.props.candidate.id + 1)
+  }
+
+  _showCandidate (id) {
+    window.location = `/admin/candidate/id/${id}`
+  }
+
+  _updateCandidateField = (fieldName, value) => {
     const { candidate } = this.state
     let newCandidate = { ...candidate }
     newCandidate.metadata[fieldName] = value
@@ -46,6 +56,11 @@ export default class AdminCandidate extends React.Component {
 
     return (
       <div>
+        <div className={styles['navigation']}>
+          <a onClick={this._showPreviousCandidate}>Previous</a>
+          |
+          <a onClick={this._showNextCandidate}>Next</a>
+        </div>
         <div className={styles['candidate-details-container']}>
           <CandidateDetails candidate={candidate} />
         </div>

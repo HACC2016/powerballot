@@ -39,7 +39,7 @@ export default class App extends Component {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/statewide">View Statewide Ballot</Link></li>
         <li><Link to="/ballot/13-04">View Example Ballot</Link></li>
-        <li><a href="/candidate/USSa">Edit Example Candidate</a></li>
+        <li><a href="/admin/candidate/USSe">Edit Example Candidate</a></li>
       </ul>
     )
 
@@ -51,7 +51,7 @@ export default class App extends Component {
           <Match exactly pattern="/" render={this._renderHomePage} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
           <Match pattern="/ballot/:precinct" render={this._renderBallotPage} />
-          <Match pattern="/candidate" component={AdminCandidatePage} />
+          <Match pattern="/admin/candidate" component={AdminCandidatePage} />
           <Miss component={NoMatch} />
           <Footer />
         </div>

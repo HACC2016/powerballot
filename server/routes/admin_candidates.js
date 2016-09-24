@@ -1,9 +1,18 @@
 var express = require('express')
-var queryString = require('query-string')
 var router = express.Router()
 
 const {scriptUrl} = require('../services/server_helpers')
-const { getFullCandidatePromise, setCandidateMetadata } = require('../services/candidate')
+const {
+  getCandidateById,
+  getFullCandidatePromise,
+  setCandidateMetadata,
+} = require('../services/candidate')
+
+router.get('/id/:id', function (req, res) {
+  getCandidateById(req.params.id).then(candidate => {
+    return res.redirect(`/admin/candidate/${candidate.Candidate_ID}`)
+  })
+})
 
 router.get('/:candidateId', function (req, res) {
   const candidateId = req.params.candidateId

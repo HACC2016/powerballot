@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/api', apiRoute)
 app.use('/ballot', ballotsRoute)
-app.use('/candidate', candidatesRoute)
+app.use('/admin/candidate', candidatesRoute)
 
 app.get('*', function (req, res) {
   res.render('index.jade', {
