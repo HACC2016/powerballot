@@ -1,0 +1,22 @@
+@import 'src/styles/_variables.scss';
+
+:local {
+  .container {
+    background: $medium-blue;
+    color: $white;
+    padding: 30px 0 15px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .hawaii-text {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .logo {
+    margin: 8px 0;
+    margin-left: -6px;
+    fill: white;
+  }
+}

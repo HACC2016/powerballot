@@ -56,7 +56,7 @@ export default class AdminCandidate extends React.Component {
     const { metadata } = candidate
 
     return (
-      <div>
+      <div className='row'>
         <div className={styles['navigation']}>
           <a onClick={this._showPreviousCandidate}>Previous</a>
           |

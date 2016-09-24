@@ -9,7 +9,7 @@
 
   .save-button {
     cursor: pointer;
-    background: $medium-blue;
+    background: #618B36;
     padding: 14px 20px;
     text-align: center;
     max-width: 200px;
@@ -18,5 +18,6 @@
     right: 30px;
     top: 80px;
     z-index: 10;
+    box-shadow: 4px 4px 10px 0px rgba(168,168,168,1);
   }
 }

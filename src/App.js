@@ -3,8 +3,10 @@ import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
 import { authenticated } from 'src/services/authentication_utils'
 
+import AdminHeader from 'src/components/global/AdminHeader'
 import Header from 'src/components/global/Header'
 import Footer from 'src/components/global/Footer'
+
 import BallotPage from 'src/components/BallotPage'
 import Home from 'src/components/home/Home'
 import StatewideBallotPage from 'src/components/StatewideBallotPage'
@@ -46,7 +48,14 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header />
+          <Match pattern="" render={() => {
+            return (
+              <div>
+                <Match pattern="/admin" component={AdminHeader} />
+                <Miss component={Header} />
+              </div>
+            )
+          }} />
           {authenticated() ? adminNav : null}
           <Match exactly pattern="/" render={this._renderHomePage} />
           <Match pattern="/statewide" component={StatewideBallotPage} />
