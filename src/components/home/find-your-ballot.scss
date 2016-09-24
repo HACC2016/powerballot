@@ -23,6 +23,7 @@ $input-padding: 12px;
 }
 
 .input {
+  display: inline-block;
   flex: 1;
   flex-basis: 350px;
   outline: none;
@@ -30,6 +31,7 @@ $input-padding: 12px;
 }
 
 .go-button {
+  display: inline-block;
   cursor: pointer;
   background: $dark-grey;
   padding: $input-padding;
