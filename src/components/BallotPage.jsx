@@ -5,6 +5,8 @@ import { getBallot } from 'src/services/api'
 import Ballot from 'src/components/ballot/Ballot'
 import Loading from 'src/components/ballot/Loading'
 
+import styles from './ballot-page.scss'
+
 export default class BallotPage extends React.Component {
   state = {
     ballot: {},
@@ -63,11 +65,17 @@ export default class BallotPage extends React.Component {
     }
   }
 
+  _renderLoading () {
+    return <div className={styles['loading-container']}>
+      <Loading />
+    </div>
+  }
+
   render () {
     const { matchedAddress, matchedCoordinates } = this.props
     const { precinct } = this.props.params
     const { ballot } = this.state
-    if (!this._hasData()) return <Loading />
+    if (!this._hasData()) return this._renderLoading()
 
     return (
       <Ballot

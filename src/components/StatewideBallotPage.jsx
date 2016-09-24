@@ -5,6 +5,8 @@ import { getStatewideBallot } from 'src/services/api'
 import StatewideBallot from 'src/components/ballot/StatewideBallot'
 import Loading from 'src/components/ballot/Loading'
 
+import styles from './ballot-page.scss'
+
 export default class StatewideBallotPage extends React.Component {
   state = {
     ballot: {},
@@ -48,9 +50,15 @@ export default class StatewideBallotPage extends React.Component {
     }
   }
 
+  _renderLoading () {
+    return <div className={styles['loading-container']}>
+      <Loading />
+    </div>
+  }
+
   render () {
     const { ballot } = this.state
-    if (!this._hasData()) return <Loading />
+    if (!this._hasData()) return this._renderLoading()
 
     return (
       <StatewideBallot
