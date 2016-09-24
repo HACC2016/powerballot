@@ -32,6 +32,7 @@ export default class AdminCandidate extends React.Component {
     updateCandidateMetadata(candidate.Candidate_ID, candidate.metadata).then(
       updatedMetadata => {
         console.log(updatedMetadata)
+        alert('Data saved!')
       },
       failure => {
         console.error('Unable to update', failure)
