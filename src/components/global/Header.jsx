@@ -7,7 +7,7 @@ import SvgIcon from 'src/components/common/SvgIcon.jsx'
 import VoteFlag from './VoteFlag'
 
 import 'normalize.css'
-import Logo from 'src/assets/power_ballot-09.svg'
+import Logo from 'src/assets/power_ballot_new-15.svg'
 import styles from './header.scss'
 import 'src/styles/styles.scss'
 
