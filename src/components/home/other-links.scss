@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   // Inverse the item horizontal margin
   margin: 0 -8px;
 
