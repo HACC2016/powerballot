@@ -24,14 +24,13 @@ export default class Footer extends React.Component {
             </p>
 
             <p>
-              Special thanks to Corie Tanida of Common Cause Hawaii who coordinated a great group of volunteers - Christine Trecker, Connie Clinton, Dustin Schoedel, Jeanne Ohta and Joe Heaukulani. They all spent many hours doing the candidate research that made the Power Ballot possible.
+              Special thanks to Corie Tanida of Common Cause Hawaii who coordinated a great group of volunteers - Christine Trecker, Connie Clinton, Dustin Schoedel, Jeanne Ohta and Joe Heaukulani.
             </p>
 
             <p>
-              The amazing web development skills of Jason Axelson were critical for pulling in candidate data from the REST service and smoothing the rough edges of my initial prototype.
+              Many thanks to Royce Jones (Da Map Guy) who manually input the Office of Elections PDF's into a REST service (as well as developing the initial 2014 power ballot) and made our lives much easier. Jill Misawa developed the design for the site and Aaron Fujimoto and Jason Axelson did the development as part of the first Hawaii Annual Code Challenge 2016.
             </p>
 
-            Mahalo ka kou! - Da Map Guy (Royce Jones)
           </div>
         </div>
       </div>
