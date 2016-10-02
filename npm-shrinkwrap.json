@@ -1761,32 +1761,84 @@
       "from": "escope@>=3.6.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/escope/-/escope-3.6.0.tgz"
     },
+    "eslint": {
+      "version": "3.7.0",
+      "from": "eslint@3.7.0",
+      "resolved": "https://registry.npmjs.org/eslint/-/eslint-3.7.0.tgz",
+      "dependencies": {
+        "acorn": {
+          "version": "4.0.3",
+          "from": "acorn@>=4.0.1 <5.0.0",
+          "resolved": "https://registry.npmjs.org/acorn/-/acorn-4.0.3.tgz"
+        },
+        "espree": {
+          "version": "3.3.2",
+          "from": "espree@>=3.3.1 <4.0.0",
+          "resolved": "https://registry.npmjs.org/espree/-/espree-3.3.2.tgz"
+        },
+        "globals": {
+          "version": "9.10.0",
+          "from": "globals@>=9.2.0 <10.0.0",
+          "resolved": "https://registry.npmjs.org/globals/-/globals-9.10.0.tgz"
+        },
+        "strip-bom": {
+          "version": "3.0.0",
+          "from": "strip-bom@>=3.0.0 <4.0.0",
+          "resolved": "https://registry.npmjs.org/strip-bom/-/strip-bom-3.0.0.tgz"
+        },
+        "user-home": {
+          "version": "2.0.0",
+          "from": "user-home@>=2.0.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/user-home/-/user-home-2.0.0.tgz"
+        }
+      }
+    },
     "eslint-config-standard-jsx": {
       "version": "3.0.1",
       "from": "eslint-config-standard-jsx@>=3.0.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/eslint-config-standard-jsx/-/eslint-config-standard-jsx-3.0.1.tgz"
+    },
+    "eslint-config-standard-react": {
+      "version": "4.2.0",
+      "from": "eslint-config-standard-react@4.2.0",
+      "resolved": "https://registry.npmjs.org/eslint-config-standard-react/-/eslint-config-standard-react-4.2.0.tgz"
     },
     "eslint-import-resolver-node": {
       "version": "0.2.3",
       "from": "eslint-import-resolver-node@>=0.2.0 <0.3.0",
       "resolved": "https://registry.npmjs.org/eslint-import-resolver-node/-/eslint-import-resolver-node-0.2.3.tgz"
     },
+    "eslint-import-resolver-webpack": {
+      "version": "0.6.0",
+      "from": "eslint-import-resolver-webpack@latest",
+      "resolved": "https://registry.npmjs.org/eslint-import-resolver-webpack/-/eslint-import-resolver-webpack-0.6.0.tgz",
+      "dependencies": {
+        "interpret": {
+          "version": "1.0.1",
+          "from": "interpret@>=1.0.0 <2.0.0",
+          "resolved": "https://registry.npmjs.org/interpret/-/interpret-1.0.1.tgz"
+        }
+      }
+    },
+    "eslint-module-utils": {
+      "version": "1.0.0",
+      "from": "eslint-module-utils@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-module-utils/-/eslint-module-utils-1.0.0.tgz"
+    },
+    "eslint-plugin-import": {
+      "version": "2.0.0",
+      "from": "eslint-plugin-import@2.0.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.0.0.tgz"
+    },
+    "eslint-plugin-react": {
+      "version": "6.3.0",
+      "from": "eslint-plugin-react@6.3.0",
+      "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.3.0.tgz"
+    },
     "espower-location-detector": {
       "version": "0.1.2",
       "from": "espower-location-detector@>=0.1.1 <0.2.0",
       "resolved": "https://registry.npmjs.org/espower-location-detector/-/espower-location-detector-0.1.2.tgz"
-    },
-    "espree": {
-      "version": "3.1.7",
-      "from": "espree@>=3.1.6 <4.0.0",
-      "resolved": "https://registry.npmjs.org/espree/-/espree-3.1.7.tgz",
-      "dependencies": {
-        "acorn": {
-          "version": "3.3.0",
-          "from": "acorn@>=3.3.0 <4.0.0",
-          "resolved": "https://registry.npmjs.org/acorn/-/acorn-3.3.0.tgz"
-        }
-      }
     },
     "esprima": {
       "version": "2.7.3",
@@ -2847,7 +2899,8 @@
       "dependencies": {
         "glob": {
           "version": "7.0.6",
-          "from": "glob@>=7.0.3 <7.1.0"
+          "from": "glob@7.0.6",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.6.tgz"
         },
         "lodash": {
           "version": "4.9.0",
@@ -3036,6 +3089,11 @@
       "version": "1.0.1",
       "from": "ignore-by-default@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/ignore-by-default/-/ignore-by-default-1.0.1.tgz"
+    },
+    "image-size": {
+      "version": "0.3.5",
+      "from": "image-size@>=0.3.5 <0.4.0",
+      "resolved": "https://registry.npmjs.org/image-size/-/image-size-0.3.5.tgz"
     },
     "immutable": {
       "version": "3.8.1",
@@ -3650,21 +3708,6 @@
       "from": "lodash.deburr@>=3.0.0 <4.0.0",
       "resolved": "https://registry.npmjs.org/lodash.deburr/-/lodash.deburr-3.2.0.tgz"
     },
-    "lodash.endswith": {
-      "version": "4.2.1",
-      "from": "lodash.endswith@>=4.0.1 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.endswith/-/lodash.endswith-4.2.1.tgz"
-    },
-    "lodash.find": {
-      "version": "4.6.0",
-      "from": "lodash.find@>=4.3.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.find/-/lodash.find-4.6.0.tgz"
-    },
-    "lodash.findindex": {
-      "version": "4.6.0",
-      "from": "lodash.findindex@>=4.3.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash.findindex/-/lodash.findindex-4.6.0.tgz"
-    },
     "lodash.get": {
       "version": "3.7.0",
       "from": "lodash.get@>=3.7.0 <4.0.0",
@@ -3925,7 +3968,8 @@
       "dependencies": {
         "glob": {
           "version": "7.0.6",
-          "from": "glob@>=7.0.3 <8.0.0"
+          "from": "glob@7.0.6",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.6.tgz"
         },
         "npmlog": {
           "version": "3.1.2",
@@ -5067,7 +5111,8 @@
       "dependencies": {
         "glob": {
           "version": "7.0.6",
-          "from": "glob@>=7.0.0 <8.0.0"
+          "from": "glob@7.0.6",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.6.tgz"
         }
       }
     },
@@ -5415,16 +5460,9 @@
       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-2.0.0.tgz"
     },
     "svg-sprite-loader": {
-      "version": "0.0.27",
-      "from": "svg-sprite-loader@*",
-      "resolved": "https://registry.npmjs.org/svg-sprite-loader/-/svg-sprite-loader-0.0.27.tgz",
-      "dependencies": {
-        "image-size": {
-          "version": "0.3.5",
-          "from": "image-size@>=0.3.5 <0.4.0",
-          "resolved": "https://registry.npmjs.org/image-size/-/image-size-0.3.5.tgz"
-        }
-      }
+      "version": "0.0.28",
+      "from": "svg-sprite-loader@0.0.28",
+      "resolved": "https://registry.npmjs.org/svg-sprite-loader/-/svg-sprite-loader-0.0.28.tgz"
     },
     "svgo": {
       "version": "0.6.6",
@@ -5891,6 +5929,11 @@
           "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.1.2.tgz"
         }
       }
+    },
+    "webpack-notifier": {
+      "version": "1.4.1",
+      "from": "webpack-notifier@latest",
+      "resolved": "https://registry.npmjs.org/webpack-notifier/-/webpack-notifier-1.4.1.tgz"
     },
     "webpack-stats-plugin": {
       "version": "0.1.3",
