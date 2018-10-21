@@ -13,6 +13,8 @@ export default class HomePage {
 
     this.data = Promise.all([candidatesPr, precinctsPr])
     .then(data => {
+      console.log(data[0])
+      console.log(data[1])
       return {candidates: data[0], precincts: data[1]}
     })
 
@@ -26,6 +28,8 @@ export default class HomePage {
   }
 
   getElements() {
+    console.log('HomePage!')
+
     return <RootContainer>
       <RootElement>
         <Header />

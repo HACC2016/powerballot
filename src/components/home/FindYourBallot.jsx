@@ -27,7 +27,7 @@ export default class FindYourBallot extends React.Component {
           </div>
           {fetching ? 'searching...': null}
           <div className={styles['instructions']}>
-            * This is the address you listed when you registered to vote, most likely your home address. If you're unsure of which address is associated with your voter registration and want to check your voter file OR you still need to register to vote visit <a href="https://olvr.hawaii.gov/">https://olvr.hawaii.gov/</a>
+            * AAAAAAAAAAAAAAAA vote, most likely your home address. If you're unsure of which address is associated with your voter registration and want to check your voter file OR you still need to register to vote visit <a href="https://olvr.hawaii.gov/">https://olvr.hawaii.gov/</a>
           </div>
         </div>
       </div>

@@ -41,6 +41,7 @@ function getPrecincts() {
     where: "1=1",
     outFields: '*',
     f: 'pjson',
+    token: 'k11BZSoYc_nvtv44j0BOdwYllBkOR6-NPO1FVgDUcYOwF6p7_8DUQrykqJQLWw-H8YSyTzo7HvIOW5rbvIdGYUN3Nr6qiquBMJ7Jo1LCN0K-3PyeFHfgz9a1txcUWPjdGm2COFg7iBM9WmkvWWIhRg..',
   })
 
   return result.then((data) => {
@@ -110,12 +111,14 @@ function geocodeAddress (address) {
     outFields: 'Match_addr,stAddr,City',
     // TOO: add auto suggest to get a magicKey
     // &magicKey=GST7YMc0AM9UOsE3GY8tIS9GOghnYnwZIip_GQypG1c915KHUTFOYNaHUTBtQNcpOh9bZgKZQoc3YSyaagDIZhkZQsxKQN4mDb8uAgTvDM8F
+    token: 'k11BZSoYc_nvtv44j0BOdwYllBkOR6-NPO1FVgDUcYOwF6p7_8DUQrykqJQLWw-H8YSyTzo7HvIOW5rbvIdGYUN3Nr6qiquBMJ7Jo1LCN0K-3PyeFHfgz9a1txcUWPjdGm2COFg7iBM9WmkvWWIhRg..',
     maxLocations: 3,
     f: 'json',
   })
 
   return result.then((data) => {
-    console.log('got data')
+    console.log('grrr')
+    console.log('got data', data)
     return JSON.parse(data.text)
   }).catch((reason) => {
     console.log("unable to fetch", reason)

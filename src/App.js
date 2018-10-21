@@ -34,6 +34,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('app.js!!!!')
     // const adminNav = (
     //   <ul>
     //     <li><Link to="/">Home</Link></li>

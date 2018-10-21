@@ -18,13 +18,13 @@ export default function OtherLinks (props) {
     <div className={styles['container']}>
       <LinkWithIcon
         icon={ButtonStatewide}
-        title='Statewide Power Ballot'
+        title='gah'
         description='All candidates and issues statewide'
         to="/statewide"
       />
       <LinkWithIcon
         icon={ButtonVote}
-        title='Register to Vote'
+        title='do not Register to Vote'
         description='Register to vote, update your voter file, and confirm registration'
         href="http://elections.hawaii.gov/"
       />
